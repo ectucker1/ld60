@@ -1,0 +1,152 @@
+name: Export Game
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+      - "!web-template-*"
+
+env:
+  GODOT_VERSION: 4.7.2
+  EXPORT_NAME: ld60
+  PROJECT_PATH: .
+
+jobs:
+  export-linux:
+    name: Linux Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p build/$EXPORT_NAME-linux
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.config/
+          mv /root/.config/godot ~/.config/godot
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Export
+        run: godot -v --headless --export-release "Linux" ./build/$EXPORT_NAME-linux/$EXPORT_NAME.x86_64
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.EXPORT_NAME }}-linux
+          path: build/${{ env.EXPORT_NAME }}-linux
+
+  export-windows:
+    name: Windows Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p build/$EXPORT_NAME-windows
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.config/
+          mv /root/.config/godot ~/.config/godot
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Export
+        run: godot -v --headless --export-release "Windows Desktop" ./build/$EXPORT_NAME-windows/$EXPORT_NAME.exe
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.EXPORT_NAME }}-windows
+          path: build/${{ env.EXPORT_NAME }}-windows
+
+  export-mac:
+    name: macOS Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p build/$EXPORT_NAME-mac
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.config/
+          mv /root/.config/godot ~/.config/godot
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Export
+        run: godot -v --headless --export-release "macOS" ./build/$EXPORT_NAME-mac/$EXPORT_NAME.zip
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.EXPORT_NAME }}-mac
+          path: build/${{ env.EXPORT_NAME }}-mac
+
+  export-web:
+    name: Web Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p build/$EXPORT_NAME-web
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.config/
+          mv /root/.config/godot ~/.config/godot
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Download Custom Web Template
+        # Built by build-web-template.yml; falls back to the standard template if it doesn't exist
+        run: |
+          TEMPLATE_URL="https://github.com/$GITHUB_REPOSITORY/releases/download/web-template-$GODOT_VERSION/web-template.zip"
+          if wget -q -O "$GITHUB_WORKSPACE/web-template.zip" "$TEMPLATE_URL"; then
+            WEB_PRESET=$(awk '/^\[preset\.[0-9]+\]$/ { section = substr($0, 2, length($0) - 2) } /^platform="Web"$/ { print section; exit }' export_presets.cfg)
+            sed -i "/^\[$WEB_PRESET\.options\]/,/^\[/ s|^custom_template/release=.*|custom_template/release=\"$GITHUB_WORKSPACE/web-template.zip\"|" export_presets.cfg
+          else
+            echo "::warning::No custom web template found for $GODOT_VERSION, using the standard template"
+          fi
+      - name: Export
+        run: godot -v --headless --export-release "Web" ./build/$EXPORT_NAME-web/index.html
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.EXPORT_NAME }}-web
+          path: build/${{ env.EXPORT_NAME }}-web
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: export-web
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download Web Artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ env.EXPORT_NAME }}-web
+          path: public
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

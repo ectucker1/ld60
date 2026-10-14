@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://u3ij0ekk2dfd"]
+
+[ext_resource type="Script" uid="uid://4tcrduyedl6p" path="res://test/pixel_perfect/pixel_perfect_test_2.gd" id="1_6qtyt"]
+[ext_resource type="Script" uid="uid://feojsmytrm8j" path="res://test/pixel_perfect/test_character.gd" id="3_6qtyt"]
+[ext_resource type="Texture2D" uid="uid://qj25sam46s4r" path="res://test/_shared/player.png" id="3_48ay1"]
+[ext_resource type="Script" uid="uid://b5pw1qsafpmit" path="res://test/pixel_perfect/test_follow_cam.gd" id="3_bbsjv"]
+[ext_resource type="PackedScene" uid="uid://dpabh43k06xgj" path="res://test/_shared/test_tilemap.tscn" id="3_gsxwa"]
+
+[sub_resource type="Gradient" id="Gradient_cjs58"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sjoje"]
+gradient = SubResource("Gradient_cjs58")
+width = 256
+height = 256
+
+[sub_resource type="Environment" id="Environment_sjoje"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.52
+glow_bloom = 0.65
+glow_hdr_threshold = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjoje"]
+size = Vector2(16, 23)
+
+[node name="PixelPerfectTest" type="Node2D" unique_id=370172322]
+script = ExtResource("1_6qtyt")
+
+[node name="Scale" parent="." unique_id=652502290 instance=ExtResource("3_gsxwa")]
+position = Vector2(-3, -22)
+scale = Vector2(1, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1906838168]
+color = Color(0.58900476, 0.63351196, 0.8642701, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1499895159]
+position = Vector2(221.5, -29.999992)
+scale = Vector2(10.296875, 6.5000005)
+texture = SubResource("GradientTexture2D_sjoje")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=934104043]
+environment = SubResource("Environment_sjoje")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=475641369]
+visible = false
+
+[node name="BackButton" type="Button" parent="UI" unique_id=404673091]
+offset_left = 4.0
+offset_top = 4.0
+text = "Previous Scene"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1198339338]
+script = ExtResource("3_6qtyt")
+speed = 60.0
+shake_interval = 8.0
+shake_trauma = 0.343
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1687143175]
+texture_filter = 1
+texture = ExtResource("3_48ay1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1877133057]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_sjoje")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=420451533 node_paths=PackedStringArray("target")]
+top_level = true
+position = Vector2(7.265, 0)
+limit_left = -150
+limit_top = -300
+limit_right = 700
+limit_bottom = 100
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("3_bbsjv")
+target = NodePath("../Sprite2D")

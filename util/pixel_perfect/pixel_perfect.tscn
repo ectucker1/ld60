@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cj1t54yqd0yjn"]
+
+[ext_resource type="Script" uid="uid://cqls74mtwqtvd" path="res://util/pixel_perfect/pixel_perfect.gd" id="1_23ttt"]
+
+[node name="PixelPerfect" type="Node" unique_id=1834020737]
+process_mode = 3
+script = ExtResource("1_23ttt")
+
+[node name="PixelViewport" type="SubViewport" parent="." unique_id=873995456]
+process_mode = 1
+own_world_3d = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+physics_object_picking = true
+size = Vector2i(320, 160)
+
+[node name="PixelLayer" type="CanvasLayer" parent="." unique_id=1842516528]
+layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="PixelLayer" unique_id=597935167]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(6, 6)
