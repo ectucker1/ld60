@@ -7,6 +7,7 @@
 radius = 6.0827627
 
 [node name="Disc" type="Area2D" unique_id=1277677675]
+z_index = 2
 script = ExtResource("1_x8k46")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532329662]

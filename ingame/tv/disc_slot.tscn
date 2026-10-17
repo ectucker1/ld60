@@ -7,6 +7,7 @@
 size = Vector2(18, 8)
 
 [node name="DiscSlot" type="Area2D" unique_id=349737341]
+z_index = 2
 script = ExtResource("1_lqxjr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=162718725]

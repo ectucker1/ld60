@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func remove(disc: DiscDisplay) -> bool:
 	if inserted_disc == disc:
+		inserted_disc.z_index = 2
 		if _insert_tween != null:
 			_insert_tween.stop()
 		inserted_disc = null
@@ -18,6 +19,7 @@ func remove(disc: DiscDisplay) -> bool:
 	return false
 
 func insert(disc: DiscDisplay) -> bool:
+	disc.z_index = 1
 	if inserted_disc != null:
 		return false
 	
