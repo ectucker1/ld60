@@ -138,6 +138,7 @@ anim_player = NodePath("CanvasLayer/PauseMenu/AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=51595221]
 layer = 100
+visible = false
 
 [node name="Dimmer" type="ColorRect" parent="CanvasLayer" unique_id=767328923]
 anchors_preset = 15

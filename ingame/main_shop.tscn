@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ck08mlqov6xn1"]
+
+[ext_resource type="PackedScene" uid="uid://dp1n6bcyfwjsy" path="res://ingame/tv/tv.tscn" id="1_qb0b0"]
+[ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
+
+[node name="MainShop" type="Node2D" unique_id=1545312003]
+
+[node name="TV" parent="." unique_id=1033368773 instance=ExtResource("1_qb0b0")]
+position = Vector2(-207, -92)
+
+[node name="TV2" parent="." unique_id=1365679928 instance=ExtResource("1_qb0b0")]
+position = Vector2(-3, -48)
+
+[node name="TV3" parent="." unique_id=1253402450 instance=ExtResource("1_qb0b0")]
+position = Vector2(-205, 57)
+
+[node name="TV4" parent="." unique_id=1532674918 instance=ExtResource("1_qb0b0")]
+position = Vector2(-3, 90)
+
+[node name="TV5" parent="." unique_id=388595075 instance=ExtResource("1_qb0b0")]
+position = Vector2(193, -96)
+
+[node name="TV6" parent="." unique_id=1328517651 instance=ExtResource("1_qb0b0")]
+position = Vector2(196, 50)
+
+[node name="EffectsCamera2D" type="Camera2D" parent="." unique_id=1134236562]
+script = ExtResource("2_d7b73")
+metadata/_custom_type_script = "uid://cu5whb37rt5d8"

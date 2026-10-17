@@ -8,6 +8,10 @@ var text_display = DebugOverlayDisplay.find_child("DebugTextDisplay")
 var in_world_display = InWorldDebugDisplay
 
 
+func _ready() -> void:
+	DebugOverlayDisplay.visible = false
+
+
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("debug_show")):
 		DebugOverlayDisplay.visible = !DebugOverlayDisplay.visible;

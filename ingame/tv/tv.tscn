@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dp1n6bcyfwjsy"]
+
+[ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="1_sen2m"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ijdr3"]
+viewport_path = NodePath("SubViewport")
+
+[node name="TV" type="Node2D" unique_id=1033368773]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2098003475]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(160, 90)
+
+[node name="InsideTVWorld" parent="SubViewport" unique_id=631518455 instance=ExtResource("1_sen2m")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582113759]
+texture = SubResource("ViewportTexture_ijdr3")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2016654456]
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)

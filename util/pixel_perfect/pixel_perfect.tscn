@@ -14,7 +14,7 @@ snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
 physics_object_picking = true
-size = Vector2i(320, 160)
+size = Vector2i(960, 540)
 
 [node name="PixelLayer" type="CanvasLayer" parent="." unique_id=1842516528]
 layer = 5
