@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://bvqpgn4n0jrug"]
+
+[ext_resource type="Resource" uid="uid://bhq67ghnx20tl" path="res://ingame/disc/disc_types/wall_scores/add_wall_score3.tres" id="1_0pgkw"]
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_wdl4g"]
+
+[resource]
+script = ExtResource("1_wdl4g")
+name = "WALL-Y II RETURN TO EARTH"
+desc = "Add 2 points to score on wall hit"
+num_in_pool = 3
+combine_to = ExtResource("1_0pgkw")
+wall_score_add = 2
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

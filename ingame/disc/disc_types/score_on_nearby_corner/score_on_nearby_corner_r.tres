@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ScoreNearbyCorner" format=3 uid="uid://dm1jji8tcysh5"]
+
+[ext_resource type="Resource" uid="uid://ddukh2p3fu7gq" path="res://ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_r2.tres" id="1_ixgcc"]
+[ext_resource type="Script" uid="uid://llmy07wtdmfn" path="res://ingame/disc/disc_types/score_on_nearby_corner/score_nearby_corner.gd" id="2_oq6li"]
+
+[resource]
+script = ExtResource("2_oq6li")
+right = true
+bonus = 10
+name = "Score on corner"
+desc = "Score 10 on right tv corner hit"
+num_in_pool = 10
+combine_to = ExtResource("1_ixgcc")
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

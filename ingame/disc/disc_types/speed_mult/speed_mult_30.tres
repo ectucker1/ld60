@@ -4,5 +4,7 @@
 
 [resource]
 script = ExtResource("1_5h8iu")
-speed_mult = 1.5
+name = "Quick and Mad the Third Installment"
+desc = "DVD speed is increased by 20%"
+speed_mult = 1.2
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

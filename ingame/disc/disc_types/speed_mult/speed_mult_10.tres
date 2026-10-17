@@ -1,8 +1,13 @@
 [gd_resource type="Resource" script_class="Disc" format=3 uid="uid://b0cd6lclvbpcc"]
 
+[ext_resource type="Resource" uid="uid://bs14eo4047oly" path="res://ingame/disc/disc_types/speed_mult/speed_mult_20.tres" id="1_aeuop"]
 [ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_o0542"]
 
 [resource]
 script = ExtResource("1_o0542")
-speed_mult = 0.5
+name = "Quick and Mad"
+desc = "DVD speed is increased by 10%"
+num_in_pool = 12
+combine_to = ExtResource("1_aeuop")
+speed_mult = 1.1
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

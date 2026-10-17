@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScoreNearbyCorner" format=3 uid="uid://dm0he6lysssxf"]
+
+[ext_resource type="Script" uid="uid://llmy07wtdmfn" path="res://ingame/disc/disc_types/score_on_nearby_corner/score_nearby_corner.gd" id="1_bn6mq"]
+
+[resource]
+script = ExtResource("1_bn6mq")
+left = true
+bonus = 25
+name = "Score on left corner"
+desc = "Score 25 on left corner tv hit"
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

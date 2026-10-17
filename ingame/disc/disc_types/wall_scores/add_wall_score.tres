@@ -1,8 +1,13 @@
 [gd_resource type="Resource" script_class="Disc" format=3 uid="uid://bo7i8kdpvko10"]
 
+[ext_resource type="Resource" uid="uid://bvqpgn4n0jrug" path="res://ingame/disc/disc_types/wall_scores/add_wall_score2.tres" id="1_45e0s"]
 [ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_m0vty"]
 
 [resource]
 script = ExtResource("1_m0vty")
+name = "WALL-Y"
+desc = "Add 1 points to score on wall hit"
+num_in_pool = 10
+combine_to = ExtResource("1_45e0s")
 wall_score_add = 1
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

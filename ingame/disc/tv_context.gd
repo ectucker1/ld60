@@ -16,6 +16,9 @@ var left: TVContext
 ## The TV to the right of this one. May be null.
 var right: TVContext
 
+#new: next bonus point
+
+
 ## Returns all discs in this TV
 func get_discs() -> Array[Disc]:
 	return tv.get_discs()

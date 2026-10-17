@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ScoreNearbyWall" format=3 uid="uid://0oseggjbtuo1"]
+
+[ext_resource type="Script" uid="uid://dqxmoi4e32u6b" path="res://ingame/disc/disc_types/score_on_nearby_wall/score_on_nearby_wall.gd" id="1_jaop3"]
+[ext_resource type="Resource" uid="uid://cmx2veb6do1ky" path="res://ingame/disc/disc_types/score_on_nearby_wall/score_on_nearby_wall_ab3.tres" id="1_whfwh"]
+
+[resource]
+script = ExtResource("1_jaop3")
+up = true
+down = true
+bonus = 2
+name = "Score on wall hit for TV above or below"
+desc = "Score 2 on wall hit for TV above or below"
+num_in_pool = 2
+combine_to = ExtResource("1_whfwh")
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ScoreNearbyWall" format=3 uid="uid://cmx2veb6do1ky"]
+
+[ext_resource type="Script" uid="uid://dqxmoi4e32u6b" path="res://ingame/disc/disc_types/score_on_nearby_wall/score_on_nearby_wall.gd" id="1_m35m3"]
+
+[resource]
+script = ExtResource("1_m35m3")
+up = true
+down = true
+bonus = 4
+name = "Score on wall hit for TV above or below"
+desc = "Score 4 on wall hit for TV above or below"
+metadata/_custom_type_script = "uid://dru57ptcau8xr"
