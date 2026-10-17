@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://bnxh4kbjnxkti"]
+
+[ext_resource type="Resource" uid="uid://dn4gvsdxkyi24" path="res://ingame/disc/disc_types/wall_scores/mult_wall_score3.tres" id="1_7kcem"]
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="2_pqa6r"]
+
+[resource]
+script = ExtResource("2_pqa6r")
+name = "WALL-X2"
+desc = "Increase wall hit mult by 10%"
+num_in_pool = 2
+combine_to = ExtResource("1_7kcem")
+wall_score_mult = 1.1
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://dn4gvsdxkyi24"]
+
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="2_jblg2"]
+
+[resource]
+script = ExtResource("2_jblg2")
+name = "WALL-X3"
+desc = "Increase wall hit mult by 20%"
+wall_score_mult = 1.2
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

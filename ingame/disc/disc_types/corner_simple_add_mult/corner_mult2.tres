@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://ckww2d42nhvf0"]
+
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_grny7"]
+[ext_resource type="Resource" uid="uid://cf0dq738kgeg6" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_mult3.tres" id="1_vbh3w"]
+
+[resource]
+script = ExtResource("1_grny7")
+name = "Corner Score Mult"
+desc = "Increase corner mult by 15% to corner score"
+num_in_pool = 3
+combine_to = ExtResource("1_vbh3w")
+corner_score_mult = 1.15
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

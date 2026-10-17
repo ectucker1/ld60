@@ -7,7 +7,7 @@
 script = ExtResource("1_2gehk")
 right = true
 bonus = 15
-name = "Score on right corner 2"
+name = "Score on right tv corner hit 2"
 desc = "Score 15 on right tv corner hit"
 num_in_pool = 2
 combine_to = ExtResource("1_thhgo")
