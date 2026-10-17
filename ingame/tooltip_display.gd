@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 		if previous_current != TooltipManager.current:
 			update_text(TooltipManager.current)
 			previous_current = TooltipManager.current
+	else:
+		previous_current = null
 
 func update_text(source: Node2D) -> void:
 	for child in get_children():
@@ -20,3 +22,6 @@ func update_text(source: Node2D) -> void:
 		$DiscTooltip.visible = true
 		$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = source.disc.name
 		$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = source.disc.desc
+	elif source.get_child_count() > 0 and source.get_child(0) is RefreshButton:
+		$MessageTooltip.visible = true
+		$MessageTooltip/PanelContainer/Message.text = source.get_child(0).message

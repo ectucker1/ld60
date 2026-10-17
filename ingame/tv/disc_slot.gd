@@ -19,6 +19,10 @@ func remove(disc: DiscDisplay) -> bool:
 	return false
 
 func insert(disc: DiscDisplay) -> bool:
+	if disc.get_parent() is Marker2D:
+		disc.get_parent().remove_child(disc)
+		get_parent().get_parent().add_child(disc)
+	
 	disc.z_index = 1
 	if inserted_disc != null:
 		return false

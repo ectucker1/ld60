@@ -58,8 +58,8 @@ func drop() -> void:
 			swap_disc.start_dragging()
 			swap_disc.can_renter = false
 		# Insert into slot
-		target_slots.front().insert(self)
 		previous_slot = target_slots.front()
+		target_slots.front().insert(self)
 		
 		can_renter = true
 	elif previous_slot != null and previous_slot.inserted_disc == null:

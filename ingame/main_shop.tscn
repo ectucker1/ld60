@@ -8,19 +8,17 @@
 [ext_resource type="Script" uid="uid://douwe7p3n5bmm" path="res://ingame/tv/tv_viewport.gd" id="3_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="4_lx1ox"]
 [ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult_10.tres" id="4_yk771"]
-[ext_resource type="Resource" uid="uid://bs14eo4047oly" path="res://ingame/disc/disc_types/speed_mult_20.tres" id="5_0qb78"]
 [ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="5_7lqh5"]
 [ext_resource type="Script" uid="uid://dem51n17sxbeg" path="res://ingame/tv_display.gd" id="6_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://y2v1wqbgjhxh" path="res://ingame/disc_slot_row.tscn" id="7_oj7a1"]
-[ext_resource type="Resource" uid="uid://dqvu8eb5ks3gi" path="res://ingame/disc/disc_types/mega_magenta.tres" id="11_pvtff"]
-[ext_resource type="Resource" uid="uid://bi3w4484ra53t" path="res://ingame/disc/disc_types/mult_wall_score.tres" id="12_m0m8y"]
+[ext_resource type="Script" uid="uid://dite8evymt610" path="res://ingame/shop.gd" id="10_7lqh5"]
+[ext_resource type="Texture2D" uid="uid://c3vpbbksp4q8d" path="res://ingame/refresh_icon.png" id="10_r8bkt"]
 [ext_resource type="FontFile" uid="uid://bgd4cxc5xbopv" path="res://assets/fonts/analog_mono/AnalogMono_v1_1.ttf" id="13_lx1ox"]
-[ext_resource type="Resource" uid="uid://bo7i8kdpvko10" path="res://ingame/disc/disc_types/add_wall_score.tres" id="13_pvtff"]
 [ext_resource type="Script" uid="uid://dcpxkhkxic2gl" path="res://ingame/score_label.gd" id="14_7lqh5"]
-[ext_resource type="Resource" uid="uid://ccg15bq4rls22" path="res://ingame/disc/disc_types/remove_blue.tres" id="15_mk1uw"]
+[ext_resource type="Script" uid="uid://ckda6auq3ephe" path="res://ingame/refresh_button.gd" id="14_m0m8y"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk1uw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0m8y"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -44,10 +42,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8bkt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pvtff"]
 viewport_path = NodePath("TVConnector/TopLeft/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6oar8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk1uw"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -71,10 +69,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_36i4f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8bkt"]
 viewport_path = NodePath("TVConnector/TopMiddle/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6oar8"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -98,10 +96,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bmf7w"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_36i4f"]
 viewport_path = NodePath("TVConnector/TopRight/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5vqv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -125,10 +123,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fqdsg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bmf7w"]
 viewport_path = NodePath("TVConnector/BottomLeft/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi66d"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5vqv"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -152,10 +150,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q40oo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fqdsg"]
 viewport_path = NodePath("TVConnector/BottomMiddle/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y437b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi66d"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -179,7 +177,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bl64n"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_q40oo"]
 viewport_path = NodePath("TVConnector/BottomRight/SubViewport")
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
@@ -209,8 +207,8 @@ world_size = Vector2i(52, 40)
 world_size = Vector2i(52, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopLeft" unique_id=1582113759]
-material = SubResource("ShaderMaterial_mk1uw")
-texture = SubResource("ViewportTexture_r8bkt")
+material = SubResource("ShaderMaterial_m0m8y")
+texture = SubResource("ViewportTexture_pvtff")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/TopLeft" unique_id=2016654456]
@@ -243,8 +241,8 @@ world_size = Vector2i(70, 49)
 world_size = Vector2i(70, 49)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopMiddle" unique_id=1332464654]
-material = SubResource("ShaderMaterial_6oar8")
-texture = SubResource("ViewportTexture_36i4f")
+material = SubResource("ShaderMaterial_mk1uw")
+texture = SubResource("ViewportTexture_r8bkt")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/TopMiddle" unique_id=1873189366]
@@ -276,8 +274,8 @@ world_size = Vector2i(40, 40)
 world_size = Vector2i(40, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopRight" unique_id=1817236573]
-material = SubResource("ShaderMaterial_7ruv5")
-texture = SubResource("ViewportTexture_bmf7w")
+material = SubResource("ShaderMaterial_6oar8")
+texture = SubResource("ViewportTexture_36i4f")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/TopRight" unique_id=1911645608]
@@ -309,9 +307,9 @@ world_size = Vector2i(72, 60)
 world_size = Vector2i(72, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft" unique_id=846064115]
-material = SubResource("ShaderMaterial_a5vqv")
+material = SubResource("ShaderMaterial_7ruv5")
 position = Vector2(1, -51)
-texture = SubResource("ViewportTexture_fqdsg")
+texture = SubResource("ViewportTexture_bmf7w")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/BottomLeft" unique_id=1100313790]
@@ -344,9 +342,9 @@ world_size = Vector2i(56, 45)
 world_size = Vector2i(56, 45)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle" unique_id=450842524]
-material = SubResource("ShaderMaterial_wi66d")
+material = SubResource("ShaderMaterial_a5vqv")
 position = Vector2(-317, 168)
-texture = SubResource("ViewportTexture_q40oo")
+texture = SubResource("ViewportTexture_fqdsg")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/BottomMiddle" unique_id=2132385306]
@@ -378,9 +376,9 @@ world_size = Vector2i(51, 50)
 world_size = Vector2i(51, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomRight" unique_id=1294684008]
-material = SubResource("ShaderMaterial_y437b")
+material = SubResource("ShaderMaterial_wi66d")
 position = Vector2(-238, -39)
-texture = SubResource("ViewportTexture_bl64n")
+texture = SubResource("ViewportTexture_q40oo")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/BottomRight" unique_id=1600823660]
@@ -397,35 +395,54 @@ position = Vector2(-238, -9)
 script = ExtResource("2_d7b73")
 metadata/_custom_type_script = "uid://cu5whb37rt5d8"
 
-[node name="Disc" parent="." unique_id=1277677675 instance=ExtResource("3_kqxgg")]
-modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
-position = Vector2(-138, 13)
-disc = ExtResource("11_pvtff")
+[node name="DaShop" type="Node2D" parent="." unique_id=1069242557]
+script = ExtResource("10_7lqh5")
 
-[node name="Disc2" parent="." unique_id=1804491141 instance=ExtResource("3_kqxgg")]
-modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
-position = Vector2(-115, 37)
-disc = ExtResource("12_m0m8y")
+[node name="Markers" type="Node2D" parent="DaShop" unique_id=1205720675]
 
-[node name="Disc3" parent="." unique_id=210748231 instance=ExtResource("3_kqxgg")]
-modulate = Color(1, 1, 0.019607844, 1)
-position = Vector2(-116, 62)
-disc = ExtResource("13_pvtff")
+[node name="Marker2D" type="Marker2D" parent="DaShop/Markers" unique_id=1338339100]
+position = Vector2(-120, 65)
 
-[node name="Disc4" parent="." unique_id=2098341852 instance=ExtResource("3_kqxgg")]
-modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
-position = Vector2(-140, 36)
+[node name="Disc" parent="DaShop/Markers/Marker2D" unique_id=1277677675 instance=ExtResource("3_kqxgg")]
 disc = ExtResource("4_yk771")
 
-[node name="Disc5" parent="." unique_id=1363716616 instance=ExtResource("3_kqxgg")]
-modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
-position = Vector2(-143, 64)
-disc = ExtResource("5_0qb78")
+[node name="Marker2D2" type="Marker2D" parent="DaShop/Markers" unique_id=300860859]
+position = Vector2(-119, 37)
 
-[node name="Disc6" parent="." unique_id=1663749190 instance=ExtResource("3_kqxgg")]
-modulate = Color(1, 1, 0.019607844, 1)
-position = Vector2(-116, 15)
-disc = ExtResource("15_mk1uw")
+[node name="Disc" parent="DaShop/Markers/Marker2D2" unique_id=1563653671 instance=ExtResource("3_kqxgg")]
+disc = ExtResource("4_yk771")
+
+[node name="Marker2D3" type="Marker2D" parent="DaShop/Markers" unique_id=55541917]
+position = Vector2(-142, 37)
+
+[node name="Disc" parent="DaShop/Markers/Marker2D3" unique_id=1871886612 instance=ExtResource("3_kqxgg")]
+disc = ExtResource("4_yk771")
+
+[node name="Marker2D4" type="Marker2D" parent="DaShop/Markers" unique_id=2007260436]
+position = Vector2(-142, 15)
+
+[node name="Disc" parent="DaShop/Markers/Marker2D4" unique_id=1809058538 instance=ExtResource("3_kqxgg")]
+disc = ExtResource("4_yk771")
+
+[node name="Money" type="Node2D" parent="DaShop" unique_id=831179454]
+
+[node name="Label" type="Label" parent="DaShop/Money" unique_id=1935257842]
+offset_left = -138.0
+offset_top = -39.0
+offset_right = -98.0
+offset_bottom = -18.0
+text = "$20"
+
+[node name="Node2D" type="Node2D" parent="DaShop" unique_id=1870207917]
+position = Vector2(-109, -4)
+
+[node name="RefreshButton" type="Button" parent="DaShop/Node2D" unique_id=790873555 node_paths=PackedStringArray("shop")]
+offset_right = 32.0
+offset_bottom = 16.0
+icon = ExtResource("10_r8bkt")
+icon_alignment = 1
+script = ExtResource("14_m0m8y")
+shop = NodePath("../..")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=971309560]
 position = Vector2(-147, -114)
@@ -445,4 +462,5 @@ horizontal_alignment = 1
 script = ExtResource("14_7lqh5")
 
 [node name="Tooltip" parent="." unique_id=904010136 instance=ExtResource("19_mk1uw")]
+visible = false
 z_index = 99

@@ -9,12 +9,15 @@ script = ExtResource("1_2psm3")
 [node name="DiscTooltip" type="CenterContainer" parent="." unique_id=867465348]
 offset_right = 22.0
 offset_bottom = 21.0
+mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="DiscTooltip" unique_id=1008576519]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DiscTooltip/PanelContainer" unique_id=1605670854]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="DiscName" type="Label" parent="DiscTooltip/PanelContainer/VBoxContainer" unique_id=1608323863]
@@ -26,3 +29,16 @@ text = "Speed Upgrade"
 [node name="DiscDesc" type="Label" parent="DiscTooltip/PanelContainer/VBoxContainer" unique_id=1379791378]
 layout_mode = 2
 text = "+20% Speed"
+
+[node name="MessageTooltip" type="CenterContainer" parent="." unique_id=2024245474]
+offset_right = 22.0
+offset_bottom = 21.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MessageTooltip" unique_id=629942229]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Message" type="Label" parent="MessageTooltip/PanelContainer" unique_id=1307830071]
+layout_mode = 2
+text = "Speed Upgrade"
