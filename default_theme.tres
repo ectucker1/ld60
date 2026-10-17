@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cejyvtyo48vcw"]
 
+[ext_resource type="FontFile" uid="uid://c0tulye1r5hmx" path="res://assets/fonts/silver/Silver.ttf" id="1_e7bfs"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp0wp"]
 content_margin_left = 16.0
 content_margin_top = 8.0
@@ -191,15 +193,11 @@ corner_radius_bottom_left = 8
 corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s87n4"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.34117648)
 corner_detail = 5
 
 [sub_resource type="DPITexture" id="DPITexture_bp0wp"]
@@ -254,7 +252,8 @@ corner_radius_bottom_left = 8
 corner_detail = 6
 
 [resource]
-default_font_size = 48
+default_font = ExtResource("1_e7bfs")
+default_font_size = 19
 Button/styles/disabled = SubResource("StyleBoxFlat_bp0wp")
 Button/styles/focus = SubResource("StyleBoxFlat_e7bfs")
 Button/styles/hover = SubResource("StyleBoxFlat_3taad")

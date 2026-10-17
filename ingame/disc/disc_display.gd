@@ -22,9 +22,12 @@ func _ready() -> void:
 func _mouse_enter() -> void:
 	last_hovered = 0.0
 	hovered = true
+	if DragManager.dragged_object == null:
+		TooltipManager.try_show(self)
 
 func _mouse_exit() -> void:
 	hovered = false
+	TooltipManager.try_remove(self)
 
 func _area_entered(area: Area2D) -> void:
 	if area is DiscSlot:
@@ -40,6 +43,7 @@ func _area_exited(area: Area2D) -> void:
 func start_dragging() -> void:
 	if DragManager.dragged_object == null:
 		DragManager.dragged_object = self
+		TooltipManager.try_remove(self)
 		
 		if previous_slot != null:
 			previous_slot.remove(self)
