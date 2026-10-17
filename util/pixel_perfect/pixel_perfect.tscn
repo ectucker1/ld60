@@ -5,6 +5,7 @@
 [node name="PixelPerfect" type="Node" unique_id=1834020737]
 process_mode = 3
 script = ExtResource("1_23ttt")
+enabled = true
 
 [node name="PixelViewport" type="SubViewport" parent="." unique_id=873995456]
 process_mode = 1

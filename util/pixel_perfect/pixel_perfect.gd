@@ -69,6 +69,12 @@ func _ready() -> void:
 	get_tree().root.size_changed.connect(_screen_size_changed)
 	_screen_size_changed()
 
+	# Set mouse in viewport so physics picking runs
+	get_tree().root.mouse_entered.connect(_set_mouse_in_viewport.bind(true))
+	get_tree().root.mouse_exited.connect(_set_mouse_in_viewport.bind(false))
+	var root = get_tree().root
+	_set_mouse_in_viewport(Rect2(Vector2.ZERO, root.get_visible_rect().size).has_point(root.get_mouse_position()))
+
 
 func _screen_size_changed() -> void:
 	var screen_size = get_tree().root.size
@@ -146,6 +152,18 @@ func _forward_input(event: InputEvent) -> void:
 		return
 	var xformed = event.xformed_by(_get_root_to_viewport_transform())
 	viewport.push_input(xformed)
+
+
+var _mouse_in_viewport := false
+
+func _set_mouse_in_viewport(inside: bool) -> void:
+	if inside == _mouse_in_viewport:
+		return
+	_mouse_in_viewport = inside
+	if inside:
+		viewport.notify_mouse_entered()
+	else:
+		viewport.notify_mouse_exited()
 
 
 func _is_positional(event: InputEvent) -> bool:
