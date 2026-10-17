@@ -29,7 +29,7 @@ func update_text(source: Node2D) -> void:
 		$DiscTooltip.visible = true
 		if ScoreManager.tickets == 0:
 			$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = "No Tickets"
-			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Next ticket at $%d earnings..." % ScoreManager.next_ticket
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Next ticket at $%s earnings..." % StringUtil.thousands_sep(ScoreManager.next_ticket)
 		elif ScoreManager.tickets == 1:
 			$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = "1 Ticket" % ScoreManager.tickets
 			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Spend tickets on DvDs!"
