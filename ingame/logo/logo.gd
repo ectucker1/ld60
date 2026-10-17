@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 @export
-var base_speed := 50.0
+var base_speed := 20.0
 
 
 var tv: TV
