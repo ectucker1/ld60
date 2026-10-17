@@ -212,7 +212,7 @@ script = ExtResource("2_thoer")
 position = Vector2(-43, -53)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(52, 40)
-unlock_at = 0
+unlock_at = -150
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/TopLeft" unique_id=2098003475]
 handle_input_locally = false
