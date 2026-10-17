@@ -29,6 +29,17 @@ var connector: TVConnector
 
 var slots: Array[DiscSlot] = []
 
+class TempBuff:
+	var disc: Disc
+	var time_left: float
+	
+	func _init(disc: Disc, time: float) -> void:
+		self.disc = disc
+		self.time_left = time
+
+var temp_buffs: Array[TempBuff]
+var temp_buffs_to_add: Array[TempBuff]
+
 
 func _ready() -> void:
 	$SubViewport.world_size = world_size
@@ -42,6 +53,8 @@ func get_discs() -> Array[Disc]:
 	for slot in slots:
 		if slot.inserted_disc != null and slot.inserted_disc.disc != null:
 			result.push_back(slot.inserted_disc.disc)
+	for buff in temp_buffs:
+		result.push_back(buff.disc)
 	return result
 
 func get_speed_mult() -> float:
@@ -84,8 +97,34 @@ func hit_corner(logo: CharacterBody2D) -> void:
 	
 	ScoreManager.score += score_context.get_corner_score()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	
 	DebugOverlay.add_message(self, "%s Speed" % name, "%f" % get_speed_mult())
+	
+	# Downtick duration of buffs
+	var to_remove = []
+	for buff in temp_buffs:
+		buff.time_left -= delta
+		if buff.time_left <= 0:
+			to_remove.push_back(buff)
+	# Erase expired buffs
+	for buff in to_remove:
+		temp_buffs.erase(buff)
+	# Add new buffs
+	for buff in temp_buffs_to_add:
+		temp_buffs.push_back(buff)
+	temp_buffs_to_add.clear()
+	
+	for disc in get_discs():
+		disc.on_physics_process(context, delta)
+
+## Queue a hit in a corner to happen shortly in the future
+## Just a placeholder for now
+func queue_corner_hit() -> void:
+	pass
+
+## Add a temporary buff to this TV, which lasts for the given duration
+func add_temp_buff(buff: Disc, duration: float) -> void:
+	temp_buffs_to_add.push_back(TempBuff.new(buff, duration))

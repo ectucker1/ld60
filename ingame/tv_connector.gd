@@ -9,6 +9,7 @@ func _ready() -> void:
 	for node in get_children():
 		if node is TV:
 			node.context = TVContext.new()
+			node.context.tv = node
 			all_tvs.push_back(node)
 	
 	for node in get_children():

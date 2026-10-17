@@ -67,6 +67,10 @@ func on_this_corner_hit(this: TVContext, score: ScoreContext) -> void:
 func on_other_corner_hit(this: TVContext, score: ScoreContext) -> void:
 	pass
 
+## Called each physics_process.
+func on_physics_process(tv: TVContext, delta: float) -> void:
+	pass
+
 ## Called after everthing else has been applied to a score context.
 ## Do effects here that might want to use scored points as a threshold.
 func finalize_score_context(this: TVContext, score: ScoreContext) -> void:
