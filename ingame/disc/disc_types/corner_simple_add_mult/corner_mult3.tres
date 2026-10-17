@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://cf0dq738kgeg6"]
+
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_q6n3x"]
+
+[resource]
+script = ExtResource("1_q6n3x")
+name = "Corner Score Mult"
+desc = "Increase corner mult by 25% to corner score"
+corner_score_mult = 1.25
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

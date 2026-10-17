@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SpeedUpAdjacentDiscOnCorner" format=3 uid="uid://cyrgo4wviv220"]
+
+[ext_resource type="Resource" uid="uid://b6pac8rskdjgj" path="res://ingame/disc/disc_types/evil_subfolder/speed_up_all_corner_hit2.tres" id="1_dx8br"]
+[ext_resource type="Script" uid="uid://d0q106dfku26h" path="res://ingame/disc/disc_types/speed_up_adjacent_on_corner.gd" id="1_uuqoy"]
+
+[resource]
+script = ExtResource("1_uuqoy")
+above = true
+below = true
+left = true
+right = true
+buff_amount = 2.5
+buff_time = 2.5
+name = "Want for Velocity"
+desc = "Give a boost in speed to adjanct TVs"
+num_in_pool = 8
+combine_to = ExtResource("1_dx8br")
+metadata/_custom_type_script = "uid://d1jamvncs61io"

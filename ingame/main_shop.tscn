@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://ckda6auq3ephe" path="res://ingame/refresh_button.gd" id="14_m0m8y"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0m8y"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvtff"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -43,10 +43,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pvtff"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mk1uw"]
 viewport_path = NodePath("TVConnector/TopLeft/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk1uw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8bkt"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -70,10 +70,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8bkt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6oar8"]
 viewport_path = NodePath("TVConnector/TopMiddle/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6oar8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36i4f"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -97,10 +97,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_36i4f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7ruv5"]
 viewport_path = NodePath("TVConnector/TopRight/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmf7w"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -124,10 +124,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bmf7w"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a5vqv"]
 viewport_path = NodePath("TVConnector/BottomLeft/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5vqv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqdsg"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -151,10 +151,10 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fqdsg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wi66d"]
 viewport_path = NodePath("TVConnector/BottomMiddle/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi66d"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q40oo"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -178,7 +178,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q40oo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_y437b"]
 viewport_path = NodePath("TVConnector/BottomRight/SubViewport")
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
@@ -208,8 +208,8 @@ world_size = Vector2i(52, 40)
 world_size = Vector2i(52, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopLeft" unique_id=1582113759]
-material = SubResource("ShaderMaterial_m0m8y")
-texture = SubResource("ViewportTexture_pvtff")
+material = SubResource("ShaderMaterial_pvtff")
+texture = SubResource("ViewportTexture_mk1uw")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/TopLeft" unique_id=2016654456]
@@ -242,8 +242,8 @@ world_size = Vector2i(70, 49)
 world_size = Vector2i(70, 49)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopMiddle" unique_id=1332464654]
-material = SubResource("ShaderMaterial_mk1uw")
-texture = SubResource("ViewportTexture_r8bkt")
+material = SubResource("ShaderMaterial_r8bkt")
+texture = SubResource("ViewportTexture_6oar8")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/TopMiddle" unique_id=1873189366]
@@ -275,8 +275,8 @@ world_size = Vector2i(40, 40)
 world_size = Vector2i(40, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopRight" unique_id=1817236573]
-material = SubResource("ShaderMaterial_6oar8")
-texture = SubResource("ViewportTexture_36i4f")
+material = SubResource("ShaderMaterial_36i4f")
+texture = SubResource("ViewportTexture_7ruv5")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/TopRight" unique_id=1911645608]
@@ -308,9 +308,9 @@ world_size = Vector2i(72, 60)
 world_size = Vector2i(72, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft" unique_id=846064115]
-material = SubResource("ShaderMaterial_7ruv5")
+material = SubResource("ShaderMaterial_bmf7w")
 position = Vector2(1, -51)
-texture = SubResource("ViewportTexture_bmf7w")
+texture = SubResource("ViewportTexture_a5vqv")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/BottomLeft" unique_id=1100313790]
@@ -343,9 +343,9 @@ world_size = Vector2i(56, 45)
 world_size = Vector2i(56, 45)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle" unique_id=450842524]
-material = SubResource("ShaderMaterial_a5vqv")
+material = SubResource("ShaderMaterial_fqdsg")
 position = Vector2(-317, 168)
-texture = SubResource("ViewportTexture_fqdsg")
+texture = SubResource("ViewportTexture_wi66d")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/BottomMiddle" unique_id=2132385306]
@@ -377,9 +377,9 @@ world_size = Vector2i(51, 50)
 world_size = Vector2i(51, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomRight" unique_id=1294684008]
-material = SubResource("ShaderMaterial_wi66d")
+material = SubResource("ShaderMaterial_q40oo")
 position = Vector2(-238, -39)
-texture = SubResource("ViewportTexture_q40oo")
+texture = SubResource("ViewportTexture_y437b")
 script = ExtResource("6_oj7a1")
 
 [node name="Line2D" type="Line2D" parent="TVConnector/BottomRight" unique_id=1600823660]

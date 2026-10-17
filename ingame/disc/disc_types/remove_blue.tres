@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="RemoveColorDisc" format=3 uid="uid://ccg15bq4rls22"]
-
-[ext_resource type="Script" uid="uid://p8avbcm7dtu7" path="res://ingame/disc/disc_types/remove_color_disc.gd" id="1_eyrrn"]
-
-[resource]
-script = ExtResource("1_eyrrn")
-channel = 2
-metadata/_custom_type_script = "uid://p8avbcm7dtu7"

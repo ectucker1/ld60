@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://dn2shbnwtshm0"]
+
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="2_uk40o"]
+
+[resource]
+script = ExtResource("2_uk40o")
+name = "Corner Score Add"
+desc = "Add 15 to corner score"
+num_in_pool = 3
+corner_score_add = 15
+metadata/_custom_type_script = "uid://dru57ptcau8xr"
