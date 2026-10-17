@@ -15,6 +15,8 @@ var target_slots: Array
 var can_renter := false
 
 
+var bought := false
+
 func _ready() -> void:
 	area_entered.connect(_area_entered)
 	area_exited.connect(_area_exited)
@@ -72,7 +74,10 @@ func _physics_process(delta: float) -> void:
 		last_hovered += delta
 	
 	if last_hovered < 0.4 and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if DragManager.dragged_object == null:
+		if DragManager.dragged_object == null and (bought or ScoreManager.tickets > 0):
+			if not bought:
+				ScoreManager.tickets -= 1
+				bought = true
 			start_dragging()
 	elif DragManager.dragged_object == self and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		drop()

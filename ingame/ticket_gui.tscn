@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://6gwf8hnwk7kp"]
+
+[ext_resource type="Script" uid="uid://7i4n2drkv131" path="res://ingame/ticket_count_label.gd" id="1_3mpue"]
+[ext_resource type="Texture2D" uid="uid://bs3li5jv45d1x" path="res://ingame/ticket_progress.png" id="1_krop3"]
+[ext_resource type="Script" uid="uid://ctvd5h1glqj66" path="res://ingame/ticket_gui.gd" id="1_x04iq"]
+[ext_resource type="Script" uid="uid://22mlhaw2owwe" path="res://ingame/ticket_progress.gd" id="4_bdk8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
+size = Vector2(40, 27)
+
+[node name="Tickets" type="Area2D" unique_id=293473471]
+script = ExtResource("1_x04iq")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1024822670]
+offset_right = 18.0
+offset_bottom = 21.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1524965195]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TicketCountLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1581331752]
+layout_mode = 2
+text = "$20"
+horizontal_alignment = 1
+script = ExtResource("1_3mpue")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CenterContainer/VBoxContainer" unique_id=2097078900]
+layout_mode = 2
+value = 100.0
+texture_progress = ExtResource("1_krop3")
+script = ExtResource("4_bdk8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1182874823]
+position = Vector2(20, 13.5)
+shape = SubResource("RectangleShape2D_ijdr3")

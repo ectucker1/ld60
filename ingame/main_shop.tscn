@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cnmnfxh6v3sor" path="res://ingame/disc/disc.tscn" id="3_kqxgg"]
 [ext_resource type="Script" uid="uid://douwe7p3n5bmm" path="res://ingame/tv/tv_viewport.gd" id="3_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="4_lx1ox"]
-[ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult_10.tres" id="4_yk771"]
 [ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="5_7lqh5"]
 [ext_resource type="Script" uid="uid://dem51n17sxbeg" path="res://ingame/tv_display.gd" id="6_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://y2v1wqbgjhxh" path="res://ingame/disc_slot_row.tscn" id="7_oj7a1"]
 [ext_resource type="Script" uid="uid://dite8evymt610" path="res://ingame/shop.gd" id="10_7lqh5"]
 [ext_resource type="Texture2D" uid="uid://c3vpbbksp4q8d" path="res://ingame/refresh_icon.png" id="10_r8bkt"]
+[ext_resource type="Resource" uid="uid://c12pj3arcssyc" path="res://ingame/disc/disc_types/evil_subfolder/speed_up_right.tres" id="12_pvtff"]
 [ext_resource type="FontFile" uid="uid://bgd4cxc5xbopv" path="res://assets/fonts/analog_mono/AnalogMono_v1_1.ttf" id="13_lx1ox"]
+[ext_resource type="PackedScene" uid="uid://6gwf8hnwk7kp" path="res://ingame/ticket_gui.tscn" id="13_pvtff"]
 [ext_resource type="Script" uid="uid://dcpxkhkxic2gl" path="res://ingame/score_label.gd" id="14_7lqh5"]
 [ext_resource type="Script" uid="uid://ckda6auq3ephe" path="res://ingame/refresh_button.gd" id="14_m0m8y"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
@@ -404,34 +405,28 @@ script = ExtResource("10_7lqh5")
 position = Vector2(-120, 65)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D" unique_id=1277677675 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("4_yk771")
+disc = ExtResource("12_pvtff")
 
 [node name="Marker2D2" type="Marker2D" parent="DaShop/Markers" unique_id=300860859]
 position = Vector2(-119, 37)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D2" unique_id=1563653671 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("4_yk771")
+disc = ExtResource("12_pvtff")
 
 [node name="Marker2D3" type="Marker2D" parent="DaShop/Markers" unique_id=55541917]
 position = Vector2(-142, 37)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D3" unique_id=1871886612 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("4_yk771")
+disc = ExtResource("12_pvtff")
 
 [node name="Marker2D4" type="Marker2D" parent="DaShop/Markers" unique_id=2007260436]
 position = Vector2(-142, 15)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D4" unique_id=1809058538 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("4_yk771")
+disc = ExtResource("12_pvtff")
 
-[node name="Money" type="Node2D" parent="DaShop" unique_id=831179454]
-
-[node name="Label" type="Label" parent="DaShop/Money" unique_id=1935257842]
-offset_left = -138.0
-offset_top = -39.0
-offset_right = -98.0
-offset_bottom = -18.0
-text = "$20"
+[node name="Tickets" parent="DaShop" unique_id=293473471 instance=ExtResource("13_pvtff")]
+position = Vector2(-147, -35)
 
 [node name="Node2D" type="Node2D" parent="DaShop" unique_id=1870207917]
 position = Vector2(-109, -4)

@@ -25,3 +25,14 @@ func update_text(source: Node2D) -> void:
 	elif source.get_child_count() > 0 and source.get_child(0) is RefreshButton:
 		$MessageTooltip.visible = true
 		$MessageTooltip/PanelContainer/Message.text = source.get_child(0).message
+	elif source is TicketGUI:
+		$DiscTooltip.visible = true
+		if ScoreManager.tickets == 0:
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = "No Tickets"
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Next ticket at $%d earnings..." % ScoreManager.next_ticket
+		elif ScoreManager.tickets == 1:
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = "1 Ticket" % ScoreManager.tickets
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Spend tickets on DvDs!"
+		else:
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = "%d Tickets" % ScoreManager.tickets
+			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Spend tickets on DvDs!"
