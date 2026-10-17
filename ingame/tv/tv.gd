@@ -1,6 +1,6 @@
 @tool
 class_name TV
-extends Node2D
+extends Area2D
 
 
 @export
@@ -20,6 +20,9 @@ var above: TV
 @export
 var below: TV
 
+@export
+var unlock_at := 1000
+
 # Context describing this TV.
 # Will be initialized in tv_connector.gd
 var context: TVContext
@@ -28,6 +31,9 @@ var connector: TVConnector
 
 
 var slots: Array[DiscSlot] = []
+
+var started := false
+var logo_scene := preload("res://ingame/logo/logo.tscn")
 
 class TempBuff:
 	var disc: Disc
@@ -47,6 +53,14 @@ func _ready() -> void:
 		if node is DiscSlot:
 			slots.push_back(node)
 	connector = get_parent()
+	$Sprite2D.visible = false
+
+func _mouse_enter() -> void:
+	if not started:
+		TooltipManager.try_show(self)
+
+func _mouse_exit() -> void:
+	TooltipManager.try_remove(self)
 
 func get_discs() -> Array[Disc]:
 	var result: Array[Disc] = []
@@ -102,6 +116,18 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	DebugOverlay.add_message(self, "%s Speed" % name, "%f" % get_speed_mult())
+	
+	if ScoreManager.score >= unlock_at and not started:
+		# Start the TV and spawn the logo!
+		started = true
+		$Sprite2D.visible = true
+		var logo = logo_scene.instantiate()
+		$SubViewport/InsideTVWorld.add_child(logo)
+		logo.global_position = Vector2(float(world_size.x) / 2, float(world_size.y) / 2)
+
+	
+	$CenterContainer/UnlockProgress.value = 100.0 * float(ScoreManager.score) / unlock_at
+	$CenterContainer/UnlockProgress.visible = !started
 	
 	# Downtick duration of buffs
 	var to_remove = []

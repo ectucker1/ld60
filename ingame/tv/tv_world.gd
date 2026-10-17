@@ -15,5 +15,3 @@ func _ready() -> void:
 	$TRCorner.global_position = Vector2(world_size.x, 0)
 	$BLCorner.global_position = Vector2(0, world_size.y)
 	$BRCorner.global_position = Vector2(world_size.x, world_size.y)
-	
-	$Logo.global_position = Vector2(float(world_size.x) / 2, float(world_size.y) / 2)

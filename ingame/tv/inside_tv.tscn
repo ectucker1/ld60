@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d3fq2qpqh4i84"]
 
 [ext_resource type="Script" uid="uid://bx1fwkh2hqeyi" path="res://ingame/tv/tv_world.gd" id="1_kh84r"]
-[ext_resource type="PackedScene" uid="uid://bejxid52u0d7n" path="res://ingame/logo/logo.tscn" id="1_tap8f"]
 [ext_resource type="Script" uid="uid://b0g70kl6gn5ge" path="res://ingame/tv/corner_area.gd" id="3_0ejm8"]
 [ext_resource type="Script" uid="uid://bylau78qvqjii" path="res://ingame/tv/side_body.gd" id="3_odoer"]
 [ext_resource type="Texture2D" uid="uid://d24gtxx27l72q" path="res://util/white.png" id="3_vfcpi"]
@@ -29,8 +28,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12408299, 0.12408296, 0.12408296, 1)
-
-[node name="Logo" parent="." unique_id=1573002056 instance=ExtResource("1_tap8f")]
 
 [node name="Left" type="StaticBody2D" parent="." unique_id=1325442596]
 position = Vector2(-10, 0)

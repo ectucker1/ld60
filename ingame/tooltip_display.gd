@@ -36,3 +36,6 @@ func update_text(source: Node2D) -> void:
 		else:
 			$DiscTooltip/PanelContainer/VBoxContainer/DiscName.text = "%d Tickets" % ScoreManager.tickets
 			$DiscTooltip/PanelContainer/VBoxContainer/DiscDesc.text = "Spend tickets on DvDs!"
+	elif source is TV:
+		$MessageTooltip.visible = true
+		$MessageTooltip/PanelContainer/Message.text = "Unlock at $%s earnings." % StringUtil.thousands_sep(source.unlock_at)
