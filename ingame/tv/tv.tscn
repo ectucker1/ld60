@@ -1,6 +1,31 @@
 [gd_scene format=3 uid="uid://dp1n6bcyfwjsy"]
 
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="1_sen2m"]
+[ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="2_qvcdp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tap8f"]
+shader = ExtResource("2_qvcdp")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(160, 90)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ijdr3"]
 viewport_path = NodePath("SubViewport")
@@ -16,6 +41,7 @@ size = Vector2i(160, 90)
 [node name="InsideTVWorld" parent="SubViewport" unique_id=631518455 instance=ExtResource("1_sen2m")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582113759]
+material = SubResource("ShaderMaterial_tap8f")
 texture = SubResource("ViewportTexture_ijdr3")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=2016654456]
