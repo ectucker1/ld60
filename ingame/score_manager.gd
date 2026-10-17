@@ -19,4 +19,4 @@ func _physics_process(delta: float) -> void:
 		next_ticket = next_next_ticket
 
 func next_ticket_threshold(prev_ticket: int) -> int:
-	return ( (prev_ticket * 1.05) + (100 * log(prev_ticket) / log(10)) )
+	return ( (prev_ticket * 1.05) + (85 * log(prev_ticket) / log(10)) )
