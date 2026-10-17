@@ -41,3 +41,5 @@ func _physics_process(delta: float) -> void:
 
 func hit_corner():
 	tv.hit_corner(self)
+	var bend = randf() * TAU * 0.1
+	direction = direction.rotated(bend)
