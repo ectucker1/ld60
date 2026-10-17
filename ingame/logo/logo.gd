@@ -11,6 +11,9 @@ var tv: TV
 var direction := Vector2.RIGHT
 
 
+var colors = [Color.WHITE, Color.RED, Color.GREEN, Color.BLUE, Color.CYAN, Color.MAGENTA, Color.YELLOW]
+
+
 func find_tv(node) -> TV:
 	if node is TV:
 		return node
@@ -22,6 +25,7 @@ func _ready() -> void:
 	randomize()
 	var angle = randf() * TAU
 	direction = Vector2.RIGHT.rotated(angle)
+	modulate = colors.pick_random()
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(direction * base_speed * tv.get_speed_mult() * delta)
@@ -30,6 +34,7 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider() is SideBody:
 			tv.hit_edge(self)
 			collision.get_collider().hit(collision)
+			modulate = colors.pick_random()
 
 func hit_corner():
 	tv.hit_corner(self)
