@@ -3,17 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://bf2tnce7cacmy" path="res://ingame/layout.png" id="1_0qb78"]
 [ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
 [ext_resource type="Script" uid="uid://cb0f5j53oqrbe" path="res://ingame/tv/tv.gd" id="2_o7wyp"]
+[ext_resource type="Script" uid="uid://xc4c1oou4n81" path="res://ingame/tv_connector.gd" id="2_thoer"]
 [ext_resource type="PackedScene" uid="uid://cnmnfxh6v3sor" path="res://ingame/disc/disc.tscn" id="3_kqxgg"]
 [ext_resource type="Script" uid="uid://douwe7p3n5bmm" path="res://ingame/tv/tv_viewport.gd" id="3_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="4_lx1ox"]
 [ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult_10.tres" id="4_yk771"]
 [ext_resource type="Resource" uid="uid://bs14eo4047oly" path="res://ingame/disc/disc_types/speed_mult_20.tres" id="5_0qb78"]
 [ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="5_7lqh5"]
-[ext_resource type="Resource" uid="uid://b4t4i01jrbu8g" path="res://ingame/disc/disc_types/speed_mult_30.tres" id="6_783pu"]
 [ext_resource type="Script" uid="uid://dem51n17sxbeg" path="res://ingame/tv_display.gd" id="6_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://y2v1wqbgjhxh" path="res://ingame/disc_slot_row.tscn" id="7_oj7a1"]
+[ext_resource type="Resource" uid="uid://dqvu8eb5ks3gi" path="res://ingame/disc/disc_types/mega_magenta.tres" id="11_pvtff"]
+[ext_resource type="Resource" uid="uid://bi3w4484ra53t" path="res://ingame/disc/disc_types/mult_wall_score.tres" id="12_m0m8y"]
 [ext_resource type="FontFile" uid="uid://bgd4cxc5xbopv" path="res://assets/fonts/analog_mono/AnalogMono_v1_1.ttf" id="13_lx1ox"]
+[ext_resource type="Resource" uid="uid://bo7i8kdpvko10" path="res://ingame/disc/disc_types/add_wall_score.tres" id="13_pvtff"]
 [ext_resource type="Script" uid="uid://dcpxkhkxic2gl" path="res://ingame/score_label.gd" id="14_7lqh5"]
+[ext_resource type="Resource" uid="uid://ccg15bq4rls22" path="res://ingame/disc/disc_types/remove_blue.tres" id="15_mk1uw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lqh5"]
 shader = ExtResource("5_7lqh5")
@@ -40,7 +44,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_thoer"]
-viewport_path = NodePath("TV1/SubViewport")
+viewport_path = NodePath("TVConnector/TopLeft/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5bou3"]
 shader = ExtResource("5_7lqh5")
@@ -67,7 +71,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_m0m8y"]
-viewport_path = NodePath("TV2/SubViewport")
+viewport_path = NodePath("TVConnector/TopMiddle/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pvtff"]
 shader = ExtResource("5_7lqh5")
@@ -94,7 +98,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mk1uw"]
-viewport_path = NodePath("TV3/SubViewport")
+viewport_path = NodePath("TVConnector/TopRight/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r8bkt"]
 shader = ExtResource("5_7lqh5")
@@ -121,7 +125,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6oar8"]
-viewport_path = NodePath("TV4/SubViewport")
+viewport_path = NodePath("TVConnector/BottomLeft/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_36i4f"]
 shader = ExtResource("5_7lqh5")
@@ -148,7 +152,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7ruv5"]
-viewport_path = NodePath("TV5/SubViewport")
+viewport_path = NodePath("TVConnector/BottomMiddle/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bmf7w"]
 shader = ExtResource("5_7lqh5")
@@ -175,19 +179,24 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a5vqv"]
-viewport_path = NodePath("TV6/SubViewport")
+viewport_path = NodePath("TVConnector/BottomRight/SubViewport")
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
 
 [node name="Backdrop" type="Sprite2D" parent="." unique_id=319077051]
 texture = ExtResource("1_0qb78")
 
-[node name="TV1" type="Node2D" parent="." unique_id=1033368773]
+[node name="TVConnector" type="Node2D" parent="." unique_id=1554303878]
+script = ExtResource("2_thoer")
+
+[node name="TopLeft" type="Node2D" parent="TVConnector" unique_id=1033368773 node_paths=PackedStringArray("right", "below")]
 position = Vector2(-43, -53)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(52, 40)
+right = NodePath("../TopMiddle")
+below = NodePath("../BottomLeft")
 
-[node name="SubViewport" type="SubViewport" parent="TV1" unique_id=2098003475]
+[node name="SubViewport" type="SubViewport" parent="TVConnector/TopLeft" unique_id=2098003475]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
@@ -195,30 +204,33 @@ size = Vector2i(52, 40)
 script = ExtResource("3_oj7a1")
 world_size = Vector2i(52, 40)
 
-[node name="InsideTVWorld" parent="TV1/SubViewport" unique_id=631518455 instance=ExtResource("4_lx1ox")]
+[node name="InsideTVWorld" parent="TVConnector/TopLeft/SubViewport" unique_id=631518455 instance=ExtResource("4_lx1ox")]
 world_size = Vector2i(52, 40)
 
-[node name="Sprite2D" type="Sprite2D" parent="TV1" unique_id=1582113759]
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopLeft" unique_id=1582113759]
 material = SubResource("ShaderMaterial_7lqh5")
 texture = SubResource("ViewportTexture_thoer")
 script = ExtResource("6_oj7a1")
 
-[node name="Line2D" type="Line2D" parent="TV1" unique_id=2016654456]
+[node name="Line2D" type="Line2D" parent="TVConnector/TopLeft" unique_id=2016654456]
 visible = false
 position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
 
-[node name="Slots" parent="TV1" unique_id=734697617 instance=ExtResource("7_oj7a1")]
+[node name="Slots" parent="TVConnector/TopLeft" unique_id=734697617 instance=ExtResource("7_oj7a1")]
 position = Vector2(-1, 25)
 
-[node name="TV2" type="Node2D" parent="." unique_id=1365679928]
+[node name="TopMiddle" type="Node2D" parent="TVConnector" unique_id=1365679928 node_paths=PackedStringArray("left", "right", "below")]
 position = Vector2(36, -42)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(70, 49)
+left = NodePath("../TopLeft")
+right = NodePath("../TopRight")
+below = NodePath("../BottomMiddle")
 
-[node name="SubViewport" type="SubViewport" parent="TV2" unique_id=1039886690]
+[node name="SubViewport" type="SubViewport" parent="TVConnector/TopMiddle" unique_id=1039886690]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
@@ -226,30 +238,32 @@ size = Vector2i(70, 49)
 script = ExtResource("3_oj7a1")
 world_size = Vector2i(70, 49)
 
-[node name="InsideTVWorld" parent="TV2/SubViewport" unique_id=752307196 instance=ExtResource("4_lx1ox")]
+[node name="InsideTVWorld" parent="TVConnector/TopMiddle/SubViewport" unique_id=752307196 instance=ExtResource("4_lx1ox")]
 world_size = Vector2i(70, 49)
 
-[node name="Sprite2D" type="Sprite2D" parent="TV2" unique_id=1332464654]
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopMiddle" unique_id=1332464654]
 material = SubResource("ShaderMaterial_5bou3")
 texture = SubResource("ViewportTexture_m0m8y")
 script = ExtResource("6_oj7a1")
 
-[node name="Line2D" type="Line2D" parent="TV2" unique_id=1873189366]
+[node name="Line2D" type="Line2D" parent="TVConnector/TopMiddle" unique_id=1873189366]
 visible = false
 position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
 
-[node name="Slots" parent="TV2" unique_id=937152338 instance=ExtResource("7_oj7a1")]
+[node name="Slots" parent="TVConnector/TopMiddle" unique_id=937152338 instance=ExtResource("7_oj7a1")]
 position = Vector2(-1, 29)
 
-[node name="TV3" type="Node2D" parent="." unique_id=1253402450]
+[node name="TopRight" type="Node2D" parent="TVConnector" unique_id=1253402450 node_paths=PackedStringArray("left", "below")]
 position = Vector2(110, -49)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(40, 40)
+left = NodePath("../TopMiddle")
+below = NodePath("../BottomRight")
 
-[node name="SubViewport" type="SubViewport" parent="TV3" unique_id=2109455609]
+[node name="SubViewport" type="SubViewport" parent="TVConnector/TopRight" unique_id=2109455609]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
@@ -257,30 +271,32 @@ size = Vector2i(40, 40)
 script = ExtResource("3_oj7a1")
 world_size = Vector2i(40, 40)
 
-[node name="InsideTVWorld" parent="TV3/SubViewport" unique_id=1022376110 instance=ExtResource("4_lx1ox")]
+[node name="InsideTVWorld" parent="TVConnector/TopRight/SubViewport" unique_id=1022376110 instance=ExtResource("4_lx1ox")]
 world_size = Vector2i(40, 40)
 
-[node name="Sprite2D" type="Sprite2D" parent="TV3" unique_id=1817236573]
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopRight" unique_id=1817236573]
 material = SubResource("ShaderMaterial_pvtff")
 texture = SubResource("ViewportTexture_mk1uw")
 script = ExtResource("6_oj7a1")
 
-[node name="Line2D" type="Line2D" parent="TV3" unique_id=1911645608]
+[node name="Line2D" type="Line2D" parent="TVConnector/TopRight" unique_id=1911645608]
 visible = false
 position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
 
-[node name="Slots" parent="TV3" unique_id=274239352 instance=ExtResource("7_oj7a1")]
+[node name="Slots" parent="TVConnector/TopRight" unique_id=274239352 instance=ExtResource("7_oj7a1")]
 position = Vector2(0, 25)
 
-[node name="TV4" type="Node2D" parent="." unique_id=1532674918]
+[node name="BottomLeft" type="Node2D" parent="TVConnector" unique_id=1532674918 node_paths=PackedStringArray("right", "above")]
 position = Vector2(-40, 68)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(72, 60)
+right = NodePath("../BottomMiddle")
+above = NodePath("../TopLeft")
 
-[node name="SubViewport" type="SubViewport" parent="TV4" unique_id=1528084224]
+[node name="SubViewport" type="SubViewport" parent="TVConnector/BottomLeft" unique_id=1528084224]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
@@ -288,31 +304,34 @@ size = Vector2i(72, 60)
 script = ExtResource("3_oj7a1")
 world_size = Vector2i(72, 60)
 
-[node name="InsideTVWorld" parent="TV4/SubViewport" unique_id=1347108171 instance=ExtResource("4_lx1ox")]
+[node name="InsideTVWorld" parent="TVConnector/BottomLeft/SubViewport" unique_id=1347108171 instance=ExtResource("4_lx1ox")]
 world_size = Vector2i(72, 60)
 
-[node name="Sprite2D" type="Sprite2D" parent="TV4" unique_id=846064115]
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft" unique_id=846064115]
 material = SubResource("ShaderMaterial_r8bkt")
 position = Vector2(1, -51)
 texture = SubResource("ViewportTexture_6oar8")
 script = ExtResource("6_oj7a1")
 
-[node name="Line2D" type="Line2D" parent="TV4" unique_id=1100313790]
+[node name="Line2D" type="Line2D" parent="TVConnector/BottomLeft" unique_id=1100313790]
 visible = false
 position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
 
-[node name="Slots" parent="TV4" unique_id=822903696 instance=ExtResource("7_oj7a1")]
+[node name="Slots" parent="TVConnector/BottomLeft" unique_id=822903696 instance=ExtResource("7_oj7a1")]
 position = Vector2(0, -16)
 
-[node name="TV5" type="Node2D" parent="." unique_id=388595075]
+[node name="BottomMiddle" type="Node2D" parent="TVConnector" unique_id=388595075 node_paths=PackedStringArray("left", "right", "above")]
 position = Vector2(353, -131)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(56, 45)
+left = NodePath("../BottomLeft")
+right = NodePath("../BottomRight")
+above = NodePath("../TopMiddle")
 
-[node name="SubViewport" type="SubViewport" parent="TV5" unique_id=1336266280]
+[node name="SubViewport" type="SubViewport" parent="TVConnector/BottomMiddle" unique_id=1336266280]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
@@ -320,31 +339,33 @@ size = Vector2i(56, 45)
 script = ExtResource("3_oj7a1")
 world_size = Vector2i(56, 45)
 
-[node name="InsideTVWorld" parent="TV5/SubViewport" unique_id=1876465913 instance=ExtResource("4_lx1ox")]
+[node name="InsideTVWorld" parent="TVConnector/BottomMiddle/SubViewport" unique_id=1876465913 instance=ExtResource("4_lx1ox")]
 world_size = Vector2i(56, 45)
 
-[node name="Sprite2D" type="Sprite2D" parent="TV5" unique_id=450842524]
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle" unique_id=450842524]
 material = SubResource("ShaderMaterial_36i4f")
 position = Vector2(-317, 168)
 texture = SubResource("ViewportTexture_7ruv5")
 script = ExtResource("6_oj7a1")
 
-[node name="Line2D" type="Line2D" parent="TV5" unique_id=2132385306]
+[node name="Line2D" type="Line2D" parent="TVConnector/BottomMiddle" unique_id=2132385306]
 visible = false
 position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
 
-[node name="Slots" parent="TV5" unique_id=491254056 instance=ExtResource("7_oj7a1")]
+[node name="Slots" parent="TVConnector/BottomMiddle" unique_id=491254056 instance=ExtResource("7_oj7a1")]
 position = Vector2(-316, 195)
 
-[node name="TV6" type="Node2D" parent="." unique_id=1328517651]
+[node name="BottomRight" type="Node2D" parent="TVConnector" unique_id=1328517651 node_paths=PackedStringArray("left", "above")]
 position = Vector2(346, 62)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(51, 50)
+left = NodePath("../BottomLeft")
+above = NodePath("../TopRight")
 
-[node name="SubViewport" type="SubViewport" parent="TV6" unique_id=1673970501]
+[node name="SubViewport" type="SubViewport" parent="TVConnector/BottomRight" unique_id=1673970501]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
@@ -352,23 +373,23 @@ size = Vector2i(51, 50)
 script = ExtResource("3_oj7a1")
 world_size = Vector2i(51, 50)
 
-[node name="InsideTVWorld" parent="TV6/SubViewport" unique_id=544653400 instance=ExtResource("4_lx1ox")]
+[node name="InsideTVWorld" parent="TVConnector/BottomRight/SubViewport" unique_id=544653400 instance=ExtResource("4_lx1ox")]
 world_size = Vector2i(51, 50)
 
-[node name="Sprite2D" type="Sprite2D" parent="TV6" unique_id=1294684008]
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomRight" unique_id=1294684008]
 material = SubResource("ShaderMaterial_bmf7w")
 position = Vector2(-238, -39)
 texture = SubResource("ViewportTexture_a5vqv")
 script = ExtResource("6_oj7a1")
 
-[node name="Line2D" type="Line2D" parent="TV6" unique_id=1600823660]
+[node name="Line2D" type="Line2D" parent="TVConnector/BottomRight" unique_id=1600823660]
 visible = false
 position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
 
-[node name="Slots" parent="TV6" unique_id=780036181 instance=ExtResource("7_oj7a1")]
+[node name="Slots" parent="TVConnector/BottomRight" unique_id=780036181 instance=ExtResource("7_oj7a1")]
 position = Vector2(-238, -9)
 
 [node name="EffectsCamera2D" type="Camera2D" parent="." unique_id=1134236562]
@@ -378,17 +399,32 @@ metadata/_custom_type_script = "uid://cu5whb37rt5d8"
 [node name="Disc" parent="." unique_id=1277677675 instance=ExtResource("3_kqxgg")]
 modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
 position = Vector2(-138, 13)
-disc = ExtResource("4_yk771")
+disc = ExtResource("11_pvtff")
 
 [node name="Disc2" parent="." unique_id=1804491141 instance=ExtResource("3_kqxgg")]
 modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
 position = Vector2(-115, 37)
-disc = ExtResource("5_0qb78")
+disc = ExtResource("12_m0m8y")
 
 [node name="Disc3" parent="." unique_id=210748231 instance=ExtResource("3_kqxgg")]
 modulate = Color(1, 1, 0.019607844, 1)
-position = Vector2(-141, 63)
-disc = ExtResource("6_783pu")
+position = Vector2(-116, 62)
+disc = ExtResource("13_pvtff")
+
+[node name="Disc4" parent="." unique_id=2098341852 instance=ExtResource("3_kqxgg")]
+modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
+position = Vector2(-140, 36)
+disc = ExtResource("4_yk771")
+
+[node name="Disc5" parent="." unique_id=1363716616 instance=ExtResource("3_kqxgg")]
+modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
+position = Vector2(-143, 64)
+disc = ExtResource("5_0qb78")
+
+[node name="Disc6" parent="." unique_id=1663749190 instance=ExtResource("3_kqxgg")]
+modulate = Color(1, 1, 0.019607844, 1)
+position = Vector2(-116, 15)
+disc = ExtResource("15_mk1uw")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=971309560]
 position = Vector2(-147, -114)

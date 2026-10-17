@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://bi3w4484ra53t"]
+
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_ofacu"]
+
+[resource]
+script = ExtResource("1_ofacu")
+wall_score_mult = 2.0
+metadata/_custom_type_script = "uid://dru57ptcau8xr"

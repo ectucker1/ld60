@@ -34,7 +34,10 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider() is SideBody:
 			tv.hit_edge(self)
 			collision.get_collider().hit(collision)
-			modulate = colors.pick_random()
+			var new_color = colors.pick_random()
+			for disc in tv.get_discs():
+				new_color = disc.on_color_change(tv.context, new_color)
+			modulate = new_color
 
 func hit_corner():
 	tv.hit_corner(self)
