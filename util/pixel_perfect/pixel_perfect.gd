@@ -144,7 +144,8 @@ func _forward_input(event: InputEvent) -> void:
 	_forwarded_event = event
 	if not enabled or not viewport.can_process():
 		return
-	viewport.push_input(event.xformed_by(_get_root_to_viewport_transform()))
+	var xformed = event.xformed_by(_get_root_to_viewport_transform())
+	viewport.push_input(xformed)
 
 
 func _is_positional(event: InputEvent) -> bool:
@@ -160,7 +161,8 @@ func _get_root_to_viewport_transform() -> Transform2D:
 	# Also remove the subpixel offset so positions line up with the unrounded canvas_transform,
 	# matching InputUtil.get_global_mouse_position.
 	var sprite_to_viewport = Transform2D(0.0, -display_sprite.get_rect().position - viewport_offset)
-	return sprite_to_viewport * root_to_sprite
+	var result = sprite_to_viewport * root_to_sprite
+	return result
 
 
 # Emitted right after the new scene is added to the root, before it's rendered.

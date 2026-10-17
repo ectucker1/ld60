@@ -1,31 +1,373 @@
 [gd_scene format=3 uid="uid://ck08mlqov6xn1"]
 
-[ext_resource type="PackedScene" uid="uid://dp1n6bcyfwjsy" path="res://ingame/tv/tv.tscn" id="1_qb0b0"]
+[ext_resource type="Texture2D" uid="uid://bf2tnce7cacmy" path="res://ingame/layout.png" id="1_0qb78"]
 [ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
+[ext_resource type="Script" uid="uid://cb0f5j53oqrbe" path="res://ingame/tv/tv.gd" id="2_o7wyp"]
 [ext_resource type="PackedScene" uid="uid://cnmnfxh6v3sor" path="res://ingame/disc/disc.tscn" id="3_kqxgg"]
+[ext_resource type="Script" uid="uid://douwe7p3n5bmm" path="res://ingame/tv/tv_viewport.gd" id="3_oj7a1"]
+[ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="4_lx1ox"]
 [ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult_10.tres" id="4_yk771"]
 [ext_resource type="Resource" uid="uid://bs14eo4047oly" path="res://ingame/disc/disc_types/speed_mult_20.tres" id="5_0qb78"]
+[ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="5_7lqh5"]
 [ext_resource type="Resource" uid="uid://b4t4i01jrbu8g" path="res://ingame/disc/disc_types/speed_mult_30.tres" id="6_783pu"]
+[ext_resource type="Script" uid="uid://dem51n17sxbeg" path="res://ingame/tv_display.gd" id="6_oj7a1"]
+[ext_resource type="PackedScene" uid="uid://y2v1wqbgjhxh" path="res://ingame/disc_slot_row.tscn" id="7_oj7a1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lx1ox"]
+shader = ExtResource("5_7lqh5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(52, 40)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7lqh5"]
+viewport_path = NodePath("TV1/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thoer"]
+shader = ExtResource("5_7lqh5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(70, 49)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5bou3"]
+viewport_path = NodePath("TV2/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0m8y"]
+shader = ExtResource("5_7lqh5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(40, 40)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pvtff"]
+viewport_path = NodePath("TV3/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk1uw"]
+shader = ExtResource("5_7lqh5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(72, 60)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8bkt"]
+viewport_path = NodePath("TV4/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6oar8"]
+shader = ExtResource("5_7lqh5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(56, 45)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_36i4f"]
+viewport_path = NodePath("TV5/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
+shader = ExtResource("5_7lqh5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.154000007315
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.1210000057475
+shader_parameter/resolution = Vector2(51, 50)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 19.61600093176
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.194000009215
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.09600000456
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 0.835
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0510000024225
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4810000228475
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bmf7w"]
+viewport_path = NodePath("TV6/SubViewport")
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
 
-[node name="TV1" parent="." unique_id=1033368773 instance=ExtResource("1_qb0b0")]
-position = Vector2(-184, -127)
+[node name="Backdrop" type="Sprite2D" parent="." unique_id=319077051]
+texture = ExtResource("1_0qb78")
 
-[node name="TV2" parent="." unique_id=1365679928 instance=ExtResource("1_qb0b0")]
-position = Vector2(66, -93)
+[node name="TV1" type="Node2D" parent="." unique_id=1033368773]
+position = Vector2(-43, -53)
+script = ExtResource("2_o7wyp")
+world_size = Vector2i(52, 40)
 
-[node name="TV3" parent="." unique_id=1253402450 instance=ExtResource("1_qb0b0")]
-position = Vector2(-216, 78)
+[node name="SubViewport" type="SubViewport" parent="TV1" unique_id=2098003475]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(52, 40)
+script = ExtResource("3_oj7a1")
+world_size = Vector2i(52, 40)
 
-[node name="TV4" parent="." unique_id=1532674918 instance=ExtResource("1_qb0b0")]
-position = Vector2(65, 84)
+[node name="InsideTVWorld" parent="TV1/SubViewport" unique_id=631518455 instance=ExtResource("4_lx1ox")]
+world_size = Vector2i(52, 40)
 
-[node name="TV5" parent="." unique_id=388595075 instance=ExtResource("1_qb0b0")]
+[node name="Sprite2D" type="Sprite2D" parent="TV1" unique_id=1582113759]
+material = SubResource("ShaderMaterial_lx1ox")
+texture = SubResource("ViewportTexture_7lqh5")
+script = ExtResource("6_oj7a1")
+
+[node name="Line2D" type="Line2D" parent="TV1" unique_id=2016654456]
+visible = false
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" parent="TV1" unique_id=734697617 instance=ExtResource("7_oj7a1")]
+position = Vector2(-1, 25)
+
+[node name="TV2" type="Node2D" parent="." unique_id=1365679928]
+position = Vector2(36, -42)
+script = ExtResource("2_o7wyp")
+world_size = Vector2i(70, 49)
+
+[node name="SubViewport" type="SubViewport" parent="TV2" unique_id=1039886690]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(70, 49)
+script = ExtResource("3_oj7a1")
+world_size = Vector2i(70, 49)
+
+[node name="InsideTVWorld" parent="TV2/SubViewport" unique_id=752307196 instance=ExtResource("4_lx1ox")]
+world_size = Vector2i(70, 49)
+
+[node name="Sprite2D" type="Sprite2D" parent="TV2" unique_id=1332464654]
+material = SubResource("ShaderMaterial_thoer")
+texture = SubResource("ViewportTexture_5bou3")
+script = ExtResource("6_oj7a1")
+
+[node name="Line2D" type="Line2D" parent="TV2" unique_id=1873189366]
+visible = false
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" parent="TV2" unique_id=937152338 instance=ExtResource("7_oj7a1")]
+position = Vector2(-1, 29)
+
+[node name="TV3" type="Node2D" parent="." unique_id=1253402450]
+position = Vector2(110, -49)
+script = ExtResource("2_o7wyp")
+world_size = Vector2i(40, 40)
+
+[node name="SubViewport" type="SubViewport" parent="TV3" unique_id=2109455609]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(40, 40)
+script = ExtResource("3_oj7a1")
+world_size = Vector2i(40, 40)
+
+[node name="InsideTVWorld" parent="TV3/SubViewport" unique_id=1022376110 instance=ExtResource("4_lx1ox")]
+world_size = Vector2i(40, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="TV3" unique_id=1817236573]
+material = SubResource("ShaderMaterial_m0m8y")
+texture = SubResource("ViewportTexture_pvtff")
+script = ExtResource("6_oj7a1")
+
+[node name="Line2D" type="Line2D" parent="TV3" unique_id=1911645608]
+visible = false
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" parent="TV3" unique_id=274239352 instance=ExtResource("7_oj7a1")]
+position = Vector2(0, 25)
+
+[node name="TV4" type="Node2D" parent="." unique_id=1532674918]
+position = Vector2(-40, 68)
+script = ExtResource("2_o7wyp")
+world_size = Vector2i(72, 60)
+
+[node name="SubViewport" type="SubViewport" parent="TV4" unique_id=1528084224]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(72, 60)
+script = ExtResource("3_oj7a1")
+world_size = Vector2i(72, 60)
+
+[node name="InsideTVWorld" parent="TV4/SubViewport" unique_id=1347108171 instance=ExtResource("4_lx1ox")]
+world_size = Vector2i(72, 60)
+
+[node name="Sprite2D" type="Sprite2D" parent="TV4" unique_id=846064115]
+material = SubResource("ShaderMaterial_mk1uw")
+position = Vector2(1, -51)
+texture = SubResource("ViewportTexture_r8bkt")
+script = ExtResource("6_oj7a1")
+
+[node name="Line2D" type="Line2D" parent="TV4" unique_id=1100313790]
+visible = false
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" parent="TV4" unique_id=822903696 instance=ExtResource("7_oj7a1")]
+position = Vector2(0, -16)
+
+[node name="TV5" type="Node2D" parent="." unique_id=388595075]
 position = Vector2(353, -131)
+script = ExtResource("2_o7wyp")
+world_size = Vector2i(56, 45)
 
-[node name="TV6" parent="." unique_id=1328517651 instance=ExtResource("1_qb0b0")]
+[node name="SubViewport" type="SubViewport" parent="TV5" unique_id=1336266280]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(56, 45)
+script = ExtResource("3_oj7a1")
+world_size = Vector2i(56, 45)
+
+[node name="InsideTVWorld" parent="TV5/SubViewport" unique_id=1876465913 instance=ExtResource("4_lx1ox")]
+world_size = Vector2i(56, 45)
+
+[node name="Sprite2D" type="Sprite2D" parent="TV5" unique_id=450842524]
+material = SubResource("ShaderMaterial_6oar8")
+position = Vector2(-317, 168)
+texture = SubResource("ViewportTexture_36i4f")
+script = ExtResource("6_oj7a1")
+
+[node name="Line2D" type="Line2D" parent="TV5" unique_id=2132385306]
+visible = false
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" parent="TV5" unique_id=491254056 instance=ExtResource("7_oj7a1")]
+position = Vector2(-316, 195)
+
+[node name="TV6" type="Node2D" parent="." unique_id=1328517651]
 position = Vector2(346, 62)
+script = ExtResource("2_o7wyp")
+world_size = Vector2i(51, 50)
+
+[node name="SubViewport" type="SubViewport" parent="TV6" unique_id=1673970501]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+gui_disable_input = true
+size = Vector2i(51, 50)
+script = ExtResource("3_oj7a1")
+world_size = Vector2i(51, 50)
+
+[node name="InsideTVWorld" parent="TV6/SubViewport" unique_id=544653400 instance=ExtResource("4_lx1ox")]
+world_size = Vector2i(51, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="TV6" unique_id=1294684008]
+material = SubResource("ShaderMaterial_7ruv5")
+position = Vector2(-238, -39)
+texture = SubResource("ViewportTexture_bmf7w")
+script = ExtResource("6_oj7a1")
+
+[node name="Line2D" type="Line2D" parent="TV6" unique_id=1600823660]
+visible = false
+position = Vector2(4, 6)
+points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
+closed = true
+default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" parent="TV6" unique_id=780036181 instance=ExtResource("7_oj7a1")]
+position = Vector2(-238, -9)
 
 [node name="EffectsCamera2D" type="Camera2D" parent="." unique_id=1134236562]
 script = ExtResource("2_d7b73")
@@ -33,15 +375,15 @@ metadata/_custom_type_script = "uid://cu5whb37rt5d8"
 
 [node name="Disc" parent="." unique_id=1277677675 instance=ExtResource("3_kqxgg")]
 modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
-position = Vector2(-408, -90)
+position = Vector2(-138, 13)
 disc = ExtResource("4_yk771")
 
 [node name="Disc2" parent="." unique_id=1804491141 instance=ExtResource("3_kqxgg")]
 modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
-position = Vector2(-413, -37)
+position = Vector2(-115, 37)
 disc = ExtResource("5_0qb78")
 
 [node name="Disc3" parent="." unique_id=210748231 instance=ExtResource("3_kqxgg")]
 modulate = Color(1, 1, 0.019607844, 1)
-position = Vector2(-417, 18)
+position = Vector2(-141, 63)
 disc = ExtResource("6_783pu")

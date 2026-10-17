@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://d3fq2qpqh4i84"]
 
+[ext_resource type="Script" uid="uid://bx1fwkh2hqeyi" path="res://ingame/tv/tv_world.gd" id="1_kh84r"]
 [ext_resource type="PackedScene" uid="uid://bejxid52u0d7n" path="res://ingame/logo/logo.tscn" id="1_tap8f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
-size = Vector2(960, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwjop"]
 size = Vector2(20, 580)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
+size = Vector2(960, 20)
+
 [node name="InsideTVWorld" type="Node2D" unique_id=631518455]
+script = ExtResource("1_kh84r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=566594456]
 layer = -3
@@ -24,20 +26,26 @@ color = Color(0.12408299, 0.12408296, 0.12408296, 1)
 [node name="Logo" parent="." unique_id=1573002056 instance=ExtResource("1_tap8f")]
 position = Vector2(80, 45)
 
-[node name="Bounds" type="StaticBody2D" parent="." unique_id=1325442596]
+[node name="Left" type="StaticBody2D" parent="." unique_id=1325442596]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds" unique_id=1079650553]
-position = Vector2(80, -10)
-shape = SubResource("RectangleShape2D_ijdr3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=1962765790]
-position = Vector2(80, 100)
-shape = SubResource("RectangleShape2D_ijdr3")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds" unique_id=1640260361]
-position = Vector2(-10, 45)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Left" unique_id=1640260361]
 shape = SubResource("RectangleShape2D_dwjop")
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds" unique_id=1891785778]
-position = Vector2(170, 45)
+[node name="Right" type="StaticBody2D" parent="." unique_id=616287359]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Right" unique_id=1891785778]
 shape = SubResource("RectangleShape2D_dwjop")
+metadata/_edit_lock_ = true
+
+[node name="Top" type="StaticBody2D" parent="." unique_id=1264858349]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Top" unique_id=1079650553]
+shape = SubResource("RectangleShape2D_ijdr3")
+metadata/_edit_lock_ = true
+
+[node name="Bottom" type="StaticBody2D" parent="." unique_id=1340570107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=1962765790]
+shape = SubResource("RectangleShape2D_ijdr3")
+metadata/_edit_lock_ = true

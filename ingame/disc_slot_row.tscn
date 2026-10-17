@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://y2v1wqbgjhxh"]
+
+[ext_resource type="PackedScene" uid="uid://baivbes5p37yf" path="res://ingame/tv/disc_slot.tscn" id="1_8xf66"]
+
+[node name="Slots" type="Node2D" unique_id=734697617]
+
+[node name="DiscSlot" parent="." unique_id=349737341 instance=ExtResource("1_8xf66")]
+position = Vector2(-26, 0)
+
+[node name="DiscSlot2" parent="." unique_id=331586062 instance=ExtResource("1_8xf66")]
+position = Vector2(-8, 0)
+
+[node name="DiscSlot3" parent="." unique_id=806318764 instance=ExtResource("1_8xf66")]
+position = Vector2(10, 0)
+
+[node name="DiscSlot4" parent="." unique_id=136476174 instance=ExtResource("1_8xf66")]
+position = Vector2(28, 0)
