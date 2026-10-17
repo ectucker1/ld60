@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="1_sen2m"]
 [ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="2_qvcdp"]
+[ext_resource type="PackedScene" uid="uid://baivbes5p37yf" path="res://ingame/tv/disc_slot.tscn" id="3_8bdpn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tap8f"]
 shader = ExtResource("2_qvcdp")
@@ -49,3 +50,17 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+
+[node name="Slots" type="Node2D" parent="." unique_id=865598508]
+
+[node name="DiscSlot" parent="Slots" unique_id=349737341 instance=ExtResource("3_8bdpn")]
+position = Vector2(-89, 73)
+
+[node name="DiscSlot2" parent="Slots" unique_id=1060697961 instance=ExtResource("3_8bdpn")]
+position = Vector2(-29, 70)
+
+[node name="DiscSlot3" parent="Slots" unique_id=1913993371 instance=ExtResource("3_8bdpn")]
+position = Vector2(31, 72)
+
+[node name="DiscSlot4" parent="Slots" unique_id=267144201 instance=ExtResource("3_8bdpn")]
+position = Vector2(92, 70)

@@ -2,27 +2,40 @@
 
 [ext_resource type="PackedScene" uid="uid://dp1n6bcyfwjsy" path="res://ingame/tv/tv.tscn" id="1_qb0b0"]
 [ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
+[ext_resource type="PackedScene" uid="uid://cnmnfxh6v3sor" path="res://ingame/disc/disc.tscn" id="3_kqxgg"]
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
 
 [node name="TV" parent="." unique_id=1033368773 instance=ExtResource("1_qb0b0")]
-position = Vector2(-207, -92)
+position = Vector2(-184, -127)
 
 [node name="TV2" parent="." unique_id=1365679928 instance=ExtResource("1_qb0b0")]
-position = Vector2(-3, -48)
+position = Vector2(66, -93)
 
 [node name="TV3" parent="." unique_id=1253402450 instance=ExtResource("1_qb0b0")]
-position = Vector2(-205, 57)
+position = Vector2(-216, 78)
 
 [node name="TV4" parent="." unique_id=1532674918 instance=ExtResource("1_qb0b0")]
-position = Vector2(-3, 90)
+position = Vector2(65, 84)
 
 [node name="TV5" parent="." unique_id=388595075 instance=ExtResource("1_qb0b0")]
-position = Vector2(193, -96)
+position = Vector2(353, -131)
 
 [node name="TV6" parent="." unique_id=1328517651 instance=ExtResource("1_qb0b0")]
-position = Vector2(196, 50)
+position = Vector2(346, 62)
 
 [node name="EffectsCamera2D" type="Camera2D" parent="." unique_id=1134236562]
 script = ExtResource("2_d7b73")
 metadata/_custom_type_script = "uid://cu5whb37rt5d8"
+
+[node name="Disc" parent="." unique_id=1277677675 instance=ExtResource("3_kqxgg")]
+modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
+position = Vector2(-408, -90)
+
+[node name="Disc2" parent="." unique_id=1804491141 instance=ExtResource("3_kqxgg")]
+modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
+position = Vector2(-413, -37)
+
+[node name="Disc3" parent="." unique_id=210748231 instance=ExtResource("3_kqxgg")]
+modulate = Color(1, 1, 0.019607844, 1)
+position = Vector2(-417, 18)

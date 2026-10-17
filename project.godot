@@ -32,6 +32,7 @@ CameraEffects="*uid://cvbgini30ani7"
 PixelPerfect="*uid://cj1t54yqd0yjn"
 PauseMenu="*res://util/pause_menu/pause_menu.tscn"
 TransitionLayer="*res://util/transition/transition_layer.tscn"
+DragManager="*uid://cx1ex0ha3la0q"
 
 [display]
 

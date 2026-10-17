@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://baivbes5p37yf"]
+
+[ext_resource type="Texture2D" uid="uid://d24gtxx27l72q" path="res://util/white.png" id="1_31im4"]
+[ext_resource type="Script" uid="uid://bse4wgx5qhblv" path="res://ingame/tv/disc_slot.gd" id="1_lqxjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
+size = Vector2(53, 28)
+
+[node name="DiscSlot" type="Area2D" unique_id=349737341]
+script = ExtResource("1_lqxjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=162718725]
+modulate = Color(0.2741585, 0.10149228, 0.062220007, 1)
+scale = Vector2(6, 3)
+texture = ExtResource("1_31im4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1107342509]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ijdr3")
+
+[node name="HeldDiscLoc" type="Marker2D" parent="." unique_id=44013300]
+position = Vector2(0, 12)
+
+[node name="HeldDiscAnimStart" type="Marker2D" parent="." unique_id=1006855858]
+position = Vector2(0, 24)
