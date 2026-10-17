@@ -53,6 +53,7 @@ func get_speed_mult() -> float:
 # Called every time a logo on this TV hits an edge
 func hit_edge(logo: CharacterBody2D) -> void:
 	var score_context = ScoreContext.new()
+	score_context.source_tv = context
 	score_context.color = logo.modulate
 	score_context.wall_score_add += 1
 	score_context.wall_score_mult = 1.0
@@ -69,6 +70,7 @@ func hit_edge(logo: CharacterBody2D) -> void:
 # Called every time a logo on this TV hits a corner
 func hit_corner(logo: CharacterBody2D) -> void:
 	var score_context = ScoreContext.new()
+	score_context.source_tv = context
 	score_context.color = logo.modulate
 	score_context.corner_score_add += 5
 	score_context.corner_score_mult = 1.0
