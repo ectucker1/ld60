@@ -2,12 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bx1fwkh2hqeyi" path="res://ingame/tv/tv_world.gd" id="1_kh84r"]
 [ext_resource type="PackedScene" uid="uid://bejxid52u0d7n" path="res://ingame/logo/logo.tscn" id="1_tap8f"]
+[ext_resource type="Script" uid="uid://b0g70kl6gn5ge" path="res://ingame/tv/corner_area.gd" id="3_0ejm8"]
+[ext_resource type="Script" uid="uid://bylau78qvqjii" path="res://ingame/tv/side_body.gd" id="3_odoer"]
+[ext_resource type="Texture2D" uid="uid://d24gtxx27l72q" path="res://util/white.png" id="3_vfcpi"]
+[ext_resource type="Texture2D" uid="uid://c1gxi0w0cxjoj" path="res://ingame/tv/corner_bumper.png" id="4_qfkb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwjop"]
 size = Vector2(20, 580)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
 size = Vector2(960, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ijdr3"]
+radius = 2.0
 
 [node name="InsideTVWorld" type="Node2D" unique_id=631518455]
 script = ExtResource("1_kh84r")
@@ -24,28 +31,87 @@ grow_vertical = 2
 color = Color(0.12408299, 0.12408296, 0.12408296, 1)
 
 [node name="Logo" parent="." unique_id=1573002056 instance=ExtResource("1_tap8f")]
-position = Vector2(80, 45)
 
 [node name="Left" type="StaticBody2D" parent="." unique_id=1325442596]
+position = Vector2(-10, 0)
+script = ExtResource("3_odoer")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Left" unique_id=1640260361]
 shape = SubResource("RectangleShape2D_dwjop")
 metadata/_edit_lock_ = true
 
+[node name="Bumper" type="Sprite2D" parent="Left" unique_id=1208109897]
+scale = Vector2(2.5, 200)
+texture = ExtResource("3_vfcpi")
+
 [node name="Right" type="StaticBody2D" parent="." unique_id=616287359]
+position = Vector2(10, 0)
+script = ExtResource("3_odoer")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Right" unique_id=1891785778]
 shape = SubResource("RectangleShape2D_dwjop")
 metadata/_edit_lock_ = true
 
+[node name="Bumper" type="Sprite2D" parent="Right" unique_id=1338595076]
+scale = Vector2(2.5, 200)
+texture = ExtResource("3_vfcpi")
+
 [node name="Top" type="StaticBody2D" parent="." unique_id=1264858349]
+position = Vector2(0, -10)
+script = ExtResource("3_odoer")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Top" unique_id=1079650553]
 shape = SubResource("RectangleShape2D_ijdr3")
 metadata/_edit_lock_ = true
 
+[node name="Bumper" type="Sprite2D" parent="Top" unique_id=806131466]
+scale = Vector2(200, 2.5)
+texture = ExtResource("3_vfcpi")
+
 [node name="Bottom" type="StaticBody2D" parent="." unique_id=1340570107]
+position = Vector2(0, 10)
+script = ExtResource("3_odoer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=1962765790]
 shape = SubResource("RectangleShape2D_ijdr3")
 metadata/_edit_lock_ = true
+
+[node name="Bumper" type="Sprite2D" parent="Bottom" unique_id=636099893]
+scale = Vector2(200, 2.5)
+texture = ExtResource("3_vfcpi")
+
+[node name="TLCorner" type="Area2D" parent="." unique_id=2084475586]
+script = ExtResource("3_0ejm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TLCorner" unique_id=1669693265]
+shape = SubResource("CircleShape2D_ijdr3")
+
+[node name="Bumper" type="Sprite2D" parent="TLCorner" unique_id=1453838982]
+texture = ExtResource("4_qfkb3")
+
+[node name="TRCorner" type="Area2D" parent="." unique_id=1721930598]
+script = ExtResource("3_0ejm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TRCorner" unique_id=120014610]
+shape = SubResource("CircleShape2D_ijdr3")
+
+[node name="Bumper" type="Sprite2D" parent="TRCorner" unique_id=1527349921]
+texture = ExtResource("4_qfkb3")
+
+[node name="BLCorner" type="Area2D" parent="." unique_id=1873288919]
+script = ExtResource("3_0ejm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BLCorner" unique_id=1982273521]
+shape = SubResource("CircleShape2D_ijdr3")
+
+[node name="Bumper" type="Sprite2D" parent="BLCorner" unique_id=1781833042]
+texture = ExtResource("4_qfkb3")
+
+[node name="BRCorner" type="Area2D" parent="." unique_id=858063645]
+script = ExtResource("3_0ejm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BRCorner" unique_id=1939291642]
+shape = SubResource("CircleShape2D_ijdr3")
+
+[node name="Bumper" type="Sprite2D" parent="BRCorner" unique_id=116240629]
+texture = ExtResource("4_qfkb3")

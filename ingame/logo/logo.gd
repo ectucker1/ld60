@@ -1,3 +1,4 @@
+class_name Logo
 extends CharacterBody2D
 
 
@@ -26,3 +27,9 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(direction * base_speed * tv.get_speed_mult() * delta)
 	if collision != null:
 		direction = -direction.reflect(collision.get_normal())
+		if collision.get_collider() is SideBody:
+			tv.hit_edge(self)
+			collision.get_collider().hit(collision)
+
+func hit_corner():
+	tv.hit_corner(self)

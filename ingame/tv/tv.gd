@@ -33,6 +33,14 @@ func get_speed_mult() -> float:
 		mult += disc.speed_mult
 	return mult
 
+# Called every time a logo on this TV hits an edge
+func hit_edge(logo: CharacterBody2D) -> void:
+	ScoreManager.score += 1
+
+# Called every time a logo on this TV hits a corner
+func hit_corner(logo: CharacterBody2D) -> void:
+	ScoreManager.score += 5
+
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
