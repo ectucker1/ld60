@@ -2,6 +2,10 @@ class_name DiscDisplay
 extends Area2D
 
 
+@export
+var disc: Disc
+
+
 var hovered := false
 var last_hovered := INF
 

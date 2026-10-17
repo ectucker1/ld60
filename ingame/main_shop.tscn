@@ -3,10 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dp1n6bcyfwjsy" path="res://ingame/tv/tv.tscn" id="1_qb0b0"]
 [ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
 [ext_resource type="PackedScene" uid="uid://cnmnfxh6v3sor" path="res://ingame/disc/disc.tscn" id="3_kqxgg"]
+[ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult_10.tres" id="4_yk771"]
+[ext_resource type="Resource" uid="uid://bs14eo4047oly" path="res://ingame/disc/disc_types/speed_mult_20.tres" id="5_0qb78"]
+[ext_resource type="Resource" uid="uid://b4t4i01jrbu8g" path="res://ingame/disc/disc_types/speed_mult_30.tres" id="6_783pu"]
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
 
-[node name="TV" parent="." unique_id=1033368773 instance=ExtResource("1_qb0b0")]
+[node name="TV1" parent="." unique_id=1033368773 instance=ExtResource("1_qb0b0")]
 position = Vector2(-184, -127)
 
 [node name="TV2" parent="." unique_id=1365679928 instance=ExtResource("1_qb0b0")]
@@ -31,11 +34,14 @@ metadata/_custom_type_script = "uid://cu5whb37rt5d8"
 [node name="Disc" parent="." unique_id=1277677675 instance=ExtResource("3_kqxgg")]
 modulate = Color(0.32592493, 0.7255817, 0.41198763, 1)
 position = Vector2(-408, -90)
+disc = ExtResource("4_yk771")
 
 [node name="Disc2" parent="." unique_id=1804491141 instance=ExtResource("3_kqxgg")]
 modulate = Color(0.93333334, 0.043137256, 0.8039216, 1)
 position = Vector2(-413, -37)
+disc = ExtResource("5_0qb78")
 
 [node name="Disc3" parent="." unique_id=210748231 instance=ExtResource("3_kqxgg")]
 modulate = Color(1, 1, 0.019607844, 1)
 position = Vector2(-417, 18)
+disc = ExtResource("6_783pu")

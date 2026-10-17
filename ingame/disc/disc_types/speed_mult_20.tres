@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Disc" format=3 uid="uid://bs14eo4047oly"]
+
+[ext_resource type="Script" uid="uid://dru57ptcau8xr" path="res://ingame/disc/disc.gd" id="1_33cc1"]
+
+[resource]
+script = ExtResource("1_33cc1")
+speed_mult = 0.2
+metadata/_custom_type_script = "uid://dru57ptcau8xr"
