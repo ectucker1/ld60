@@ -7,8 +7,8 @@
 script = ExtResource("1_2gehk")
 right = true
 bonus = 50
-name = "Score on right tv corner hit 2"
-desc = "Score 50 on right tv corner hit"
+name = "Building Stolen II"
+desc = "Score 50 when right TV hits a corner"
 tier = 2
 num_in_pool = 1
 combine_to = ExtResource("1_thhgo")

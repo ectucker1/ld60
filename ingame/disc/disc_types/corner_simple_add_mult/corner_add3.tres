@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_npkrj")
-name = "Corner Score Add"
+name = "Sea's 25"
 desc = "Add 25 to corner score"
 tier = 3
 corner_score_add = 25

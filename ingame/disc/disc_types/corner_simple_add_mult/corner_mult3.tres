@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_q6n3x")
-name = "Corner Score Mult"
+name = "Hustler III"
 desc = "Increase corner mult by 25% to corner score"
 tier = 3
 corner_score_mult = 0.25

@@ -6,7 +6,7 @@
 script = ExtResource("1_b41dj")
 right = true
 bonus = 100
-name = "Score on right tv corner hit 3"
-desc = "Score 100 on right tv corner hit"
+name = "Building Stolen III"
+desc = "Score 100 when right TV hits a corner"
 tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

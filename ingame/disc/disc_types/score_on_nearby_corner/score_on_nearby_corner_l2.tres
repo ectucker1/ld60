@@ -7,7 +7,7 @@
 script = ExtResource("1_ku2o2")
 left = true
 bonus = 50
-name = "Score on left tv corner hit 2"
+name = "Genesis II"
 desc = "Score 50 on left tv corner hit"
 tier = 2
 num_in_pool = 1
