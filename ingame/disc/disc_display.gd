@@ -58,7 +58,8 @@ func start_dragging() -> void:
 	if DragManager.dragged_object == null:
 		DragManager.dragged_object = self
 		TooltipManager.try_remove(self)
-		
+		GlobalSounds.play("CDPickup")
+
 		if previous_slot != null:
 			previous_slot.remove(self)
 
