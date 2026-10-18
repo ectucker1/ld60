@@ -53,9 +53,9 @@ func list_news():
 		NewsItem.new(false, 4500, "NEWS: BBI Video Rental stock is surging"),
 		NewsItem.new(false, 6000, "NEWS: BBI opens 25 more stores across the nation"),
 		NewsItem.new(false, 9000, "NEWS: Analysts say 'BBI' is hottest stock of the decade"),
-		NewsItem.new(false, 13500, "NEWS: New service announced 'MetBlix' movies available on your computer?"),
-		NewsItem.new(false, 15000, "NEWS: MetBlix goes public!"),
-		NewsItem.new(true, 1, "NEWS: TEST LOSING MONEY"),
+		NewsItem.new(false, 13500, "NEWS: New service announced 'NTFLX' movies available on your computer?"),
+		NewsItem.new(false, 15000, "NEWS: NTFLX goes public!"),
+		#NewsItem.new(true, 50, "NEWS: TEST LOSING MONEY"),
 	]
 	return result
 
