@@ -38,6 +38,7 @@ func _ready() -> void:
 		material.set("shader_parameter/resolution", texture.get_size())
 		for param in BURST_PARAMS:
 			_base[param] = material.get_shader_parameter(param)
+	z_index = 3
 
 ## Kicks the screen static up, wilder the bigger the corner score
 func corner_burst(score: int) -> void:

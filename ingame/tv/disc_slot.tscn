@@ -21,7 +21,7 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_ijdr3")
 
 [node name="HeldDiscLoc" type="Marker2D" parent="." unique_id=44013300]
-position = Vector2(0, 3)
+position = Vector2(0, 2)
 
 [node name="HeldDiscAnimStart" type="Marker2D" parent="." unique_id=1006855858]
 position = Vector2(0, 8)

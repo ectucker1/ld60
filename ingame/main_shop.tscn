@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
 [ext_resource type="Script" uid="uid://cb0f5j53oqrbe" path="res://ingame/tv/tv.gd" id="2_o7wyp"]
 [ext_resource type="Script" uid="uid://xc4c1oou4n81" path="res://ingame/tv_connector.gd" id="2_thoer"]
+[ext_resource type="Texture2D" uid="uid://thgh6jkubkk1" path="res://ingame/top_of_slots.png" id="2_wi66d"]
 [ext_resource type="PackedScene" uid="uid://cnmnfxh6v3sor" path="res://ingame/disc/disc.tscn" id="3_kqxgg"]
 [ext_resource type="Script" uid="uid://douwe7p3n5bmm" path="res://ingame/tv/tv_viewport.gd" id="3_oj7a1"]
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="4_lx1ox"]
@@ -289,6 +290,11 @@ _data = {
 z_index = -5
 position = Vector2(0, 8)
 texture = ExtResource("1_fqdsg")
+
+[node name="SlotCovers" type="Sprite2D" parent="." unique_id=2131302169]
+z_index = 2
+position = Vector2(0, 8)
+texture = ExtResource("2_wi66d")
 
 [node name="TVConnector" type="Node2D" parent="." unique_id=1554303878]
 script = ExtResource("2_thoer")
@@ -793,6 +799,7 @@ horizontal_alignment = 1
 libraries/ = SubResource("AnimationLibrary_q40oo")
 autoplay = &"Hover"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657990198]
+[node name="Glass" type="Sprite2D" parent="." unique_id=657990198]
+z_index = 5
 position = Vector2(17, 14)
 texture = ExtResource("26_wi66d")

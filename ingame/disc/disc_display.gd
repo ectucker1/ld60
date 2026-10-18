@@ -25,6 +25,7 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		make_disc_unique()
 	add_to_group("discs")
+	z_index = 4
 
 func make_disc_unique() -> void:
 	disc.set_meta("original_path", disc.resource_path)
