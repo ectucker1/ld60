@@ -12,7 +12,7 @@ viewport_path = NodePath("SubViewport")
 [node name="NewsTicker" type="Node2D" unique_id=1354520848]
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1144934885]
-size = Vector2i(281, 24)
+size = Vector2i(350, 24)
 
 [node name="NewsTickerWorld" parent="SubViewport" unique_id=234397378 instance=ExtResource("1_ytrd1")]
 
