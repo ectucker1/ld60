@@ -88,6 +88,15 @@ func drop() -> void:
 		previous_slot.insert(self)
 		can_renter = true
 
+func animate_case():
+	var case = $Case
+	remove_child(case)
+	get_parent().add_child(case)
+	case.global_position = global_position
+	var tween = case.create_tween()
+	tween.tween_property(case, "global_position", Vector2(-4, 9), 0.5).as_relative().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_callback(func(): case.queue_free()).set_delay(0.2)
+
 func _physics_process(delta: float) -> void:
 	if not hovered:
 		last_hovered += delta
@@ -97,6 +106,7 @@ func _physics_process(delta: float) -> void:
 			if not bought:
 				ScoreManager.tickets -= 1
 				bought = true
+				animate_case()
 			start_dragging()
 	elif DragManager.dragged_object == self and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		drop()

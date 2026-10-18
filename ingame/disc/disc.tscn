@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ca8wqecmqhv22" path="res://ingame/disc/disc_display.gd" id="1_x8k46"]
 [ext_resource type="Texture2D" uid="uid://bxcmutb0fbnbk" path="res://ingame/disc/disc_highlihgt.png" id="2_opufo"]
-[ext_resource type="Texture2D" uid="uid://d35wcfhievs8a" path="res://ingame/disc/disc.png" id="2_x8k46"]
+[ext_resource type="Texture2D" uid="uid://c0a6jx1w4m0yq" path="res://ingame/disc/disc_common.png" id="3_7lvic"]
+[ext_resource type="Texture2D" uid="uid://b6kdf653rbrj" path="res://ingame/disc/empty_case.png" id="4_7lvic"]
 
 [sub_resource type="Animation" id="Animation_opufo"]
 resource_name = "HighlightGlow"
@@ -58,7 +59,11 @@ libraries/ = SubResource("AnimationLibrary_8epd5")
 autoplay = &"HighlightGlow"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532329662]
-texture = ExtResource("2_x8k46")
+texture = ExtResource("3_7lvic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=739673955]
 shape = SubResource("CircleShape2D_ijdr3")
+
+[node name="Case" type="Sprite2D" parent="." unique_id=1423502552]
+position = Vector2(-1, 0)
+texture = ExtResource("4_7lvic")
