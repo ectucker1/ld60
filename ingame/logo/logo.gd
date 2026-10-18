@@ -51,7 +51,7 @@ func _draw() -> void:
 	for i in range(0, 10):
 		var next = find_next_bounce(loc.pos, loc.out_dir)
 		draw_line(to_local(loc.pos), to_local(next.pos), Color.AQUA)
-		loc = BounceLoc.new(next.pos + next.out_dir * 5.0, next.out_dir)
+		loc = BounceLoc.new(next.pos + next.out_dir * 1.0, next.out_dir)
 
 class BounceLoc:
 	var pos: Vector2

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bgrw57i6q15ye"]
+
+[ext_resource type="Script" uid="uid://dpmdp365dquv4" path="res://ingame/popup/point_popup.gd" id="1_thsfl"]
+
+[node name="PointPopup" type="Node2D" unique_id=197192088]
+script = ExtResource("1_thsfl")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1682094132]
+offset_left = -30.0
+offset_top = -16.0
+offset_right = 30.0
+offset_bottom = 24.0
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=195681380]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

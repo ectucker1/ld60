@@ -35,6 +35,8 @@ var slots: Array[DiscSlot] = []
 var started := false
 var logo_scene := preload("res://ingame/logo/logo.tscn")
 
+var point_scene := preload("res://ingame/popup/point_popup.tscn")
+
 class TempBuff:
 	var disc: Disc
 	var time_left: float
@@ -92,7 +94,13 @@ func hit_edge(logo: CharacterBody2D) -> void:
 	
 	connector.on_wall_hit(self, score_context)
 	
-	ScoreManager.score += score_context.get_wall_score()
+	var score = score_context.get_wall_score()
+	ScoreManager.score += score
+	
+	var point_display = point_scene.instantiate()
+	add_child(point_display)
+	point_display.position = logo.global_position - Vector2(world_size.x, world_size.y) / 2
+	point_display.set_score(score)
 
 # Called every time a logo on this TV hits a corner
 func hit_corner(logo: CharacterBody2D) -> void:
@@ -109,7 +117,13 @@ func hit_corner(logo: CharacterBody2D) -> void:
 	
 	connector.on_corner_hit(self, score_context)
 	
-	ScoreManager.score += score_context.get_corner_score()
+	var score = score_context.get_corner_score()
+	ScoreManager.score += score
+	
+	var point_display = point_scene.instantiate()
+	add_child(point_display)
+	point_display.position = logo.global_position - Vector2(world_size.x, world_size.y) / 2
+	point_display.set_score(score)
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
