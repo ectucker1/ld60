@@ -17,9 +17,12 @@ func _area_exited(area: Area2D) -> void:
 	if overlapping_disc == area:
 		overlapping_disc = null
 
+var prev_pressed := false
+
 func _physics_process(delta: float) -> void:
-	if overlapping_disc != null and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if overlapping_disc != null and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) != prev_pressed:
 		if DragManager.dragged_object == overlapping_disc:
 			DragManager.dragged_object = null
 		overlapping_disc.queue_free()
 		overlapping_disc = null
+	prev_pressed = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)

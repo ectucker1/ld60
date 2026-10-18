@@ -17,6 +17,8 @@ var can_renter := false
 
 var bought := false
 
+var prev_pressed := false
+
 func _ready() -> void:
 	area_entered.connect(_area_entered)
 	area_exited.connect(_area_exited)
@@ -103,6 +105,8 @@ func _physics_process(delta: float) -> void:
 	if not hovered:
 		last_hovered += delta
 	
+	var press_changed = prev_pressed != Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+	
 	if last_hovered < 0.4 and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if DragManager.dragged_object == null and (bought or ScoreManager.tickets > 0):
 			if not bought:
@@ -110,8 +114,10 @@ func _physics_process(delta: float) -> void:
 				bought = true
 				animate_case()
 			start_dragging()
-	elif DragManager.dragged_object == self and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	elif DragManager.dragged_object == self and press_changed:
 		drop()
+	
+	prev_pressed = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 
 	if DragManager.dragged_object == self:
 		global_position = InputUtil.get_global_mouse_position(self)
