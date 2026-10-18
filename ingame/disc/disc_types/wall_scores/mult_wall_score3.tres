@@ -6,5 +6,6 @@
 script = ExtResource("2_jblg2")
 name = "WALL-X3"
 desc = "Increase wall hit mult by 20%"
+tier = 3
 wall_score_mult = 1.0
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

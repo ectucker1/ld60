@@ -7,4 +7,5 @@ script = ExtResource("1_ekm13")
 buff_amount = 1.55
 name = "Dog of Wall Avenue 3"
 desc = "Increase speed for each wall hit, reset on corner hit"
+tier = 3
 metadata/_custom_type_script = "uid://d1jamvncs61io"

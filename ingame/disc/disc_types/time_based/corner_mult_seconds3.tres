@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_xap1e")
 mult_bonus = 2.7
-name = "Slow is Smooth"
-desc = "Stacking mult for every second between corner hits"
+name = "Slowest is Smoothest"
+desc = "Huge Stacking mult for every second between corner hits"
+tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

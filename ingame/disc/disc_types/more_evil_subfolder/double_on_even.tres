@@ -6,5 +6,6 @@
 script = ExtResource("1_bkt4p")
 name = "Pond's Even"
 desc = "When this TV scores an even number, double it. Otherwise, score nothing."
+tier = 4
 num_in_pool = 1
 metadata/_custom_type_script = "uid://di1x8uqyx548j"

@@ -10,6 +10,9 @@ var name := "REPLACE_ME"
 @export
 var desc := "REPLACE_ME"
 
+##Tier for what color to show, 1 is white, 2 is green, 3 is blue, 4 is unique (orange)
+@export var tier = 1
+
 ## The number of these discs which should be available in the shop pool
 @export
 var num_in_pool := 0

@@ -7,6 +7,7 @@
 script = ExtResource("1_33cc1")
 name = "Quick and Mad the Sequel"
 desc = "DVD speed is increased by 15%"
+tier = 2
 num_in_pool = 2
 combine_to = ExtResource("1_qkla3")
 speed_mult = 1.15

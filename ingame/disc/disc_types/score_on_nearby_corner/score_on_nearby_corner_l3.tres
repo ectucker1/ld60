@@ -8,4 +8,5 @@ left = true
 bonus = 100
 name = "Score on left tv corner hit 3"
 desc = "Score 100 on left tv corner hit"
+tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

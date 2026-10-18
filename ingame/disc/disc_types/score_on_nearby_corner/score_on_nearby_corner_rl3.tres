@@ -8,5 +8,6 @@ left = true
 right = true
 bonus = 50
 name = "Score on right or left TV corner hit 3"
-desc = "Score 15 on right or left tv corner hit"
+desc = "Score 50 on right or left tv corner hit"
+tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

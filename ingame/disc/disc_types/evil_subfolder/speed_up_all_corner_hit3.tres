@@ -12,4 +12,5 @@ buff_amount = 4.0
 buff_time = 3.0
 name = "Want for Max Velocity"
 desc = "Give a massive boost in speed to adjanct TVs"
+tier = 3
 metadata/_custom_type_script = "uid://d1jamvncs61io"

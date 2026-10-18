@@ -13,6 +13,6 @@ buff_amount = 2.5
 buff_time = 2.5
 name = "Want for Velocity"
 desc = "Give a boost in speed to adjanct TVs"
-num_in_pool = 8
+num_in_pool = 7
 combine_to = ExtResource("1_dx8br")
 metadata/_custom_type_script = "uid://d1jamvncs61io"

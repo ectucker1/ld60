@@ -6,5 +6,6 @@
 script = ExtResource("1_vb5j0")
 name = "Attack of the Clones"
 desc = "Add an extra logo to the screen."
+tier = 4
 num_in_pool = 1
 metadata/_custom_type_script = "uid://crxqo4f5jiw4i"

@@ -7,6 +7,7 @@
 script = ExtResource("2_uk40o")
 name = "Corner Score Add"
 desc = "Add 15 to corner score"
+tier = 2
 num_in_pool = 3
 combine_to = ExtResource("1_kxbos")
 corner_score_add = 15

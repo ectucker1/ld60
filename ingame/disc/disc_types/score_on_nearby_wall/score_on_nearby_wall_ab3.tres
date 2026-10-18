@@ -9,4 +9,5 @@ down = true
 bonus = 4
 name = "Score on wall hit for TV above or below"
 desc = "Score 4 on wall hit for TV above or below"
+tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

@@ -7,7 +7,7 @@
 script = ExtResource("1_o0542")
 name = "Quick and Mad"
 desc = "DVD speed is increased by 10%"
-num_in_pool = 12
+num_in_pool = 8
 combine_to = ExtResource("1_aeuop")
 speed_mult = 1.1
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

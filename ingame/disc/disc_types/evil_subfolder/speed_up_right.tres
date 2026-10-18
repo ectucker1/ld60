@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpeedUpAdjacentDiscOnCorner" format=3 uid="uid://c12pj3arcssyc"]
+[gd_resource type="Resource" script_class="SpeedUpAdjacentDisc" format=3 uid="uid://c12pj3arcssyc"]
 
 [ext_resource type="Script" uid="uid://d1jamvncs61io" path="res://ingame/disc/disc_types/speed_up_adjacent.gd" id="1_ob37o"]
 
@@ -8,6 +8,7 @@ right = true
 buff_amount = 1.1
 name = "Speed up TV right"
 desc = "Speed up the TV to the right but slow this one down"
-num_in_pool = 2
+tier = 4
+num_in_pool = 1
 speed_mult = -0.25
 metadata/_custom_type_script = "uid://d1jamvncs61io"

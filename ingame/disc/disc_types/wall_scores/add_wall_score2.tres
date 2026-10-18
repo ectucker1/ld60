@@ -7,7 +7,8 @@
 script = ExtResource("1_wdl4g")
 name = "WALL-Y II RETURN TO EARTH"
 desc = "Add 2 points to score on wall hit"
-num_in_pool = 3
+tier = 2
+num_in_pool = 1
 combine_to = ExtResource("1_0pgkw")
 wall_score_add = 2
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

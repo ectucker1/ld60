@@ -13,6 +13,7 @@ buff_amount = 3.25
 buff_time = 2.75
 name = "Want for More Velocity"
 desc = "Give a bigger boost in speed to adjanct TVs"
+tier = 2
 num_in_pool = 1
 combine_to = ExtResource("1_y42uv")
 metadata/_custom_type_script = "uid://d1jamvncs61io"
