@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://1o5bdibbsjs1"]
+
+[ext_resource type="Script" uid="uid://c5uni7srnbv6u" path="res://ingame/trash/trash_can.gd" id="1_5tprd"]
+[ext_resource type="Texture2D" uid="uid://11pkiy1upfb" path="res://ingame/trash/trash_can.png" id="1_unl3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
+
+[node name="TrashCan" type="Area2D" unique_id=1185540062]
+script = ExtResource("1_5tprd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445772255]
+texture = ExtResource("1_unl3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566740354]
+shape = SubResource("RectangleShape2D_ijdr3")

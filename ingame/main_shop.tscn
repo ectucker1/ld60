@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://l05m0e4sfg18" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_mult.tres" id="15_bmf7w"]
 [ext_resource type="Resource" uid="uid://di4vuaomsjbca" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_add.tres" id="16_a5vqv"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
+[ext_resource type="PackedScene" uid="uid://1o5bdibbsjs1" path="res://ingame/trash/trash_can.tscn" id="23_7ruv5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_36i4f"]
 shader = ExtResource("5_7lqh5")
@@ -591,3 +592,6 @@ script = ExtResource("14_7lqh5")
 [node name="Tooltip" parent="." unique_id=904010136 instance=ExtResource("19_mk1uw")]
 visible = false
 z_index = 99
+
+[node name="TrashCan" parent="." unique_id=1185540062 instance=ExtResource("23_7ruv5")]
+position = Vector2(162, 87)
