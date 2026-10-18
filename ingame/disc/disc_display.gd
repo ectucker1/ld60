@@ -57,8 +57,14 @@ func drop() -> void:
 		# Swap with previous disc
 		if target_slots.front().inserted_disc != null:
 			var swap_disc = target_slots.front().inserted_disc
-			swap_disc.start_dragging()
-			swap_disc.can_renter = false
+			if swap_disc.disc == disc and disc.combine_to != null:
+				# Combine discs!
+				disc = disc.combine_to
+				swap_disc.start_dragging()
+				swap_disc.queue_free()
+			else:
+				swap_disc.start_dragging()
+				swap_disc.can_renter = false
 		# Insert into slot
 		previous_slot = target_slots.front()
 		target_slots.front().insert(self)

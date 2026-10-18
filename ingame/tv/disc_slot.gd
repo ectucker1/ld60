@@ -23,9 +23,10 @@ func insert(disc: DiscDisplay) -> bool:
 		disc.get_parent().remove_child(disc)
 		get_parent().get_parent().add_child(disc)
 	
-	disc.z_index = 1
 	if inserted_disc != null:
 		return false
+	
+	disc.z_index = 1
 	
 	if _insert_tween != null:
 		_insert_tween.stop()
