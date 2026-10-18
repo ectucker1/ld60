@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpeedUpSelfOnWall" format=3 uid="uid://bkrj87poquen2"]
+
+[ext_resource type="Script" uid="uid://b1ovtkhhux8jo" path="res://ingame/disc/disc_types/speed_up_self_on_wall.gd" id="1_ekm13"]
+
+[resource]
+script = ExtResource("1_ekm13")
+buff_amount = 1.55
+name = "Dog of Wall Avenue"
+desc = "Increase speed for each wall hit, reset on corner hit"
+metadata/_custom_type_script = "uid://d1jamvncs61io"

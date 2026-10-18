@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BonusCornerPerWallHit" format=3 uid="uid://bu0mraoqq1nv8"]
+
+[ext_resource type="Script" uid="uid://ig68febvj4td" path="res://ingame/disc/disc_types/bonus_corner_per_wall_hit.gd" id="1_oa2sc"]
+
+[resource]
+script = ExtResource("1_oa2sc")
+buff_amount = 3.0
+name = "Two walls make a corner"
+desc = "Gain stacking bonus to corner points for each wall hit, resets on corner hit"
+num_in_pool = 12
+metadata/_custom_type_script = "uid://d1jamvncs61io"

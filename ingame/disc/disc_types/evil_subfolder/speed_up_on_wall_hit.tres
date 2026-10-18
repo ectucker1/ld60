@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpeedUpSelfOnWall" format=3 uid="uid://b1v0mplb00gtg"]
+
+[ext_resource type="Resource" uid="uid://drmi8kx0drycs" path="res://ingame/disc/disc_types/evil_subfolder/speed_up_on_wall_hit2.tres" id="1_dxopm"]
+[ext_resource type="Script" uid="uid://b1ovtkhhux8jo" path="res://ingame/disc/disc_types/speed_up_self_on_wall.gd" id="1_e3wfk"]
+
+[resource]
+script = ExtResource("1_e3wfk")
+buff_amount = 1.0
+name = "Wolf of Wall Avenue"
+desc = "Increase speed for each wall hit, reset on corner hit"
+num_in_pool = 12
+combine_to = ExtResource("1_dxopm")
+metadata/_custom_type_script = "uid://d1jamvncs61io"

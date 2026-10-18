@@ -13,14 +13,17 @@
 [ext_resource type="Texture2D" uid="uid://cmy3n8dqfejxy" path="res://ingame/tv/tv_progress.png" id="9_mk1uw"]
 [ext_resource type="Script" uid="uid://dite8evymt610" path="res://ingame/shop.gd" id="10_7lqh5"]
 [ext_resource type="Texture2D" uid="uid://c3vpbbksp4q8d" path="res://ingame/refresh_icon.png" id="10_r8bkt"]
-[ext_resource type="Resource" uid="uid://c12pj3arcssyc" path="res://ingame/disc/disc_types/evil_subfolder/speed_up_right.tres" id="12_pvtff"]
+[ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult/speed_mult_10.tres" id="13_36i4f"]
 [ext_resource type="FontFile" uid="uid://bgd4cxc5xbopv" path="res://assets/fonts/analog_mono/AnalogMono_v1_1.ttf" id="13_lx1ox"]
 [ext_resource type="PackedScene" uid="uid://6gwf8hnwk7kp" path="res://ingame/ticket_gui.tscn" id="13_pvtff"]
 [ext_resource type="Script" uid="uid://dcpxkhkxic2gl" path="res://ingame/score_label.gd" id="14_7lqh5"]
+[ext_resource type="Resource" uid="uid://bo7i8kdpvko10" path="res://ingame/disc/disc_types/wall_scores/add_wall_score.tres" id="14_7ruv5"]
 [ext_resource type="Script" uid="uid://ckda6auq3ephe" path="res://ingame/refresh_button.gd" id="14_m0m8y"]
+[ext_resource type="Resource" uid="uid://l05m0e4sfg18" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_mult.tres" id="15_bmf7w"]
+[ext_resource type="Resource" uid="uid://di4vuaomsjbca" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_add.tres" id="16_a5vqv"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk1uw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqdsg"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -44,13 +47,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8bkt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wi66d"]
 viewport_path = NodePath("TVConnector/TopLeft/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36i4f"]
 size = Vector2(56, 40)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6oar8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q40oo"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -74,13 +77,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_36i4f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_y437b"]
 viewport_path = NodePath("TVConnector/TopMiddle/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvtff"]
 size = Vector2(72, 48)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bl64n"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -104,13 +107,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bmf7w"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u0ij1"]
 viewport_path = NodePath("TVConnector/TopRight/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oar8"]
 size = Vector2(43, 40)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5vqv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnfix"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -134,13 +137,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fqdsg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dx04f"]
 viewport_path = NodePath("TVConnector/BottomLeft/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk1uw"]
 size = Vector2(75, 60)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi66d"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpvwb"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -164,13 +167,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q40oo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nh7q2"]
 viewport_path = NodePath("TVConnector/BottomMiddle/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
 size = Vector2(59, 45)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y437b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ceqm1"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -194,7 +197,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bl64n"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_141ji"]
 viewport_path = NodePath("TVConnector/BottomRight/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8bkt"]
@@ -227,8 +230,8 @@ world_size = Vector2i(52, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopLeft" unique_id=1582113759]
 visible = false
-material = SubResource("ShaderMaterial_mk1uw")
-texture = SubResource("ViewportTexture_r8bkt")
+material = SubResource("ShaderMaterial_fqdsg")
+texture = SubResource("ViewportTexture_wi66d")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -262,7 +265,7 @@ texture_progress = ExtResource("9_mk1uw")
 position = Vector2(36, -42)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(70, 49)
-unlock_at = 100
+unlock_at = 50
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/TopMiddle" unique_id=1039886690]
 handle_input_locally = false
@@ -277,8 +280,8 @@ world_size = Vector2i(70, 49)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopMiddle" unique_id=1332464654]
 visible = false
-material = SubResource("ShaderMaterial_6oar8")
-texture = SubResource("ViewportTexture_36i4f")
+material = SubResource("ShaderMaterial_q40oo")
+texture = SubResource("ViewportTexture_y437b")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -312,7 +315,7 @@ texture_progress = ExtResource("9_mk1uw")
 position = Vector2(110, -49)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(40, 40)
-unlock_at = 3000
+unlock_at = 2500
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/TopRight" unique_id=2109455609]
 handle_input_locally = false
@@ -327,8 +330,8 @@ world_size = Vector2i(40, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopRight" unique_id=1817236573]
 visible = false
-material = SubResource("ShaderMaterial_7ruv5")
-texture = SubResource("ViewportTexture_bmf7w")
+material = SubResource("ShaderMaterial_bl64n")
+texture = SubResource("ViewportTexture_u0ij1")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -362,7 +365,6 @@ texture_progress = ExtResource("9_mk1uw")
 position = Vector2(-40, 17)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(72, 60)
-unlock_at = 2000
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/BottomLeft" unique_id=1528084224]
 handle_input_locally = false
@@ -377,8 +379,8 @@ world_size = Vector2i(72, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft" unique_id=846064115]
 visible = false
-material = SubResource("ShaderMaterial_a5vqv")
-texture = SubResource("ViewportTexture_fqdsg")
+material = SubResource("ShaderMaterial_wnfix")
+texture = SubResource("ViewportTexture_dx04f")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -412,7 +414,7 @@ texture_progress = ExtResource("9_mk1uw")
 position = Vector2(36, 37)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(56, 45)
-unlock_at = 4000
+unlock_at = 10000
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/BottomMiddle" unique_id=1336266280]
 handle_input_locally = false
@@ -427,8 +429,8 @@ world_size = Vector2i(56, 45)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle" unique_id=450842524]
 visible = false
-material = SubResource("ShaderMaterial_wi66d")
-texture = SubResource("ViewportTexture_q40oo")
+material = SubResource("ShaderMaterial_fpvwb")
+texture = SubResource("ViewportTexture_nh7q2")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -477,8 +479,8 @@ world_size = Vector2i(51, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomRight" unique_id=1294684008]
 visible = false
-material = SubResource("ShaderMaterial_y437b")
-texture = SubResource("ViewportTexture_bl64n")
+material = SubResource("ShaderMaterial_ceqm1")
+texture = SubResource("ViewportTexture_141ji")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -521,25 +523,25 @@ script = ExtResource("10_7lqh5")
 position = Vector2(-120, 65)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D" unique_id=1277677675 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("12_pvtff")
+disc = ExtResource("13_36i4f")
 
 [node name="Marker2D2" type="Marker2D" parent="DaShop/Markers" unique_id=300860859]
 position = Vector2(-119, 37)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D2" unique_id=1563653671 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("12_pvtff")
+disc = ExtResource("14_7ruv5")
 
 [node name="Marker2D3" type="Marker2D" parent="DaShop/Markers" unique_id=55541917]
 position = Vector2(-142, 37)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D3" unique_id=1871886612 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("12_pvtff")
+disc = ExtResource("15_bmf7w")
 
 [node name="Marker2D4" type="Marker2D" parent="DaShop/Markers" unique_id=2007260436]
 position = Vector2(-142, 15)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D4" unique_id=1809058538 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("12_pvtff")
+disc = ExtResource("16_a5vqv")
 
 [node name="Tickets" parent="DaShop" unique_id=293473471 instance=ExtResource("13_pvtff")]
 position = Vector2(-147, -35)

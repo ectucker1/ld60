@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CornerMultTimePass" format=3 uid="uid://coox8gtfcgx2v"]
+
+[ext_resource type="Script" uid="uid://daq1wk0ssdhx1" path="res://ingame/disc/disc_types/time_based/corner_mult_for_time_pass.gd" id="1_xap1e"]
+
+[resource]
+script = ExtResource("1_xap1e")
+mult_bonus = 2.7
+name = "Slow is Smooth"
+desc = "Stacking mult for every second between corner hits"
+metadata/_custom_type_script = "uid://dru57ptcau8xr"
