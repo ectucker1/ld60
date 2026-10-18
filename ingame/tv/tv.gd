@@ -79,6 +79,15 @@ func get_speed_mult() -> float:
 		mult += disc.speed_mult
 	return mult
 
+func get_global_center():
+	return Vector2(world_size.x, world_size.y) / 2
+
+func spawn_point_popup(loc: Vector2, amount: int):
+	var point_display = point_scene.instantiate()
+	add_child(point_display)
+	point_display.position = loc - get_global_center()
+	point_display.set_score(amount)
+
 # Called every time a logo on this TV hits an edge
 func hit_edge(logo: CharacterBody2D) -> void:
 	var score_context = ScoreContext.new()
@@ -97,10 +106,7 @@ func hit_edge(logo: CharacterBody2D) -> void:
 	var score = score_context.get_wall_score()
 	ScoreManager.score += score
 	
-	var point_display = point_scene.instantiate()
-	add_child(point_display)
-	point_display.position = logo.global_position - Vector2(world_size.x, world_size.y) / 2
-	point_display.set_score(score)
+	spawn_point_popup(logo.global_position, score)
 
 # Called every time a logo on this TV hits a corner
 func hit_corner(logo: CharacterBody2D) -> void:
@@ -120,10 +126,7 @@ func hit_corner(logo: CharacterBody2D) -> void:
 	var score = score_context.get_corner_score()
 	ScoreManager.score += score
 	
-	var point_display = point_scene.instantiate()
-	add_child(point_display)
-	point_display.position = logo.global_position - Vector2(world_size.x, world_size.y) / 2
-	point_display.set_score(score)
+	spawn_point_popup(logo.global_position, score)
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
