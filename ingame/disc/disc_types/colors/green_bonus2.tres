@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CountColorExtraDisc" format=3 uid="uid://cumytqkyl7i61"]
+
+[ext_resource type="Resource" uid="uid://dhagjcks5oo50" path="res://ingame/disc/disc_types/colors/green_bonus3.tres" id="1_olfr0"]
+[ext_resource type="Script" uid="uid://c0l6vu1pm27p4" path="res://ingame/disc/disc_types/colors/count_color_extra_disc.gd" id="2_yuqia"]
+
+[resource]
+script = ExtResource("2_yuqia")
+target_color = Color(0, 1, 0, 1)
+extra_add = 100
+name = "Shade of Cash 2"
+desc = "Corner hit is an extra 100 if the color is green"
+num_in_pool = 1
+combine_to = ExtResource("1_olfr0")
+metadata/_custom_type_script = "uid://c0l6vu1pm27p4"

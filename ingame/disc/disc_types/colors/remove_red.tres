@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RemoveColorDisc" format=3 uid="uid://bp6dpigvv2dsi"]
+
+[ext_resource type="Script" uid="uid://p8avbcm7dtu7" path="res://ingame/disc/disc_types/colors/remove_color_disc.gd" id="1_gppb4"]
+
+[resource]
+script = ExtResource("1_gppb4")
+name = "Red light blocker"
+desc = "DVD no longer turns red"
+num_in_pool = 4
+metadata/_custom_type_script = "uid://p8avbcm7dtu7"
