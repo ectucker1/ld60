@@ -37,7 +37,8 @@ func refresh() -> void:
 	for marker in $Markers.get_children():
 		for child in marker.get_children():
 			if child is DiscDisplay:
-				pool.push_back(child.disc)
+				var original_disc = load(child.disc.get_meta("original_path"))
+				pool.push_back(original_disc)
 			child.queue_free()
 	
 	# Spawn new discs
