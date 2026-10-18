@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7oknl5jpnkkh" path="res://ingame/ticker/news_ticker.gd" id="1_ex46r"]
 [ext_resource type="FontFile" uid="uid://bt8bllgnhpajx" path="res://assets/fonts/not_jam_laika/Not Jam Laika 11.ttf" id="1_lqibe"]
 [ext_resource type="Script" uid="uid://dcpxkhkxic2gl" path="res://ingame/score_label.gd" id="2_lqibe"]
+[ext_resource type="Script" uid="uid://cyvta3rlxoage" path="res://ingame/ticker/competitor_score_lbl.gd" id="4_ex46r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2fo0"]
 content_margin_left = 2.0
@@ -18,7 +19,23 @@ offset_right = 532.0
 offset_bottom = 22.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h2fo0")
 
-[node name="ScoreLabel" type="Label" parent="Offset" unique_id=914022119]
+[node name="ScoreContainer" type="HBoxContainer" parent="Offset" unique_id=99263909]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="ScoreLabel" type="Label" parent="Offset/ScoreContainer" unique_id=914022119]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.40950006, 0.91, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_lqibe")
+theme_override_font_sizes/font_size = 22
+text = "Score: Wow"
+script = ExtResource("2_lqibe")
+
+[node name="CompetitorScoreLbl" type="Label" parent="Offset/ScoreContainer" unique_id=634138926]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_colors/font_color = Color(0.91, 0, 0.1971667, 1)
@@ -26,12 +43,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("1_lqibe")
 theme_override_font_sizes/font_size = 22
 text = "Score: Wow"
-script = ExtResource("2_lqibe")
+script = ExtResource("4_ex46r")
 
 [node name="NewsLabel" type="Label" parent="Offset" unique_id=281433386]
 layout_mode = 2
 offset_transform_enabled = true
-theme_override_colors/font_color = Color(0.9098039, 0, 0.19607843, 1)
+theme_override_colors/font_color = Color(0.30030075, 0.49448746, 0.74704915, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("1_lqibe")
 theme_override_font_sizes/font_size = 22

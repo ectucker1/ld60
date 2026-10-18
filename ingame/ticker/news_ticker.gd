@@ -1,7 +1,8 @@
 extends Node2D
 
 
-@onready var score_label = $Offset/ScoreLabel
+@onready var score_container = $Offset/ScoreContainer
+@onready var score_label = $Offset/ScoreContainer/ScoreLabel
 @onready var news_label = $Offset/NewsLabel
 
 var _tween: Tween
@@ -25,10 +26,10 @@ func show_news(text: String):
 	score_label.offset_transform_position = Vector2.ZERO
 	
 	_tween = create_tween()
-	_tween.tween_property(score_label, "offset_transform_position", Vector2(0, -24), 0.8)
+	_tween.tween_property(score_container, "offset_transform_position", Vector2(0, -24), 0.8)
 	_tween.parallel().tween_property(news_label, "offset_transform_position", Vector2.ZERO, 0.8)
 	_tween.tween_property(news_label, "offset_transform_position", Vector2(-news_label.get_combined_minimum_size().x, 0), news_length).set_delay(1.0)
-	_tween.tween_property(score_label, "offset_transform_position", Vector2.ZERO, 0.8).set_delay(0.0)
+	_tween.tween_property(score_container, "offset_transform_position", Vector2.ZERO, 0.8).set_delay(0.0)
 	_tween.parallel().tween_property(news_label, "offset_transform_position", Vector2(0, 48), 0.8).as_relative()
 	_tween.play()
 
