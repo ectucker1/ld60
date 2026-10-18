@@ -29,7 +29,7 @@ func _ready() -> void:
 	
 	# Rig angle for the first logo
 	if ScoreManager.score < 20:
-		direction = Vector2(0.094, -0.18).normalized()
+		direction = Vector2(0.091, -0.18).normalized()
 	
 	modulate = colors.pick_random()
 
