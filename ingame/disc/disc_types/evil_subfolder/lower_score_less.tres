@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SpeedUpAdjacentDisc" format=3 uid="uid://c4f4e71f5xn84"]
+
+[ext_resource type="Script" uid="uid://bu7iqc2uncr6i" path="res://ingame/disc/disc_types/lower_score_less.gd" id="1_flxbi"]
+
+[resource]
+script = ExtResource("1_flxbi")
+below = true
+buff_amount = 1.0
+name = "High and Mighty"
+desc = "Increase corner and wall mult, TV below loses wall and corner mult"
+num_in_pool = 5
+wall_score_mult = 1.0
+corner_score_mult = 1.0
+metadata/_custom_type_script = "uid://d1jamvncs61io"
