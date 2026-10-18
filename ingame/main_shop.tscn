@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://d0uu67r4e4ksq" path="res://ingame/cost_label.gd" id="25_a5vqv"]
 [ext_resource type="Texture2D" uid="uid://bsf1tcfyymabw" path="res://ingame/Screen.png" id="26_wi66d"]
 [ext_resource type="Shader" uid="uid://c357dy851mrtf" path="res://ingame/clouds.gdshader" id="27_clouds"]
+[ext_resource type="Texture2D" uid="uid://d24gtxx27l72q" path="res://util/white.png" id="29_y437b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
 shader = ExtResource("5_7lqh5")
@@ -312,8 +313,11 @@ _data = {
 
 [node name="Backdrop" type="Sprite2D" parent="." unique_id=319077051]
 z_index = -5
+texture_repeat = 3
 position = Vector2(0, 8)
 texture = ExtResource("1_fqdsg")
+region_enabled = true
+region_rect = Rect2(0, -80, 400, 400)
 
 [node name="SlotCovers" type="Sprite2D" parent="." unique_id=2131302169]
 z_index = 2
@@ -844,3 +848,18 @@ autoplay = &"Hover"
 z_index = 5
 position = Vector2(17, 14)
 texture = ExtResource("26_wi66d")
+
+[node name="BlackBars" type="Node2D" parent="." unique_id=1019688413]
+modulate = Color(0.043137256, 0.05490196, 0.039215688, 1)
+z_index = 999
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="BlackBars" unique_id=203988135]
+position = Vector2(-600, 0)
+scale = Vector2(100, 100)
+texture = ExtResource("29_y437b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BlackBars" unique_id=2062230010]
+position = Vector2(600, 0)
+scale = Vector2(100, 100)
+texture = ExtResource("29_y437b")
