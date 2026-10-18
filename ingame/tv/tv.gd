@@ -136,6 +136,7 @@ func hit_corner(logo: CharacterBody2D) -> int:
 	ScoreManager.score += score
 
 	spawn_point_popup(logo.global_position, score)
+	$Sprite2D.corner_burst(score)
 	return score
 
 func get_inside_world():
