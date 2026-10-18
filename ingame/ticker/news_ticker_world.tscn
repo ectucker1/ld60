@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c2w4scb8sll4j"]
+
+[ext_resource type="Script" uid="uid://b7oknl5jpnkkh" path="res://ingame/ticker/news_ticker.gd" id="1_ex46r"]
+[ext_resource type="FontFile" uid="uid://bt8bllgnhpajx" path="res://assets/fonts/not_jam_laika/Not Jam Laika 11.ttf" id="1_lqibe"]
+[ext_resource type="Script" uid="uid://dcpxkhkxic2gl" path="res://ingame/score_label.gd" id="2_lqibe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2fo0"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+
+[node name="NewsTickerWorld" type="Node2D" unique_id=234397378]
+script = ExtResource("1_ex46r")
+
+[node name="Offset" type="PanelContainer" parent="." unique_id=1781023418]
+custom_minimum_size = Vector2(300, 22)
+offset_right = 532.0
+offset_bottom = 22.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h2fo0")
+
+[node name="ScoreLabel" type="Label" parent="Offset" unique_id=914022119]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.91, 0, 0.1971667, 1)
+theme_override_fonts/font = ExtResource("1_lqibe")
+theme_override_font_sizes/font_size = 22
+text = "Score: Wow"
+script = ExtResource("2_lqibe")
+
+[node name="NewsLabel" type="Label" parent="Offset" unique_id=281433386]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.9098039, 0, 0.19607843, 1)
+theme_override_fonts/font = ExtResource("1_lqibe")
+theme_override_font_sizes/font_size = 22

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dans3f0f2a2eo"]
+
+[ext_resource type="PackedScene" uid="uid://c2w4scb8sll4j" path="res://ingame/ticker/news_ticker_world.tscn" id="1_ytrd1"]
+[ext_resource type="Shader" uid="uid://db7bn8oxca481" path="res://ingame/ticker/dot_display.gdshader" id="2_oo5js"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytrd1"]
+shader = ExtResource("2_oo5js")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ijdr3"]
+viewport_path = NodePath("SubViewport")
+
+[node name="NewsTicker" type="Node2D" unique_id=1354520848]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1144934885]
+size = Vector2i(300, 24)
+
+[node name="NewsTickerWorld" parent="SubViewport" unique_id=234397378 instance=ExtResource("1_ytrd1")]
+
+[node name="TickerSprite" type="Sprite2D" parent="." unique_id=1694128484]
+material = SubResource("ShaderMaterial_ytrd1")
+texture = SubResource("ViewportTexture_ijdr3")

@@ -22,9 +22,15 @@ func find_tv(node) -> TV:
 
 func _ready() -> void:
 	tv = find_tv(self)
+	
 	randomize()
 	var angle = randf() * TAU
 	direction = Vector2.RIGHT.rotated(angle)
+	
+	# Rig angle for the first logo
+	if ScoreManager.score < 20:
+		direction = Vector2(0.094, -0.18).normalized()
+	
 	modulate = colors.pick_random()
 
 func _physics_process(delta: float) -> void:
