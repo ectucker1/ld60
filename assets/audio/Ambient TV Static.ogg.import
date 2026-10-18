@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jtgniahx7b7r"
+path="res://.godot/imported/Ambient TV Static.ogg-2b25d495af7dc2e692c60197375c9fec.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Ambient TV Static.ogg"
+dest_files=["res://.godot/imported/Ambient TV Static.ogg-2b25d495af7dc2e692c60197375c9fec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

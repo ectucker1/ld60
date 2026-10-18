@@ -32,6 +32,8 @@ func insert(disc: DiscDisplay) -> bool:
 	if _insert_tween != null:
 		_insert_tween.stop()
 	
+	GlobalSounds.play("CDInsert")
+	
 	inserted_disc = disc
 	disc.global_position = $HeldDiscAnimStart.global_position
 	_insert_tween = get_tree().create_tween()

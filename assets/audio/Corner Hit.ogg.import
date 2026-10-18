@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1bc0lkmgdi5k"
+path="res://.godot/imported/Corner Hit.ogg-e0b3fb181dc280a5a4f3baa0b916cffe.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Corner Hit.ogg"
+dest_files=["res://.godot/imported/Corner Hit.ogg-e0b3fb181dc280a5a4f3baa0b916cffe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

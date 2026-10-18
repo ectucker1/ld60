@@ -4,6 +4,13 @@
 [ext_resource type="Script" uid="uid://ml06xufnntuj" path="res://util/audio/global_sounds.gd" id="1_31spj"]
 [ext_resource type="AudioStream" uid="uid://hquektxfiyvv" path="res://util/audio/hover.ogg" id="2_cf02l"]
 [ext_resource type="AudioStream" uid="uid://cyr17jn64ctxo" path="res://util/audio/press.ogg" id="3_yh5r5"]
+[ext_resource type="AudioStream" uid="uid://d1bc0lkmgdi5k" path="res://assets/audio/Corner Hit.ogg" id="5_0s1bv"]
+[ext_resource type="AudioStream" uid="uid://d0c2nrowuacim" path="res://assets/audio/Ambient Rain.ogg" id="5_dejh5"]
+[ext_resource type="AudioStream" uid="uid://ccqhihk063tv" path="res://assets/audio/CD Insert.ogg" id="6_ftaf7"]
+[ext_resource type="AudioStream" uid="uid://4kw4wiid7fap" path="res://assets/audio/Ambient Shop Noises.ogg" id="6_p8wga"]
+[ext_resource type="AudioStream" uid="uid://cwdqcspsfohbn" path="res://assets/audio/Shop Refresh.ogg" id="7_amqt0"]
+[ext_resource type="AudioStream" uid="uid://jtgniahx7b7r" path="res://assets/audio/Ambient TV Static.ogg" id="7_b4sgj"]
+[ext_resource type="AudioStream" uid="uid://wlommsdn8cgw" path="res://assets/audio/The Corner Shop.ogg" id="8_0s1bv"]
 
 [node name="GlobalSounds" type="Node" unique_id=516643137]
 process_mode = 3
@@ -21,3 +28,39 @@ bus = &"Effects"
 [node name="Pressed" type="AudioStreamPlayer" parent="." unique_id=1747181065]
 stream = ExtResource("3_yh5r5")
 bus = &"Effects"
+
+[node name="CornerHit" type="AudioStreamPlayer" parent="." unique_id=384320907]
+stream = ExtResource("5_0s1bv")
+bus = &"Effects"
+
+[node name="CDInsert" type="AudioStreamPlayer" parent="." unique_id=95009603]
+stream = ExtResource("6_ftaf7")
+bus = &"Effects"
+
+[node name="RefreshShop" type="AudioStreamPlayer" parent="." unique_id=1964334437]
+stream = ExtResource("7_amqt0")
+bus = &"Effects"
+
+[node name="AmbientRain" type="AudioStreamPlayer" parent="." unique_id=1009742843]
+stream = ExtResource("5_dejh5")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="AmbientShop" type="AudioStreamPlayer" parent="." unique_id=1951261581]
+stream = ExtResource("6_p8wga")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="AmbientTVStatic" type="AudioStreamPlayer" parent="." unique_id=93205934]
+stream = ExtResource("7_b4sgj")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1036996654]
+stream = ExtResource("8_0s1bv")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

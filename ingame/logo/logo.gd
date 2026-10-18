@@ -51,6 +51,7 @@ func hit_corner():
 	tv.hit_corner(self)
 	var bend = randf() * TAU * 0.1
 	direction = direction.rotated(bend)
+	GlobalSounds.play("CornerHit")
 
 func _draw() -> void:
 	var loc = BounceLoc.new(global_position, direction)

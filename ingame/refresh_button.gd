@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 		message = "Refresh the shop!"
 
 func _pressed() -> void:
+	GlobalSounds.play("RefreshShop")
 	shop.refresh()
