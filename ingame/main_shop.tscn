@@ -761,11 +761,15 @@ metadata/_edit_lock_ = true
 position = Vector2(-153, -37)
 
 [node name="Node2D" type="Node2D" parent="DaShop" unique_id=1870207917]
-position = Vector2(-176, 8)
+position = Vector2(-156, 19)
 
 [node name="RefreshButton" type="Button" parent="DaShop/Node2D" unique_id=790873555 node_paths=PackedStringArray("shop")]
-offset_right = 32.0
-offset_bottom = 16.0
+modulate = Color(1, 1, 1, 0.7607843)
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 24.0
+offset_bottom = 14.0
+theme_override_constants/h_separation = 2
 icon = ExtResource("10_r8bkt")
 icon_alignment = 1
 script = ExtResource("14_m0m8y")
