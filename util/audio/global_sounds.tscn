@@ -11,10 +11,17 @@
 [ext_resource type="AudioStream" uid="uid://cwdqcspsfohbn" path="res://assets/audio/Shop Refresh.ogg" id="7_amqt0"]
 [ext_resource type="AudioStream" uid="uid://jtgniahx7b7r" path="res://assets/audio/Ambient TV Static.ogg" id="7_b4sgj"]
 [ext_resource type="AudioStream" uid="uid://wlommsdn8cgw" path="res://assets/audio/The Corner Shop.ogg" id="8_0s1bv"]
+[ext_resource type="Script" uid="uid://brv4r6h2qbfeo" path="res://util/audio/collection/audio_stream_col_randomizer.gd" id="9_cdrnd"]
+[ext_resource type="AudioStream" uid="uid://b6fgab4bb2yl4" path="res://assets/audio/CD Pickup 01.ogg" id="10_cdp01"]
+[ext_resource type="AudioStream" uid="uid://k713o3tqv8bq" path="res://assets/audio/CD Pickup 03.ogg" id="10_cdp03"]
+[ext_resource type="AudioStream" uid="uid://dxaurys724iu2" path="res://assets/audio/CD Pickup 04.ogg" id="10_cdp04"]
+[ext_resource type="AudioStream" uid="uid://c7smjagt5cx0r" path="res://assets/audio/CD Pickup 05.ogg" id="10_cdp05"]
 
 [node name="GlobalSounds" type="Node" unique_id=516643137]
 process_mode = 3
 script = ExtResource("1_31spj")
+corner_pitch_range = Vector2(1.05, 0.75)
+corner_boom_start = 0.3
 
 [node name="Hover" type="Node" parent="." unique_id=1436362784]
 script = ExtResource("1_5slqt")
@@ -23,10 +30,12 @@ pitch_offset = 0.05
 
 [node name="Hover" type="AudioStreamPlayer" parent="Hover" unique_id=1021262688]
 stream = ExtResource("2_cf02l")
+volume_db = -18.0
 bus = &"Effects"
 
 [node name="Pressed" type="AudioStreamPlayer" parent="." unique_id=1747181065]
 stream = ExtResource("3_yh5r5")
+volume_db = -5.0
 bus = &"Effects"
 
 [node name="CornerHit" type="AudioStreamPlayer" parent="." unique_id=384320907]
@@ -35,32 +44,60 @@ bus = &"Effects"
 
 [node name="CDInsert" type="AudioStreamPlayer" parent="." unique_id=95009603]
 stream = ExtResource("6_ftaf7")
+volume_db = -5.0
 bus = &"Effects"
 
 [node name="RefreshShop" type="AudioStreamPlayer" parent="." unique_id=1964334437]
 stream = ExtResource("7_amqt0")
+volume_db = -6.0
+bus = &"Effects"
+
+[node name="CDPickup" type="Node" parent="." unique_id=2086383294]
+script = ExtResource("9_cdrnd")
+
+[node name="PageTurn1" type="AudioStreamPlayer" parent="CDPickup" unique_id=409667473]
+stream = ExtResource("10_cdp01")
+volume_db = -35.0
+bus = &"Effects"
+
+[node name="PageTurn3" type="AudioStreamPlayer" parent="CDPickup" unique_id=782210928]
+stream = ExtResource("10_cdp03")
+volume_db = -35.0
+bus = &"Effects"
+
+[node name="PageTurn4" type="AudioStreamPlayer" parent="CDPickup" unique_id=36476153]
+stream = ExtResource("10_cdp04")
+volume_db = -35.0
+bus = &"Effects"
+
+[node name="PageTurn5" type="AudioStreamPlayer" parent="CDPickup" unique_id=866912142]
+stream = ExtResource("10_cdp05")
+volume_db = -35.0
 bus = &"Effects"
 
 [node name="AmbientRain" type="AudioStreamPlayer" parent="." unique_id=1009742843]
 stream = ExtResource("5_dejh5")
+volume_db = -20.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="AmbientShop" type="AudioStreamPlayer" parent="." unique_id=1951261581]
 stream = ExtResource("6_p8wga")
+volume_db = -5.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="AmbientTVStatic" type="AudioStreamPlayer" parent="." unique_id=93205934]
+[node name="TVStatic" type="AudioStreamPlayer" parent="." unique_id=93205934]
 stream = ExtResource("7_b4sgj")
-autoplay = true
+volume_db = -10.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1036996654]
 stream = ExtResource("8_0s1bv")
+volume_db = -1.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true

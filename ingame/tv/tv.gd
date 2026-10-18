@@ -113,8 +113,8 @@ func hit_edge(logo: CharacterBody2D) -> void:
 	
 	spawn_point_popup(logo.global_position, score)
 
-# Called every time a logo on this TV hits a corner
-func hit_corner(logo: CharacterBody2D) -> void:
+# Called every time a logo on this TV hits a corner, returns the score awarded
+func hit_corner(logo: CharacterBody2D) -> int:
 	var score_context = ScoreContext.new()
 	score_context.source_tv = context
 	score_context.type = ScoreContext.ScoreType.CORNER
@@ -134,8 +134,9 @@ func hit_corner(logo: CharacterBody2D) -> void:
 	
 	var score = score_context.get_corner_score()
 	ScoreManager.score += score
-	
+
 	spawn_point_popup(logo.global_position, score)
+	return score
 
 func get_inside_world():
 	return $SubViewport/InsideTVWorld
@@ -153,6 +154,7 @@ func _physics_process(delta: float) -> void:
 		var logo = logo_scene.instantiate()
 		get_inside_world().add_child(logo)
 		logo.global_position = get_global_center()
+		GlobalSounds.start_tv_static(self)
 
 	
 	$CenterContainer/UnlockProgress.value = 100.0 * float(ScoreManager.score) / unlock_at
