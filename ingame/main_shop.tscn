@@ -211,10 +211,12 @@ texture = ExtResource("1_0qb78")
 [node name="TVConnector" type="Node2D" parent="." unique_id=1554303878]
 script = ExtResource("2_thoer")
 
-[node name="TopLeft" type="Area2D" parent="TVConnector" unique_id=659304647]
+[node name="TopLeft" type="Area2D" parent="TVConnector" unique_id=659304647 node_paths=PackedStringArray("right", "below")]
 position = Vector2(-43, -53)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(52, 40)
+right = NodePath("../TopMiddle")
+below = NodePath("../BottomLeft")
 unlock_at = -150
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/TopLeft" unique_id=2098003475]
@@ -261,10 +263,13 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
-[node name="TopMiddle" type="Area2D" parent="TVConnector" unique_id=1360717503]
+[node name="TopMiddle" type="Area2D" parent="TVConnector" unique_id=1360717503 node_paths=PackedStringArray("left", "right", "below")]
 position = Vector2(36, -42)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(70, 49)
+left = NodePath("../TopLeft")
+right = NodePath("../TopRight")
+below = NodePath("../BottomMiddle")
 unlock_at = 50
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/TopMiddle" unique_id=1039886690]
@@ -311,10 +316,12 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
-[node name="TopRight" type="Area2D" parent="TVConnector" unique_id=1368384317]
+[node name="TopRight" type="Area2D" parent="TVConnector" unique_id=1368384317 node_paths=PackedStringArray("left", "below")]
 position = Vector2(110, -49)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(40, 40)
+left = NodePath("../TopMiddle")
+below = NodePath("../BottomRight")
 unlock_at = 2500
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/TopRight" unique_id=2109455609]
@@ -361,10 +368,12 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
-[node name="BottomLeft" type="Area2D" parent="TVConnector" unique_id=1871451394]
+[node name="BottomLeft" type="Area2D" parent="TVConnector" unique_id=1871451394 node_paths=PackedStringArray("right", "above")]
 position = Vector2(-40, 17)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(72, 60)
+right = NodePath("../BottomMiddle")
+above = NodePath("../TopLeft")
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/BottomLeft" unique_id=1528084224]
 handle_input_locally = false
@@ -410,10 +419,13 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
-[node name="BottomMiddle" type="Area2D" parent="TVConnector" unique_id=476473176]
+[node name="BottomMiddle" type="Area2D" parent="TVConnector" unique_id=476473176 node_paths=PackedStringArray("left", "right", "above")]
 position = Vector2(36, 37)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(56, 45)
+left = NodePath("../BottomLeft")
+right = NodePath("../BottomRight")
+above = NodePath("../TopMiddle")
 unlock_at = 10000
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/BottomMiddle" unique_id=1336266280]
@@ -460,10 +472,12 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
-[node name="BottomRight" type="Area2D" parent="TVConnector" unique_id=47487788]
+[node name="BottomRight" type="Area2D" parent="TVConnector" unique_id=47487788 node_paths=PackedStringArray("left", "above")]
 position = Vector2(109, 24)
 script = ExtResource("2_o7wyp")
 world_size = Vector2i(51, 50)
+left = NodePath("../BottomMiddle")
+above = NodePath("../TopRight")
 unlock_at = 5000
 
 [node name="SubViewport" type="SubViewport" parent="TVConnector/BottomRight" unique_id=1673970501]
