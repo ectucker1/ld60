@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b6o8vuhttgq3m" path="res://ingame/tooltip_display.gd" id="1_2psm3"]
 [ext_resource type="FontFile" uid="uid://bt8bllgnhpajx" path="res://assets/fonts/not_jam_laika/Not Jam Laika 11.ttf" id="2_0ognk"]
+[ext_resource type="StyleBox" uid="uid://dk8jd675mmo4e" path="res://ingame/tooltip_box.tres" id="2_5hj05"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ognk"]
+content_margin_left = 3.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 1.0
+bg_color = Color(0.19, 0.19, 0.19, 0.78039217)
+corner_detail = 5
 
 [node name="Tooltip" type="Node2D" unique_id=904010136]
 script = ExtResource("1_2psm3")
@@ -11,26 +20,40 @@ offset_right = 22.0
 offset_bottom = 21.0
 mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="DiscTooltip" unique_id=1008576519]
+[node name="Panel" type="PanelContainer" parent="DiscTooltip" unique_id=1008576519]
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_5hj05")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DiscTooltip/PanelContainer" unique_id=1605670854]
+[node name="Layout" type="VBoxContainer" parent="DiscTooltip/Panel" unique_id=1605670854]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="DiscName" type="Label" parent="DiscTooltip/PanelContainer/VBoxContainer" unique_id=1608323863]
+[node name="DiscName" type="Label" parent="DiscTooltip/Panel/Layout" unique_id=1608323863]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0ognk")
 theme_override_font_sizes/font_size = 11
 text = "Speed Upgrade"
 
-[node name="DiscDesc" type="Label" parent="DiscTooltip/PanelContainer/VBoxContainer" unique_id=1379791378]
+[node name="DiscRarity" type="Label" parent="DiscTooltip/Panel/Layout" unique_id=702630788]
+modulate = Color(0.6509804, 0.6509804, 0.6509804, 1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -1)
+text = "Tier 1"
+
+[node name="DiscDesc" type="Label" parent="DiscTooltip/Panel/Layout" unique_id=1379791378]
 layout_mode = 2
 text = "+20% Speed"
 
+[node name="DiscCombineReminder" type="Label" parent="DiscTooltip/Panel/Layout" unique_id=1995341330]
+modulate = Color(0.6509804, 0.6509804, 0.6509804, 1)
+layout_mode = 2
+text = "You own another. Combine for a sequel!"
+
 [node name="MessageTooltip" type="CenterContainer" parent="." unique_id=2024245474]
+visible = false
 offset_right = 22.0
 offset_bottom = 21.0
 mouse_filter = 2
@@ -38,7 +61,35 @@ mouse_filter = 2
 [node name="PanelContainer" type="PanelContainer" parent="MessageTooltip" unique_id=629942229]
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ognk")
 
 [node name="Message" type="Label" parent="MessageTooltip/PanelContainer" unique_id=1307830071]
 layout_mode = 2
 text = "Speed Upgrade"
+
+[node name="TicketTooltip" type="CenterContainer" parent="." unique_id=1189224341]
+offset_right = 22.0
+offset_bottom = 21.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="TicketTooltip" unique_id=243352709]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_5hj05")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TicketTooltip/PanelContainer" unique_id=2040466401]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="DiscName" type="Label" parent="TicketTooltip/PanelContainer/VBoxContainer" unique_id=125443872]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ognk")
+theme_override_font_sizes/font_size = 11
+text = "Speed Upgrade"
+
+[node name="DiscDesc" type="Label" parent="TicketTooltip/PanelContainer/VBoxContainer" unique_id=1550947493]
+modulate = Color(0.6521796, 0.65217966, 0.6521794, 1)
+custom_minimum_size = Vector2(0, 9)
+layout_mode = 2
+text = "+20% Speed"

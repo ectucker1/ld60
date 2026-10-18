@@ -22,6 +22,7 @@ func _ready() -> void:
 	area_exited.connect(_area_exited)
 	if not Engine.is_editor_hint():
 		make_disc_unique()
+	add_to_group("discs")
 
 func make_disc_unique() -> void:
 	disc.set_meta("original_path", disc.resource_path)
@@ -32,10 +33,15 @@ func _mouse_enter() -> void:
 	hovered = true
 	if DragManager.dragged_object == null:
 		TooltipManager.try_show(self)
+	for other_disc in get_tree().get_nodes_in_group("discs"):
+		if other_disc.disc.get_meta("original_path") == self.disc.get_meta("original_path"):
+			other_disc.get_node("Highlight").visible = true
 
 func _mouse_exit() -> void:
 	hovered = false
 	TooltipManager.try_remove(self)
+	for other_disc in get_tree().get_nodes_in_group("discs"):
+		other_disc.get_node("Highlight").visible = false
 
 func _area_entered(area: Area2D) -> void:
 	if area is DiscSlot:
@@ -97,3 +103,14 @@ func _physics_process(delta: float) -> void:
 
 	if DragManager.dragged_object == self:
 		global_position = InputUtil.get_global_mouse_position(self)
+	
+	# Show the right disc texture
+	match disc.tier:
+		1:
+			$Sprite2D.texture = preload("res://ingame/disc/disc_common.png")
+		2:
+			$Sprite2D.texture = preload("res://ingame/disc/disc_uncommon.png")
+		3:
+			$Sprite2D.texture = preload("res://ingame/disc/disc_rare.png")
+		4:
+			$Sprite2D.texture = preload("res://ingame/disc/disc_unique.png")

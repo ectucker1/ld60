@@ -1,7 +1,46 @@
 [gd_scene format=3 uid="uid://cnmnfxh6v3sor"]
 
 [ext_resource type="Script" uid="uid://ca8wqecmqhv22" path="res://ingame/disc/disc_display.gd" id="1_x8k46"]
+[ext_resource type="Texture2D" uid="uid://bxcmutb0fbnbk" path="res://ingame/disc/disc_highlihgt.png" id="2_opufo"]
 [ext_resource type="Texture2D" uid="uid://d35wcfhievs8a" path="res://ingame/disc/disc.png" id="2_x8k46"]
+
+[sub_resource type="Animation" id="Animation_opufo"]
+resource_name = "HighlightGlow"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.6862745), Color(0.79, 0.79, 0.79, 0.1882353), Color(1, 1, 1, 0.6862745)]
+}
+
+[sub_resource type="Animation" id="Animation_7lvic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8epd5"]
+_data = {
+&"HighlightGlow": SubResource("Animation_opufo"),
+&"RESET": SubResource("Animation_7lvic")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ijdr3"]
 radius = 6.0827627
@@ -9,6 +48,14 @@ radius = 6.0827627
 [node name="Disc" type="Area2D" unique_id=1277677675]
 z_index = 2
 script = ExtResource("1_x8k46")
+
+[node name="Highlight" type="Sprite2D" parent="." unique_id=1737988223]
+visible = false
+texture = ExtResource("2_opufo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Highlight" unique_id=1723964264]
+libraries/ = SubResource("AnimationLibrary_8epd5")
+autoplay = &"HighlightGlow"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532329662]
 texture = ExtResource("2_x8k46")

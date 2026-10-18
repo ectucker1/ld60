@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://cejyvtyo48vcw"]
 
-[ext_resource type="FontFile" uid="uid://c0tulye1r5hmx" path="res://assets/fonts/silver/Silver.ttf" id="1_e7bfs"]
+[ext_resource type="FontFile" uid="uid://caiu3mwr0kc2d" path="res://assets/fonts/not_jam_undead_pixel/Undead Pixel 11.ttf" id="1_e7bfs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp0wp"]
 content_margin_left = 2.0
@@ -253,7 +253,7 @@ corner_detail = 6
 
 [resource]
 default_font = ExtResource("1_e7bfs")
-default_font_size = 19
+default_font_size = 11
 Button/styles/disabled = SubResource("StyleBoxFlat_bp0wp")
 Button/styles/focus = SubResource("StyleBoxFlat_e7bfs")
 Button/styles/hover = SubResource("StyleBoxFlat_3taad")
@@ -283,6 +283,10 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_uwdo0")
 HSlider/styles/slider = SubResource("StyleBoxFlat_cefca")
 HeaderLarge/font_sizes/font_size = 72
 HeaderMedium/font_sizes/font_size = 60
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.27450982)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_s87n4")
 VBoxContainer/constants/separation = 8
 VSlider/icons/grabber = SubResource("DPITexture_bp0wp")
