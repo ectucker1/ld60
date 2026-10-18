@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_bw4jg")
-mult_bonus = 1.8
+mult_bonus = 1.5
 name = "Slower is Smoother"
 desc = "Larger Stacking mult for every second between corner hits"
 tier = 2
