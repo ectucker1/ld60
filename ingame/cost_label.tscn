@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c8hnnb08uhfgc"]
+
+[ext_resource type="Script" uid="uid://d0uu67r4e4ksq" path="res://ingame/cost_label.gd" id="1_t00m8"]
+
+[sub_resource type="Animation" id="Animation_fqdsg"]
+resource_name = "Hover"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CostLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.97, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.00999999, 0.00999999, 1), Color(1, 0.00999999, 0.00999999, 0.39607844), Color(1, 0.00999999, 0.00999999, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CostLabel:offset_transform_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wi66d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CostLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.00999999, 0.00999999, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CostLabel:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q40oo"]
+_data = {
+&"Hover": SubResource("Animation_fqdsg"),
+&"RESET": SubResource("Animation_wi66d")
+}
+
+[node name="CostLabel" type="Node2D" unique_id=1895850884]
+script = ExtResource("1_t00m8")
+
+[node name="CostLabel" type="Label" parent="." unique_id=754180462]
+modulate = Color(1, 0.00999999, 0.00999999, 1)
+offset_right = 14.0
+offset_bottom = 12.0
+offset_transform_enabled = true
+text = "-1"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1276724018]
+libraries/ = SubResource("AnimationLibrary_q40oo")
+autoplay = &"Hover"

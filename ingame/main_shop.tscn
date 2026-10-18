@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://1o5bdibbsjs1" path="res://ingame/trash/trash_can.tscn" id="23_7ruv5"]
 [ext_resource type="Shader" uid="uid://dh7nsbyv8n6ir" path="res://ingame/rain.gdshader" id="23_bmf7w"]
 [ext_resource type="Texture2D" uid="uid://t3v2nw7ec4bf" path="res://util/clear.png" id="24_bmf7w"]
+[ext_resource type="Script" uid="uid://d0uu67r4e4ksq" path="res://ingame/cost_label.gd" id="25_a5vqv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
 shader = ExtResource("5_7lqh5")
@@ -218,6 +219,68 @@ shader_parameter/rain_color = Color(0.5888, 0.8427201, 0.92, 0.21176471)
 shader_parameter/base_rain_speed = 0.15400000405512
 shader_parameter/additional_rain_speed = 0.13400000310512
 shader_parameter/slant = 0.07500005106249996
+
+[sub_resource type="Animation" id="Animation_fqdsg"]
+resource_name = "Hover"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CostLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.97, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.00999999, 0.00999999, 1), Color(1, 0.00999999, 0.00999999, 0.39607844), Color(1, 0.00999999, 0.00999999, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CostLabel:offset_transform_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wi66d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CostLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.00999999, 0.00999999, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CostLabel:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q40oo"]
+_data = {
+&"Hover": SubResource("Animation_fqdsg"),
+&"RESET": SubResource("Animation_wi66d")
+}
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
 
@@ -602,5 +665,22 @@ position = Vector2(162, 87)
 [node name="Rain" type="Sprite2D" parent="." unique_id=17242746]
 z_index = 10
 material = SubResource("ShaderMaterial_36i4f")
+position = Vector2(0, 0.56233263)
 scale = Vector2(125, 125)
 texture = ExtResource("24_bmf7w")
+
+[node name="CostLabel" type="Node2D" parent="." unique_id=419162982]
+position = Vector2(-112, -36)
+script = ExtResource("25_a5vqv")
+
+[node name="CostLabel" type="Label" parent="CostLabel" unique_id=1004153642]
+modulate = Color(1, 0.00999999, 0.00999999, 1)
+offset_right = 14.0
+offset_bottom = 12.0
+offset_transform_enabled = true
+text = "-1"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CostLabel" unique_id=1901737469]
+libraries/ = SubResource("AnimationLibrary_q40oo")
+autoplay = &"Hover"
