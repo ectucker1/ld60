@@ -77,3 +77,6 @@ func update_text(source: Node2D) -> void:
 	elif source is TV:
 		$MessageTooltip.visible = true
 		$MessageTooltip/PanelContainer/Message.text = "Unlock at $%s earnings." % StringUtil.thousands_sep(source.unlock_at)
+	elif source is TrashCan:
+		$MessageTooltip.visible = true
+		$MessageTooltip/PanelContainer/Message.text = "Trash unwanted DvDs."

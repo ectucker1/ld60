@@ -1,3 +1,4 @@
+class_name TrashCan
 extends Area2D
 
 
@@ -16,6 +17,12 @@ func _area_entered(area: Area2D) -> void:
 func _area_exited(area: Area2D) -> void:
 	if overlapping_disc == area:
 		overlapping_disc = null
+
+func _mouse_enter() -> void:
+	TooltipManager.try_show(self)
+
+func _mouse_exit() -> void:
+	TooltipManager.try_remove(self)
 
 var prev_pressed := false
 

@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	disabled = !shop.can_refresh()
 	if disabled:
-		message = "Buy at least two items before refreshing."
+		message = "Buy at least two DvDs before refreshing."
 	else:
 		message = "Refresh the shop!"
 
