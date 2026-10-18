@@ -7,7 +7,7 @@
 script = ExtResource("1_w75ap")
 left = true
 right = true
-bonus = 10
+bonus = 25
 name = "Score on right or left TV corner hit 2"
 desc = "Score 10 on right or left tv corner hit"
 num_in_pool = 2

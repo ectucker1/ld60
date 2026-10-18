@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_bn6mq")
 left = true
-bonus = 25
+bonus = 100
 name = "Score on left tv corner hit 3"
-desc = "Score 25 on left corner tv hit"
+desc = "Score 100 on left tv corner hit"
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

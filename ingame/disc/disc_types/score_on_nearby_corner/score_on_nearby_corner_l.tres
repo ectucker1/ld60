@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("2_imuiu")
 left = true
-bonus = 10
+bonus = 25
 name = "Score on left tv corner hit"
-desc = "Score 10 on left corner tv hit"
+desc = "Score 25 on left tv corner hit"
 num_in_pool = 6
 combine_to = ExtResource("1_v1ujq")
 metadata/_custom_type_script = "uid://dru57ptcau8xr"
