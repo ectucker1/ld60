@@ -11,7 +11,7 @@ var competitor_score: int = 0
 var score: int = 0
 
 #default back to zero after testing!!!!!!!
-var tickets: int = 0
+var tickets: int = 10
 
 var last_ticket: int = 0
 var next_ticket: int = 25
