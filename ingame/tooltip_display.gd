@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 			update_text(TooltipManager.current)
 			previous_current = TooltipManager.current
 		
-		var target := TooltipManager.current.global_position + Vector2(8, 8)
+		var target := TooltipManager.current.global_position + Vector2(8, -24)
 		var overflow := target.x + get_tooltip_width() - PixelPerfect.viewport_base_size.x / 2
 		if overflow > 0:
 			target.x -= overflow
