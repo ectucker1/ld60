@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NoCornerDoubleWallDisc" format=3 uid="uid://bhkfpx53on1ya"]
+
+[ext_resource type="Script" uid="uid://dufriktheeyig" path="res://ingame/disc/disc_types/more_evil_subfolder/no_corner_double_wall.gd" id="1_t3hop"]
+
+[resource]
+script = ExtResource("1_t3hop")
+name = "Walls Only"
+desc = "+1 mult for walls. Corners no longer score."
+num_in_pool = 1
+metadata/_custom_type_script = "uid://dufriktheeyig"

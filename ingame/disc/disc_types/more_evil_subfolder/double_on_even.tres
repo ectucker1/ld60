@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DoubleOnEvenDisc" format=3 uid="uid://vbpned4wyqh4"]
+
+[ext_resource type="Script" uid="uid://di1x8uqyx548j" path="res://ingame/disc/disc_types/more_evil_subfolder/double_on_even.gd" id="1_bkt4p"]
+
+[resource]
+script = ExtResource("1_bkt4p")
+name = "Pond's Even"
+desc = "When this TV scores an even number, double it. Otherwise, score nothing."
+num_in_pool = 1
+metadata/_custom_type_script = "uid://di1x8uqyx548j"

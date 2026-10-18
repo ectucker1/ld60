@@ -2,8 +2,17 @@ class_name ScoreContext
 extends RefCounted
 
 
+enum ScoreType
+{
+	WALL,
+	CORNER
+}
+
+
 ## The TV this score is occuring on 
 var source_tv: TVContext
+
+var type: ScoreType = ScoreType.WALL
 
 ## The color of the logo which is triggering this score
 var color: Color
@@ -36,3 +45,11 @@ func get_wall_score() -> int:
 
 func get_corner_score() -> int:
 	return max(0, roundi(corner_score_add * corner_score_mult))
+
+func get_score() -> int:
+	match type:
+		ScoreType.WALL:
+			return get_wall_score()
+		ScoreType.CORNER:
+			return get_corner_score()
+	return 0

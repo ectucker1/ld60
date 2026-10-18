@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExtraDiscDisc" format=3 uid="uid://cgrcl7w787tv2"]
+
+[ext_resource type="Script" uid="uid://crxqo4f5jiw4i" path="res://ingame/disc/disc_types/more_evil_subfolder/extra_disc.gd" id="1_vb5j0"]
+
+[resource]
+script = ExtResource("1_vb5j0")
+name = "Attack of the Clones"
+desc = "Add an extra logo to the screen."
+num_in_pool = 1
+metadata/_custom_type_script = "uid://crxqo4f5jiw4i"

@@ -83,15 +83,17 @@ func get_global_center():
 	return Vector2(world_size.x, world_size.y) / 2
 
 func spawn_point_popup(loc: Vector2, amount: int):
-	var point_display = point_scene.instantiate()
-	add_child(point_display)
-	point_display.position = loc - get_global_center()
-	point_display.set_score(amount)
+	if amount > 0:
+		var point_display = point_scene.instantiate()
+		add_child(point_display)
+		point_display.position = loc - get_global_center()
+		point_display.set_score(amount)
 
 # Called every time a logo on this TV hits an edge
 func hit_edge(logo: CharacterBody2D) -> void:
 	var score_context = ScoreContext.new()
 	score_context.source_tv = context
+	score_context.type = ScoreContext.ScoreType.WALL
 	score_context.color = logo.modulate
 	score_context.wall_score_add += 1
 	score_context.wall_score_mult = 1.0
@@ -103,6 +105,9 @@ func hit_edge(logo: CharacterBody2D) -> void:
 	
 	connector.on_wall_hit(self, score_context)
 	
+	for disc in get_discs():
+		disc.finalize_score_context(context, score_context)
+	
 	var score = score_context.get_wall_score()
 	ScoreManager.score += score
 	
@@ -112,6 +117,7 @@ func hit_edge(logo: CharacterBody2D) -> void:
 func hit_corner(logo: CharacterBody2D) -> void:
 	var score_context = ScoreContext.new()
 	score_context.source_tv = context
+	score_context.type = ScoreContext.ScoreType.CORNER
 	score_context.color = logo.modulate
 	score_context.corner_score_add += 25
 	score_context.corner_score_mult = 1.0
@@ -123,10 +129,16 @@ func hit_corner(logo: CharacterBody2D) -> void:
 	
 	connector.on_corner_hit(self, score_context)
 	
+	for disc in get_discs():
+		disc.finalize_score_context(context, score_context)
+	
 	var score = score_context.get_corner_score()
 	ScoreManager.score += score
 	
 	spawn_point_popup(logo.global_position, score)
+
+func get_inside_world():
+	return $SubViewport/InsideTVWorld
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -139,8 +151,8 @@ func _physics_process(delta: float) -> void:
 		started = true
 		$Sprite2D.visible = true
 		var logo = logo_scene.instantiate()
-		$SubViewport/InsideTVWorld.add_child(logo)
-		logo.global_position = Vector2(float(world_size.x) / 2, float(world_size.y) / 2)
+		get_inside_world().add_child(logo)
+		logo.global_position = get_global_center()
 
 	
 	$CenterContainer/UnlockProgress.value = 100.0 * float(ScoreManager.score) / unlock_at
