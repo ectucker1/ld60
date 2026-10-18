@@ -9,7 +9,7 @@ var _tween: Tween
 var news: Array[NewsItem]
 
 func _ready() -> void:
-	show_news("")
+	#show_news("")
 	news = list_news()
 
 func show_news(text: String):
