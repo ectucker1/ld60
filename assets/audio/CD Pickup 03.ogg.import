@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://k713o3tqv8bq"
+path="res://.godot/imported/CD Pickup 03.ogg-80719c387d31c3b6acb07593357f98bf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/CD Pickup 03.ogg"
+dest_files=["res://.godot/imported/CD Pickup 03.ogg-80719c387d31c3b6acb07593357f98bf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

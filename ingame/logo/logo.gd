@@ -48,10 +48,10 @@ func _physics_process(delta: float) -> void:
 	queue_redraw()
 
 func hit_corner():
-	tv.hit_corner(self)
+	var score = tv.hit_corner(self)
 	var bend = randf() * TAU * 0.1
 	direction = direction.rotated(bend)
-	GlobalSounds.play("CornerHit")
+	GlobalSounds.play_corner_hit(score)
 
 func _draw() -> void:
 	var loc = BounceLoc.new(global_position, direction)
