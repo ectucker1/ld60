@@ -4,7 +4,7 @@ extends Sprite2D
 
 ## Corner hit scores in this range scale from the smallest to the wildest static burst
 @export var burst_score_min := 25
-@export var burst_score_max := 300
+@export var burst_score_max := 500
 ## How much of the burst the smallest hit still gets (0 to 1), so every corner flickers a little
 @export_range(0.0, 1.0) var burst_floor := 0.15
 ## Seconds for the smallest (x) and biggest (y) bursts to settle back to normal
