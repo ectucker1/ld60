@@ -7,12 +7,26 @@ var previous_current: Node2D
 func _process(delta: float) -> void:
 	visible = TooltipManager.current != null
 	if TooltipManager.current != null:
-		global_position = TooltipManager.current.global_position + Vector2(8, 8)
 		if previous_current != TooltipManager.current:
 			update_text(TooltipManager.current)
 			previous_current = TooltipManager.current
+		
+		var target := TooltipManager.current.global_position + Vector2(8, 8)
+		var overflow := target.x + get_tooltip_width() - PixelPerfect.viewport_base_size.x / 2
+		if overflow > 0:
+			target.x -= overflow
+		
+		global_position = target
 	else:
 		previous_current = null
+
+func get_tooltip_width() -> float:
+	for child in get_children():
+		if child.visible and child is Control:
+			child.update_minimum_size()
+			var value = child.size.x
+			return value
+	return 0.0
 
 func owns_duplicate_disc(display: DiscDisplay):
 	for disc_display in get_tree().get_nodes_in_group("discs"):
