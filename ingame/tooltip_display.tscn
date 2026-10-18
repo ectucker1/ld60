@@ -5,11 +5,16 @@
 [ext_resource type="StyleBox" uid="uid://dk8jd675mmo4e" path="res://ingame/tooltip_box.tres" id="2_5hj05"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ognk"]
-content_margin_left = 3.0
-content_margin_top = 1.0
-content_margin_right = 3.0
-content_margin_bottom = 1.0
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
 bg_color = Color(0.19, 0.19, 0.19, 0.78039217)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.68235296)
 corner_detail = 5
 
 [node name="Tooltip" type="Node2D" unique_id=904010136]
