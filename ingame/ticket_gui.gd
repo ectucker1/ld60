@@ -4,7 +4,6 @@ extends Area2D
 
 func _mouse_enter() -> void:
 	TooltipManager.try_show(self)
-	GlobalSounds.play("Hover")
 
 func _mouse_exit() -> void:
 	TooltipManager.try_remove(self)

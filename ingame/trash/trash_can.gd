@@ -25,4 +25,5 @@ func _physics_process(delta: float) -> void:
 			DragManager.dragged_object = null
 		overlapping_disc.queue_free()
 		overlapping_disc = null
+		GlobalSounds.play("Trashcan")
 	prev_pressed = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)

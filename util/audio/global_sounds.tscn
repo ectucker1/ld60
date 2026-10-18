@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://k713o3tqv8bq" path="res://assets/audio/CD Pickup 03.ogg" id="10_cdp03"]
 [ext_resource type="AudioStream" uid="uid://dxaurys724iu2" path="res://assets/audio/CD Pickup 04.ogg" id="10_cdp04"]
 [ext_resource type="AudioStream" uid="uid://c7smjagt5cx0r" path="res://assets/audio/CD Pickup 05.ogg" id="10_cdp05"]
+[ext_resource type="AudioStream" uid="uid://1vpgg0ol5hqb" path="res://assets/audio/Trashcan.ogg" id="11_trash"]
 
 [node name="GlobalSounds" type="Node" unique_id=516643137]
 process_mode = 3
@@ -52,6 +53,12 @@ bus = &"Effects"
 [node name="RefreshShop" type="AudioStreamPlayer" parent="." unique_id=1964334437]
 stream = ExtResource("7_amqt0")
 volume_db = -6.0
+bus = &"Effects"
+
+[node name="Trashcan" type="AudioStreamPlayer" parent="." unique_id=511579950]
+stream = ExtResource("11_trash")
+volume_db = -20.0
+pitch_scale = 0.8
 bus = &"Effects"
 
 [node name="CDPickup" type="Node" parent="." unique_id=2086383294]
