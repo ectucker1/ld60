@@ -46,8 +46,16 @@ class NewsItem:
 func list_news():
 	var result: Array[NewsItem]
 	result = [
-		NewsItem.new(false, 50, "NEWS: Thing happened!"),
-		NewsItem.new(false, 250, "NEWS: Another thing happened!")
+		NewsItem.new(false, 0, "NEWS: Local DVD rental store opens!"),
+		NewsItem.new(false, 750, "NEWS: Local store looking to expand soon!"),
+		NewsItem.new(false, 1050, "NEWS: Grand opening of second location!"),
+		NewsItem.new(false, 2500, "NEWS: DVD Rental Company 'BBI' opens 3 more stores!"),
+		NewsItem.new(false, 4500, "NEWS: BBI Video Rental stock is surging"),
+		NewsItem.new(false, 6000, "NEWS: BBI opens 25 more stores across the nation"),
+		NewsItem.new(false, 9000, "NEWS: Analysts say 'BBI' is hottest stock of the decade"),
+		NewsItem.new(false, 13500, "NEWS: New service announced 'NTFLX' movies available on your computer?"),
+		NewsItem.new(false, 15000, "NEWS: NTFLX goes public!"),
+		#NewsItem.new(true, 50, "NEWS: TEST LOSING MONEY"),
 	]
 	return result
 

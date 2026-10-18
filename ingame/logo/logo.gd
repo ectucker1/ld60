@@ -1,7 +1,7 @@
 class_name Logo
 extends CharacterBody2D
 
-
+#speed should be 18. set higher to test faster
 @export
 var base_speed := 18.0
 
