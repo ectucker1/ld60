@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_633oq")
-name = "Corner Score Mult"
+name = "Hustler"
 desc = "Increase corner mult by 10% to corner score"
 num_in_pool = 7
 combine_to = ExtResource("1_su71x")

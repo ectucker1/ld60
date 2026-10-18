@@ -7,7 +7,7 @@
 script = ExtResource("1_fqces")
 up = true
 down = true
-name = "Score on wall hit for TV above or below"
+name = "DROVE"
 desc = "Score 1 on wall hit for TV above or below"
 num_in_pool = 6
 combine_to = ExtResource("1_74oqn")

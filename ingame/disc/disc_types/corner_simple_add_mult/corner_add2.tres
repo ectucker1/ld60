@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_uk40o")
-name = "Corner Score Add"
+name = "Sea's 15"
 desc = "Add 15 to corner score"
 tier = 2
 num_in_pool = 3
