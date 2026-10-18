@@ -21,6 +21,9 @@ var buff_time = 1.0
 
 var time = 0
 
+func reset() -> void:
+	time = 0
+
 func on_this_corner_hit(this: TVContext, score: ScoreContext) -> void:
 	time = buff_time
 

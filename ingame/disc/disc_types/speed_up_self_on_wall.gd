@@ -6,6 +6,9 @@ var buff_amount := 0.0
 
 var bounces = 0
 
+func reset() -> void:
+	bounces = 0
+
 func on_this_wall_hit(this: TVContext, score: ScoreContext) -> void:
 	bounces += 1
 

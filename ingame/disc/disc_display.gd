@@ -20,6 +20,12 @@ var bought := false
 func _ready() -> void:
 	area_entered.connect(_area_entered)
 	area_exited.connect(_area_exited)
+	if not Engine.is_editor_hint():
+		make_disc_unique()
+
+func make_disc_unique() -> void:
+	disc.set_meta("original_path", disc.resource_path)
+	disc = disc.duplicate()
 
 func _mouse_enter() -> void:
 	last_hovered = 0.0
@@ -57,9 +63,10 @@ func drop() -> void:
 		# Swap with previous disc
 		if target_slots.front().inserted_disc != null:
 			var swap_disc = target_slots.front().inserted_disc
-			if swap_disc.disc == disc and disc.combine_to != null:
+			if swap_disc.disc.get_meta("original_path") == disc.get_meta("original_path") and disc.combine_to != null:
 				# Combine discs!
 				disc = disc.combine_to
+				make_disc_unique()
 				swap_disc.start_dragging()
 				swap_disc.queue_free()
 			else:

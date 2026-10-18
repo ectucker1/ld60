@@ -75,3 +75,7 @@ func on_physics_process(tv: TVContext, delta: float) -> void:
 ## Do effects here that might want to use scored points as a threshold.
 func finalize_score_context(this: TVContext, score: ScoreContext) -> void:
 	pass
+
+## Called when the disc is removed from a slot
+func reset() -> void:
+	pass

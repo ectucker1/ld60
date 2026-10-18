@@ -6,6 +6,9 @@ var mult_bonus := 1.0
 
 var time = 0
 
+func reset() -> void:
+	time = 0
+
 func on_this_corner_hit(this: TVContext, score: ScoreContext) -> void:
 	score.corner_score_mult += (time / 2) * mult_bonus
 	time = 0
