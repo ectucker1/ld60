@@ -20,7 +20,7 @@ func try_remove(maybe_next: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if next != null:
-		if next_time < 0.4:
+		if next_time < 0.2:
 			next_time += delta
 		else:
 			current = next
