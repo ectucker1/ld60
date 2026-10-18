@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://11pkiy1upfb" path="res://ingame/trash/trash_can.png" id="1_unl3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
+size = Vector2(34, 32)
 
 [node name="TrashCan" type="Area2D" unique_id=1185540062]
 script = ExtResource("1_5tprd")
@@ -12,4 +13,5 @@ script = ExtResource("1_5tprd")
 texture = ExtResource("1_unl3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566740354]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_ijdr3")

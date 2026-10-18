@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck08mlqov6xn1"]
 
-[ext_resource type="Texture2D" uid="uid://bf2tnce7cacmy" path="res://ingame/layout.png" id="1_0qb78"]
+[ext_resource type="Texture2D" uid="uid://c7fb0vhinrcjf" path="res://ingame/Background_without_glass.png" id="1_fqdsg"]
 [ext_resource type="Script" uid="uid://cu5whb37rt5d8" path="res://util/camera/effects_camera_2d.gd" id="2_d7b73"]
 [ext_resource type="Script" uid="uid://cb0f5j53oqrbe" path="res://ingame/tv/tv.gd" id="2_o7wyp"]
 [ext_resource type="Script" uid="uid://xc4c1oou4n81" path="res://ingame/tv_connector.gd" id="2_thoer"]
@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://d3fq2qpqh4i84" path="res://ingame/tv/inside_tv.tscn" id="4_lx1ox"]
 [ext_resource type="Shader" uid="uid://b8bkk414wb16e" path="res://ingame/tv/vhs.gdshader" id="5_7lqh5"]
 [ext_resource type="Script" uid="uid://dem51n17sxbeg" path="res://ingame/tv_display.gd" id="6_oj7a1"]
-[ext_resource type="PackedScene" uid="uid://y2v1wqbgjhxh" path="res://ingame/disc_slot_row.tscn" id="7_oj7a1"]
 [ext_resource type="Texture2D" uid="uid://cmy3n8dqfejxy" path="res://ingame/tv/tv_progress.png" id="9_mk1uw"]
 [ext_resource type="Script" uid="uid://dite8evymt610" path="res://ingame/shop.gd" id="10_7lqh5"]
 [ext_resource type="Texture2D" uid="uid://c3vpbbksp4q8d" path="res://ingame/refresh_icon.png" id="10_r8bkt"]
+[ext_resource type="PackedScene" uid="uid://baivbes5p37yf" path="res://ingame/tv/disc_slot.tscn" id="10_wi66d"]
 [ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult/speed_mult_10.tres" id="13_36i4f"]
 [ext_resource type="PackedScene" uid="uid://6gwf8hnwk7kp" path="res://ingame/ticket_gui.tscn" id="13_pvtff"]
 [ext_resource type="Resource" uid="uid://bo7i8kdpvko10" path="res://ingame/disc/disc_types/wall_scores/add_wall_score.tres" id="14_7ruv5"]
@@ -25,6 +25,7 @@
 [ext_resource type="Shader" uid="uid://dh7nsbyv8n6ir" path="res://ingame/rain.gdshader" id="23_bmf7w"]
 [ext_resource type="Texture2D" uid="uid://t3v2nw7ec4bf" path="res://util/clear.png" id="24_bmf7w"]
 [ext_resource type="Script" uid="uid://d0uu67r4e4ksq" path="res://ingame/cost_label.gd" id="25_a5vqv"]
+[ext_resource type="Texture2D" uid="uid://bsf1tcfyymabw" path="res://ingame/Screen.png" id="26_wi66d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
 shader = ExtResource("5_7lqh5")
@@ -209,14 +210,14 @@ size = Vector2(54.5, 50.5)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_36i4f"]
 shader = ExtResource("23_bmf7w")
 shader_parameter/rain_amount = 70.0
-shader_parameter/near_rain_length = 0.37900001730398003
+shader_parameter/near_rain_length = 0.37900001730398
 shader_parameter/far_rain_length = 0.20500000903898
 shader_parameter/near_rain_width = 0.10000000149012
 shader_parameter/far_rain_width = 0.5
 shader_parameter/near_rain_transparency = 0.28500001027762
 shader_parameter/far_rain_transparency = 0.5
-shader_parameter/rain_color = Color(0.5888, 0.8427201, 0.92, 0.21176471)
-shader_parameter/base_rain_speed = 0.15400000405512
+shader_parameter/rain_color = Color(0.96, 0.9906667, 1, 0.5372549)
+shader_parameter/base_rain_speed = 0.10000000149012
 shader_parameter/additional_rain_speed = 0.13400000310512
 shader_parameter/slant = 0.07500005106249996
 
@@ -286,15 +287,16 @@ _data = {
 
 [node name="Backdrop" type="Sprite2D" parent="." unique_id=319077051]
 z_index = -5
-texture = ExtResource("1_0qb78")
+position = Vector2(0, 8)
+texture = ExtResource("1_fqdsg")
 
 [node name="TVConnector" type="Node2D" parent="." unique_id=1554303878]
 script = ExtResource("2_thoer")
 
 [node name="TopLeft" type="Area2D" parent="TVConnector" unique_id=659304647 node_paths=PackedStringArray("right", "below")]
-position = Vector2(-43, -53)
+position = Vector2(-54, -30)
 script = ExtResource("2_o7wyp")
-world_size = Vector2i(52, 40)
+world_size = Vector2i(51, 40)
 right = NodePath("../TopMiddle")
 below = NodePath("../BottomLeft")
 unlock_at = -150
@@ -303,12 +305,12 @@ unlock_at = -150
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
-size = Vector2i(52, 40)
+size = Vector2i(51, 40)
 script = ExtResource("3_oj7a1")
-world_size = Vector2i(52, 40)
+world_size = Vector2i(51, 40)
 
 [node name="InsideTVWorld" parent="TVConnector/TopLeft/SubViewport" unique_id=631518455 instance=ExtResource("4_lx1ox")]
-world_size = Vector2i(52, 40)
+world_size = Vector2i(51, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopLeft" unique_id=1582113759]
 visible = false
@@ -323,19 +325,36 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+metadata/_edit_lock_ = true
 
-[node name="Slots" parent="TVConnector/TopLeft" unique_id=734697617 instance=ExtResource("7_oj7a1")]
-position = Vector2(-1, 25)
+[node name="Slots" type="Node2D" parent="TVConnector/TopLeft" unique_id=734697617]
+position = Vector2(-1, 23)
+metadata/_edit_lock_ = true
+
+[node name="DiscSlot" parent="TVConnector/TopLeft/Slots" unique_id=349737341 instance=ExtResource("10_wi66d")]
+position = Vector2(-26, 1)
+
+[node name="DiscSlot2" parent="TVConnector/TopLeft/Slots" unique_id=331586062 instance=ExtResource("10_wi66d")]
+position = Vector2(-9, 1)
+
+[node name="DiscSlot3" parent="TVConnector/TopLeft/Slots" unique_id=806318764 instance=ExtResource("10_wi66d")]
+position = Vector2(9, 1)
+
+[node name="DiscSlot4" parent="TVConnector/TopLeft/Slots" unique_id=136476174 instance=ExtResource("10_wi66d")]
+position = Vector2(26, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TVConnector/TopLeft" unique_id=519490828]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_36i4f")
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="TVConnector/TopLeft" unique_id=1673792858]
+visible = false
 offset_left = -30.0
 offset_top = -2.0
 offset_right = 30.0
 offset_bottom = 38.0
+metadata/_edit_lock_ = true
 
 [node name="UnlockProgress" type="TextureProgressBar" parent="TVConnector/TopLeft/CenterContainer" unique_id=1149527779]
 z_index = 3
@@ -344,9 +363,9 @@ value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
 [node name="TopMiddle" type="Area2D" parent="TVConnector" unique_id=1360717503 node_paths=PackedStringArray("left", "right", "below")]
-position = Vector2(36, -42)
+position = Vector2(22, -20)
 script = ExtResource("2_o7wyp")
-world_size = Vector2i(70, 49)
+world_size = Vector2i(66, 46)
 left = NodePath("../TopLeft")
 right = NodePath("../TopRight")
 below = NodePath("../BottomMiddle")
@@ -356,12 +375,12 @@ unlock_at = 50
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
-size = Vector2i(70, 49)
+size = Vector2i(66, 46)
 script = ExtResource("3_oj7a1")
-world_size = Vector2i(70, 49)
+world_size = Vector2i(66, 46)
 
 [node name="InsideTVWorld" parent="TVConnector/TopMiddle/SubViewport" unique_id=752307196 instance=ExtResource("4_lx1ox")]
-world_size = Vector2i(70, 49)
+world_size = Vector2i(66, 46)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopMiddle" unique_id=1332464654]
 visible = false
@@ -376,19 +395,36 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+metadata/_edit_lock_ = true
 
-[node name="Slots" parent="TVConnector/TopMiddle" unique_id=937152338 instance=ExtResource("7_oj7a1")]
-position = Vector2(-1, 29)
+[node name="Slots" type="Node2D" parent="TVConnector/TopMiddle" unique_id=937152338]
+position = Vector2(-1, 26)
+metadata/_edit_lock_ = true
+
+[node name="DiscSlot" parent="TVConnector/TopMiddle/Slots" unique_id=5220220 instance=ExtResource("10_wi66d")]
+position = Vector2(-26, 2)
+
+[node name="DiscSlot2" parent="TVConnector/TopMiddle/Slots" unique_id=39516797 instance=ExtResource("10_wi66d")]
+position = Vector2(-8, 2)
+
+[node name="DiscSlot3" parent="TVConnector/TopMiddle/Slots" unique_id=15284900 instance=ExtResource("10_wi66d")]
+position = Vector2(9, 2)
+
+[node name="DiscSlot4" parent="TVConnector/TopMiddle/Slots" unique_id=1401581011 instance=ExtResource("10_wi66d")]
+position = Vector2(27, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TVConnector/TopMiddle" unique_id=2045911055]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_pvtff")
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="TVConnector/TopMiddle" unique_id=1932595838]
+visible = false
 offset_left = -30.0
 offset_top = 1.0
 offset_right = 30.0
 offset_bottom = 41.0
+metadata/_edit_lock_ = true
 
 [node name="UnlockProgress" type="TextureProgressBar" parent="TVConnector/TopMiddle/CenterContainer" unique_id=1979330777]
 z_index = 3
@@ -397,9 +433,9 @@ value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
 [node name="TopRight" type="Area2D" parent="TVConnector" unique_id=1368384317 node_paths=PackedStringArray("left", "below")]
-position = Vector2(110, -49)
+position = Vector2(94, -27)
 script = ExtResource("2_o7wyp")
-world_size = Vector2i(40, 40)
+world_size = Vector2i(38, 38)
 left = NodePath("../TopMiddle")
 below = NodePath("../BottomRight")
 unlock_at = 2500
@@ -408,12 +444,12 @@ unlock_at = 2500
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
-size = Vector2i(40, 40)
+size = Vector2i(38, 38)
 script = ExtResource("3_oj7a1")
-world_size = Vector2i(40, 40)
+world_size = Vector2i(38, 38)
 
 [node name="InsideTVWorld" parent="TVConnector/TopRight/SubViewport" unique_id=1022376110 instance=ExtResource("4_lx1ox")]
-world_size = Vector2i(40, 40)
+world_size = Vector2i(38, 38)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopRight" unique_id=1817236573]
 visible = false
@@ -428,19 +464,36 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+metadata/_edit_lock_ = true
 
-[node name="Slots" parent="TVConnector/TopRight" unique_id=274239352 instance=ExtResource("7_oj7a1")]
-position = Vector2(0, 25)
+[node name="Slots" type="Node2D" parent="TVConnector/TopRight" unique_id=274239352]
+position = Vector2(0, 22)
+metadata/_edit_lock_ = true
+
+[node name="DiscSlot" parent="TVConnector/TopRight/Slots" unique_id=1800419647 instance=ExtResource("10_wi66d")]
+position = Vector2(-23, 0)
+
+[node name="DiscSlot2" parent="TVConnector/TopRight/Slots" unique_id=1662908444 instance=ExtResource("10_wi66d")]
+position = Vector2(-8, 0)
+
+[node name="DiscSlot3" parent="TVConnector/TopRight/Slots" unique_id=1924229018 instance=ExtResource("10_wi66d")]
+position = Vector2(9, 0)
+
+[node name="DiscSlot4" parent="TVConnector/TopRight/Slots" unique_id=1842405586 instance=ExtResource("10_wi66d")]
+position = Vector2(25, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TVConnector/TopRight" unique_id=1561398444]
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_6oar8")
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="TVConnector/TopRight" unique_id=1668535023]
+visible = false
 offset_left = -30.0
 offset_top = -2.0
 offset_right = 30.0
 offset_bottom = 38.0
+metadata/_edit_lock_ = true
 
 [node name="UnlockProgress" type="TextureProgressBar" parent="TVConnector/TopRight/CenterContainer" unique_id=1340786603]
 z_index = 3
@@ -449,9 +502,9 @@ value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
 [node name="BottomLeft" type="Area2D" parent="TVConnector" unique_id=1871451394 node_paths=PackedStringArray("right", "above")]
-position = Vector2(-40, 17)
+position = Vector2(-55, 36)
 script = ExtResource("2_o7wyp")
-world_size = Vector2i(72, 60)
+world_size = Vector2i(68, 56)
 right = NodePath("../BottomMiddle")
 above = NodePath("../TopLeft")
 
@@ -459,12 +512,12 @@ above = NodePath("../TopLeft")
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
-size = Vector2i(72, 60)
+size = Vector2i(68, 56)
 script = ExtResource("3_oj7a1")
-world_size = Vector2i(72, 60)
+world_size = Vector2i(68, 56)
 
 [node name="InsideTVWorld" parent="TVConnector/BottomLeft/SubViewport" unique_id=1347108171 instance=ExtResource("4_lx1ox")]
-world_size = Vector2i(72, 60)
+world_size = Vector2i(68, 56)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft" unique_id=846064115]
 visible = false
@@ -479,19 +532,36 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+metadata/_edit_lock_ = true
 
-[node name="Slots" parent="TVConnector/BottomLeft" unique_id=822903696 instance=ExtResource("7_oj7a1")]
-position = Vector2(0, 35)
+[node name="Slots" type="Node2D" parent="TVConnector/BottomLeft" unique_id=822903696]
+position = Vector2(-2, 33)
+metadata/_edit_lock_ = true
+
+[node name="DiscSlot" parent="TVConnector/BottomLeft/Slots" unique_id=935364839 instance=ExtResource("10_wi66d")]
+position = Vector2(-25, 2)
+
+[node name="DiscSlot2" parent="TVConnector/BottomLeft/Slots" unique_id=1315913986 instance=ExtResource("10_wi66d")]
+position = Vector2(-7, 2)
+
+[node name="DiscSlot3" parent="TVConnector/BottomLeft/Slots" unique_id=1638609258 instance=ExtResource("10_wi66d")]
+position = Vector2(10, 2)
+
+[node name="DiscSlot4" parent="TVConnector/BottomLeft/Slots" unique_id=1626915606 instance=ExtResource("10_wi66d")]
+position = Vector2(28, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TVConnector/BottomLeft" unique_id=1423011849]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_mk1uw")
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="TVConnector/BottomLeft" unique_id=203978713]
+visible = false
 offset_left = -29.0
 offset_top = 9.0
 offset_right = 31.0
 offset_bottom = 49.0
+metadata/_edit_lock_ = true
 
 [node name="UnlockProgress" type="TextureProgressBar" parent="TVConnector/BottomLeft/CenterContainer" unique_id=1281863354]
 z_index = 3
@@ -500,9 +570,9 @@ value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
 [node name="BottomMiddle" type="Area2D" parent="TVConnector" unique_id=476473176 node_paths=PackedStringArray("left", "right", "above")]
-position = Vector2(36, 37)
+position = Vector2(22, 56)
 script = ExtResource("2_o7wyp")
-world_size = Vector2i(56, 45)
+world_size = Vector2i(54, 42)
 left = NodePath("../BottomLeft")
 right = NodePath("../BottomRight")
 above = NodePath("../TopMiddle")
@@ -512,12 +582,12 @@ unlock_at = 10000
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
-size = Vector2i(56, 45)
+size = Vector2i(54, 42)
 script = ExtResource("3_oj7a1")
-world_size = Vector2i(56, 45)
+world_size = Vector2i(54, 42)
 
 [node name="InsideTVWorld" parent="TVConnector/BottomMiddle/SubViewport" unique_id=1876465913 instance=ExtResource("4_lx1ox")]
-world_size = Vector2i(56, 45)
+world_size = Vector2i(54, 42)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle" unique_id=450842524]
 visible = false
@@ -532,19 +602,36 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+metadata/_edit_lock_ = true
 
-[node name="Slots" parent="TVConnector/BottomMiddle" unique_id=491254056 instance=ExtResource("7_oj7a1")]
-position = Vector2(-2, 28)
+[node name="Slots" type="Node2D" parent="TVConnector/BottomMiddle" unique_id=491254056]
+position = Vector2(2, 25)
+metadata/_edit_lock_ = true
+
+[node name="DiscSlot" parent="TVConnector/BottomMiddle/Slots" unique_id=439708655 instance=ExtResource("10_wi66d")]
+position = Vector2(-24, 2)
+
+[node name="DiscSlot2" parent="TVConnector/BottomMiddle/Slots" unique_id=1862924186 instance=ExtResource("10_wi66d")]
+position = Vector2(-11, 2)
+
+[node name="DiscSlot3" parent="TVConnector/BottomMiddle/Slots" unique_id=1889518402 instance=ExtResource("10_wi66d")]
+position = Vector2(5, 2)
+
+[node name="DiscSlot4" parent="TVConnector/BottomMiddle/Slots" unique_id=234643992 instance=ExtResource("10_wi66d")]
+position = Vector2(20, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TVConnector/BottomMiddle" unique_id=1509041166]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ijdr3")
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="TVConnector/BottomMiddle" unique_id=557232227]
+visible = false
 offset_left = -32.0
 offset_top = 1.0
 offset_right = 28.0
 offset_bottom = 41.0
+metadata/_edit_lock_ = true
 
 [node name="UnlockProgress" type="TextureProgressBar" parent="TVConnector/BottomMiddle/CenterContainer" unique_id=973631086]
 z_index = 3
@@ -553,9 +640,9 @@ value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
 [node name="BottomRight" type="Area2D" parent="TVConnector" unique_id=47487788 node_paths=PackedStringArray("left", "above")]
-position = Vector2(109, 24)
+position = Vector2(92, 43)
 script = ExtResource("2_o7wyp")
-world_size = Vector2i(51, 50)
+world_size = Vector2i(47, 48)
 left = NodePath("../BottomMiddle")
 above = NodePath("../TopRight")
 unlock_at = 5000
@@ -564,12 +651,12 @@ unlock_at = 5000
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 gui_disable_input = true
-size = Vector2i(51, 50)
+size = Vector2i(47, 48)
 script = ExtResource("3_oj7a1")
-world_size = Vector2i(51, 50)
+world_size = Vector2i(47, 48)
 
 [node name="InsideTVWorld" parent="TVConnector/BottomRight/SubViewport" unique_id=544653400 instance=ExtResource("4_lx1ox")]
-world_size = Vector2i(51, 50)
+world_size = Vector2i(47, 48)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomRight" unique_id=1294684008]
 visible = false
@@ -584,19 +671,36 @@ position = Vector2(4, 6)
 points = PackedVector2Array(-89, -56, 80, -56, 80, 44, -89, 44)
 closed = true
 default_color = Color(0.48685724, 0.2013947, 0.062202916, 1)
+metadata/_edit_lock_ = true
 
-[node name="Slots" parent="TVConnector/BottomRight" unique_id=780036181 instance=ExtResource("7_oj7a1")]
+[node name="Slots" type="Node2D" parent="TVConnector/BottomRight" unique_id=780036181]
 position = Vector2(-1, 30)
+metadata/_edit_lock_ = true
+
+[node name="DiscSlot" parent="TVConnector/BottomRight/Slots" unique_id=1294369234 instance=ExtResource("10_wi66d")]
+position = Vector2(-24, 1)
+
+[node name="DiscSlot2" parent="TVConnector/BottomRight/Slots" unique_id=2059438713 instance=ExtResource("10_wi66d")]
+position = Vector2(-6, 1)
+
+[node name="DiscSlot3" parent="TVConnector/BottomRight/Slots" unique_id=810233408 instance=ExtResource("10_wi66d")]
+position = Vector2(11, 1)
+
+[node name="DiscSlot4" parent="TVConnector/BottomRight/Slots" unique_id=1476768295 instance=ExtResource("10_wi66d")]
+position = Vector2(29, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TVConnector/BottomRight" unique_id=1313564428]
 position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_r8bkt")
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="TVConnector/BottomRight" unique_id=677812575]
+visible = false
 offset_left = -31.0
 offset_top = 3.0
 offset_right = 29.0
 offset_bottom = 43.0
+metadata/_edit_lock_ = true
 
 [node name="UnlockProgress" type="TextureProgressBar" parent="TVConnector/BottomRight/CenterContainer" unique_id=135691712]
 z_index = 3
@@ -614,34 +718,38 @@ script = ExtResource("10_7lqh5")
 [node name="Markers" type="Node2D" parent="DaShop" unique_id=1205720675]
 
 [node name="Marker2D" type="Marker2D" parent="DaShop/Markers" unique_id=1338339100]
-position = Vector2(-120, 65)
+position = Vector2(-150, 54)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D" unique_id=1277677675 instance=ExtResource("3_kqxgg")]
 disc = ExtResource("13_36i4f")
+metadata/_edit_lock_ = true
 
 [node name="Marker2D2" type="Marker2D" parent="DaShop/Markers" unique_id=300860859]
-position = Vector2(-119, 37)
+position = Vector2(-127, 78)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D2" unique_id=1563653671 instance=ExtResource("3_kqxgg")]
 disc = ExtResource("14_7ruv5")
+metadata/_edit_lock_ = true
 
 [node name="Marker2D3" type="Marker2D" parent="DaShop/Markers" unique_id=55541917]
-position = Vector2(-142, 37)
+position = Vector2(-122, 33)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D3" unique_id=1871886612 instance=ExtResource("3_kqxgg")]
 disc = ExtResource("15_bmf7w")
+metadata/_edit_lock_ = true
 
 [node name="Marker2D4" type="Marker2D" parent="DaShop/Markers" unique_id=2007260436]
-position = Vector2(-142, 15)
+position = Vector2(-156, 101)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D4" unique_id=1809058538 instance=ExtResource("3_kqxgg")]
 disc = ExtResource("16_a5vqv")
+metadata/_edit_lock_ = true
 
 [node name="Tickets" parent="DaShop" unique_id=293473471 instance=ExtResource("13_pvtff")]
-position = Vector2(-147, -35)
+position = Vector2(-153, -37)
 
 [node name="Node2D" type="Node2D" parent="DaShop" unique_id=1870207917]
-position = Vector2(-109, -4)
+position = Vector2(-176, 8)
 
 [node name="RefreshButton" type="Button" parent="DaShop/Node2D" unique_id=790873555 node_paths=PackedStringArray("shop")]
 offset_right = 32.0
@@ -653,14 +761,14 @@ shop = NodePath("../..")
 
 [node name="NewsTicker" parent="." unique_id=1354520848 instance=ExtResource("20_36i4f")]
 z_index = -1
-position = Vector2(-7, -94)
+position = Vector2(-13, -90)
 
 [node name="Tooltip" parent="." unique_id=904010136 instance=ExtResource("19_mk1uw")]
 visible = false
 z_index = 99
 
 [node name="TrashCan" parent="." unique_id=1185540062 instance=ExtResource("23_7ruv5")]
-position = Vector2(162, 87)
+position = Vector2(159, 100)
 
 [node name="Rain" type="Sprite2D" parent="." unique_id=17242746]
 z_index = 10
@@ -670,7 +778,7 @@ scale = Vector2(125, 125)
 texture = ExtResource("24_bmf7w")
 
 [node name="CostLabel" type="Node2D" parent="." unique_id=419162982]
-position = Vector2(-112, -36)
+position = Vector2(-114, -38)
 script = ExtResource("25_a5vqv")
 
 [node name="CostLabel" type="Label" parent="CostLabel" unique_id=1004153642]
@@ -684,3 +792,7 @@ horizontal_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CostLabel" unique_id=1901737469]
 libraries/ = SubResource("AnimationLibrary_q40oo")
 autoplay = &"Hover"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657990198]
+position = Vector2(17, 14)
+texture = ExtResource("26_wi66d")
