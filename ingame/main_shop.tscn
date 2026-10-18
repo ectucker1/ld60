@@ -794,7 +794,7 @@ scale = Vector2(125, 125)
 texture = ExtResource("24_bmf7w")
 
 [node name="CostLabel" type="Node2D" parent="." unique_id=419162982]
-position = Vector2(-114, -38)
+position = Vector2(-118, -38)
 script = ExtResource("25_a5vqv")
 
 [node name="CostLabel" type="Label" parent="CostLabel" unique_id=1004153642]
