@@ -9,6 +9,6 @@ up = true
 down = true
 name = "Score on wall hit for TV above or below"
 desc = "Score 1 on wall hit for TV above or below"
-num_in_pool = 10
+num_in_pool = 6
 combine_to = ExtResource("1_74oqn")
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

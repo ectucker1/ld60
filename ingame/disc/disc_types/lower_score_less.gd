@@ -17,7 +17,7 @@ var right := false
 var buff_amount := 0.0
 #FIX ME - math may be WAY off
 func on_physics_process(this: TVContext, delta: float) -> void:
-	var buff_calc = buff_amount * -0.5
+	var buff_calc = buff_amount * -1
 	if above and this.above != null:
 		var buff = Disc.new()
 		buff.corner_score_mult = buff_calc

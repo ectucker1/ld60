@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ScoreNearbyCorner" format=3 uid="uid://brm0v0vs3tu1f"]
 
+[ext_resource type="Resource" uid="uid://da8k7mx2yr1b5" path="res://ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_rl3.tres" id="1_hbjxg"]
 [ext_resource type="Script" uid="uid://llmy07wtdmfn" path="res://ingame/disc/disc_types/score_on_nearby_corner/score_nearby_corner.gd" id="1_w75ap"]
 
 [resource]
@@ -10,4 +11,5 @@ bonus = 10
 name = "Score on right or left TV corner hit 2"
 desc = "Score 10 on right or left tv corner hit"
 num_in_pool = 2
+combine_to = ExtResource("1_hbjxg")
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

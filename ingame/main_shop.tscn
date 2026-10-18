@@ -23,7 +23,7 @@
 [ext_resource type="Resource" uid="uid://di4vuaomsjbca" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_add.tres" id="16_a5vqv"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqdsg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36i4f"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -47,13 +47,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wi66d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7ruv5"]
 viewport_path = NodePath("TVConnector/TopLeft/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36i4f"]
 size = Vector2(56, 40)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q40oo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmf7w"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -77,13 +77,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_y437b"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a5vqv"]
 viewport_path = NodePath("TVConnector/TopMiddle/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvtff"]
 size = Vector2(72, 48)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bl64n"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqdsg"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -107,13 +107,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u0ij1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wi66d"]
 viewport_path = NodePath("TVConnector/TopRight/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oar8"]
 size = Vector2(43, 40)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnfix"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q40oo"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -137,13 +137,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dx04f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_y437b"]
 viewport_path = NodePath("TVConnector/BottomLeft/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk1uw"]
 size = Vector2(75, 60)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpvwb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bl64n"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -167,13 +167,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_nh7q2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u0ij1"]
 viewport_path = NodePath("TVConnector/BottomMiddle/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijdr3"]
 size = Vector2(59, 45)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ceqm1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnfix"]
 shader = ExtResource("5_7lqh5")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.154000007315
@@ -197,7 +197,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4810000228475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_141ji"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dx04f"]
 viewport_path = NodePath("TVConnector/BottomRight/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8bkt"]
@@ -230,8 +230,8 @@ world_size = Vector2i(52, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopLeft" unique_id=1582113759]
 visible = false
-material = SubResource("ShaderMaterial_fqdsg")
-texture = SubResource("ViewportTexture_wi66d")
+material = SubResource("ShaderMaterial_36i4f")
+texture = SubResource("ViewportTexture_7ruv5")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -280,8 +280,8 @@ world_size = Vector2i(70, 49)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopMiddle" unique_id=1332464654]
 visible = false
-material = SubResource("ShaderMaterial_q40oo")
-texture = SubResource("ViewportTexture_y437b")
+material = SubResource("ShaderMaterial_bmf7w")
+texture = SubResource("ViewportTexture_a5vqv")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -330,8 +330,8 @@ world_size = Vector2i(40, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/TopRight" unique_id=1817236573]
 visible = false
-material = SubResource("ShaderMaterial_bl64n")
-texture = SubResource("ViewportTexture_u0ij1")
+material = SubResource("ShaderMaterial_fqdsg")
+texture = SubResource("ViewportTexture_wi66d")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -379,8 +379,8 @@ world_size = Vector2i(72, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft" unique_id=846064115]
 visible = false
-material = SubResource("ShaderMaterial_wnfix")
-texture = SubResource("ViewportTexture_dx04f")
+material = SubResource("ShaderMaterial_q40oo")
+texture = SubResource("ViewportTexture_y437b")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -429,8 +429,8 @@ world_size = Vector2i(56, 45)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle" unique_id=450842524]
 visible = false
-material = SubResource("ShaderMaterial_fpvwb")
-texture = SubResource("ViewportTexture_nh7q2")
+material = SubResource("ShaderMaterial_bl64n")
+texture = SubResource("ViewportTexture_u0ij1")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 
@@ -479,8 +479,8 @@ world_size = Vector2i(51, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomRight" unique_id=1294684008]
 visible = false
-material = SubResource("ShaderMaterial_ceqm1")
-texture = SubResource("ViewportTexture_141ji")
+material = SubResource("ShaderMaterial_wnfix")
+texture = SubResource("ViewportTexture_dx04f")
 script = ExtResource("6_oj7a1")
 metadata/_edit_lock_ = true
 

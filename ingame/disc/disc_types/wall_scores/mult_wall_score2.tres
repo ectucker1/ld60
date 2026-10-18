@@ -9,5 +9,5 @@ name = "WALL-X2"
 desc = "Increase wall hit mult by 10%"
 num_in_pool = 2
 combine_to = ExtResource("1_7kcem")
-wall_score_mult = 1.1
+wall_score_mult = 0.5
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

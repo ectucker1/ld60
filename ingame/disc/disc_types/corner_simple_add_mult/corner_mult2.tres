@@ -9,5 +9,5 @@ name = "Corner Score Mult"
 desc = "Increase corner mult by 15% to corner score"
 num_in_pool = 3
 combine_to = ExtResource("1_vbh3w")
-corner_score_mult = 1.15
+corner_score_mult = 0.15
 metadata/_custom_type_script = "uid://dru57ptcau8xr"
