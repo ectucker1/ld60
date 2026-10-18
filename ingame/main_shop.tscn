@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
 [ext_resource type="PackedScene" uid="uid://dans3f0f2a2eo" path="res://ingame/ticker/news_ticker.tscn" id="20_36i4f"]
 [ext_resource type="PackedScene" uid="uid://1o5bdibbsjs1" path="res://ingame/trash/trash_can.tscn" id="23_7ruv5"]
+[ext_resource type="Shader" uid="uid://dh7nsbyv8n6ir" path="res://ingame/rain.gdshader" id="23_bmf7w"]
+[ext_resource type="Texture2D" uid="uid://t3v2nw7ec4bf" path="res://util/clear.png" id="24_bmf7w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
 shader = ExtResource("5_7lqh5")
@@ -202,6 +204,20 @@ viewport_path = NodePath("TVConnector/BottomRight/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8bkt"]
 size = Vector2(54.5, 50.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36i4f"]
+shader = ExtResource("23_bmf7w")
+shader_parameter/rain_amount = 70.0
+shader_parameter/near_rain_length = 0.37900001730398003
+shader_parameter/far_rain_length = 0.20500000903898
+shader_parameter/near_rain_width = 0.10000000149012
+shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_transparency = 0.28500001027762
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.5888, 0.8427201, 0.92, 0.21176471)
+shader_parameter/base_rain_speed = 0.15400000405512
+shader_parameter/additional_rain_speed = 0.13400000310512
+shader_parameter/slant = 0.07500005106249996
 
 [node name="MainShop" type="Node2D" unique_id=1545312003]
 
@@ -582,3 +598,9 @@ z_index = 99
 
 [node name="TrashCan" parent="." unique_id=1185540062 instance=ExtResource("23_7ruv5")]
 position = Vector2(162, 87)
+
+[node name="Rain" type="Sprite2D" parent="." unique_id=17242746]
+z_index = 10
+material = SubResource("ShaderMaterial_36i4f")
+scale = Vector2(125, 125)
+texture = ExtResource("24_bmf7w")
