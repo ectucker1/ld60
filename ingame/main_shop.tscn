@@ -773,7 +773,7 @@ shop = NodePath("../..")
 
 [node name="NewsTicker" parent="." unique_id=1354520848 instance=ExtResource("20_36i4f")]
 z_index = -1
-position = Vector2(-13, -90)
+position = Vector2(22, -90)
 
 [node name="Tooltip" parent="." unique_id=904010136 instance=ExtResource("19_mk1uw")]
 visible = false
