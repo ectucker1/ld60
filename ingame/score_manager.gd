@@ -1,7 +1,7 @@
 extends Node
 
 
-var score: int = -25
+var score: int = 0
 
 var tickets: int = 0
 
