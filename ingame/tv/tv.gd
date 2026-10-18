@@ -60,6 +60,7 @@ func _ready() -> void:
 func _mouse_enter() -> void:
 	if not started:
 		TooltipManager.try_show(self)
+		GlobalSounds.play("Hover")
 
 func _mouse_exit() -> void:
 	TooltipManager.try_remove(self)

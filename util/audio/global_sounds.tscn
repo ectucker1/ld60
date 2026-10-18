@@ -20,6 +20,8 @@
 [node name="GlobalSounds" type="Node" unique_id=516643137]
 process_mode = 3
 script = ExtResource("1_31spj")
+corner_score_max = 300
+corner_volume_range = Vector2(-2, 4)
 corner_pitch_range = Vector2(1.05, 0.75)
 corner_boom_start = 0.3
 

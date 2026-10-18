@@ -33,6 +33,7 @@ func _mouse_enter() -> void:
 	hovered = true
 	if DragManager.dragged_object == null:
 		TooltipManager.try_show(self)
+		GlobalSounds.play("Hover")
 	for other_disc in get_tree().get_nodes_in_group("discs"):
 		if other_disc.disc.get_meta("original_path") == self.disc.get_meta("original_path"):
 			other_disc.get_node("Highlight").visible = true
