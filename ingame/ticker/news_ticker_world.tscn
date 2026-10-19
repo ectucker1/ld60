@@ -24,7 +24,7 @@ layout_mode = 2
 offset_transform_enabled = true
 
 [node name="ScoreLabel" type="Label" parent="Offset/ScoreContainer" unique_id=914022119]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_colors/font_color = Color(0.40950006, 0.91, 0, 1)
@@ -35,7 +35,7 @@ text = "Score: Wow"
 script = ExtResource("2_lqibe")
 
 [node name="CompetitorScoreLbl" type="Label" parent="Offset/ScoreContainer" unique_id=634138926]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_colors/font_color = Color(0.91, 0, 0.1971667, 1)

@@ -62,7 +62,7 @@ func main_menu() -> void:
 	# Pre-hide menu so we don't mess with puasing over top of the transiton
 	anim_player.play("Hide")
 	shown = false
-	TransitionLayer.transition_to(project_main_scene_path)
+	#TransitionLayer.transition_to(project_main_scene_path)
 
 func exit() -> void:
 	get_tree().quit()
