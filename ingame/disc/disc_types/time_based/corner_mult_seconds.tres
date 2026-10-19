@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_rnqyx")
 name = "The Walk"
-desc = "Corner  hit % $$ increases over time between hits"
+desc = "Corner hit % $$ increases over time between hits"
 num_in_pool = 7
 combine_to = ExtResource("1_n8jp8")
 metadata/_custom_type_script = "uid://dru57ptcau8xr"
