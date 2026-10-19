@@ -13,6 +13,7 @@ var direction := Vector2.RIGHT
 
 var colors = [Color.WHITE, Color.RED, Color.GREEN, Color.BLUE, Color.CYAN, Color.MAGENTA, Color.YELLOW]
 
+var can_trigger := false
 
 func find_tv(node) -> TV:
 	if node is TV:
@@ -32,6 +33,9 @@ func _ready() -> void:
 		direction = Vector2(0.091, -0.18).normalized()
 	
 	modulate = colors.pick_random()
+	
+	can_trigger = false
+	get_tree().create_timer(0.2).timeout.connect(func(): can_trigger = true)
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(direction * base_speed * tv.get_speed_mult() * delta)

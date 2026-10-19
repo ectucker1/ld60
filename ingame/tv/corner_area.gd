@@ -13,7 +13,7 @@ func _body_entered(body: PhysicsBody2D) -> void:
 	if ScoreManager.score < 1:
 		return
 	
-	if body is Logo:
+	if body is Logo and body.can_trigger:
 		body.hit_corner()
 		if _bumper_tween != null:
 			_bumper_tween.stop()
