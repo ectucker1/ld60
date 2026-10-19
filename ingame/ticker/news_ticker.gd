@@ -65,3 +65,4 @@ func _physics_process(delta: float) -> void:
 		if (not next.down and ScoreManager.score >= next.threshold) or (next.down and (ScoreManager.score - ScoreManager.competitor_score) <= next.threshold):
 			news.pop_front()
 			show_news(next.text)
+	visible = ScoreManager.score > 0

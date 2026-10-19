@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://d0uu67r4e4ksq" path="res://ingame/cost_label.gd" id="25_a5vqv"]
 [ext_resource type="Texture2D" uid="uid://bsf1tcfyymabw" path="res://ingame/Screen.png" id="26_wi66d"]
 [ext_resource type="Shader" uid="uid://c357dy851mrtf" path="res://ingame/clouds.gdshader" id="27_clouds"]
+[ext_resource type="PackedScene" uid="uid://bwy25pcxjsexn" path="res://ingame/menu_zone.tscn" id="29_bl64n"]
 [ext_resource type="Texture2D" uid="uid://d24gtxx27l72q" path="res://util/white.png" id="29_y437b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ruv5"]
@@ -845,9 +846,13 @@ libraries/ = SubResource("AnimationLibrary_q40oo")
 autoplay = &"Hover"
 
 [node name="Glass" type="Sprite2D" parent="." unique_id=657990198]
-z_index = 5
+z_index = 6
 position = Vector2(17, 14)
 texture = ExtResource("26_wi66d")
+
+[node name="MenuZone" parent="." unique_id=1793736949 instance=ExtResource("29_bl64n")]
+visible = false
+position = Vector2(17, 14)
 
 [node name="BlackBars" type="Node2D" parent="." unique_id=1019688413]
 modulate = Color(0.043137256, 0.05490196, 0.039215688, 1)

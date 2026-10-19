@@ -8,7 +8,7 @@ var competitor_time_current: float = 0.0
 
 var competitor_score: int = 0
 
-var score: int = 0
+var score: int = -999
 
 #default back to zero after testing!!!!!!!
 var tickets: int = 0

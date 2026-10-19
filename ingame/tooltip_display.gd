@@ -5,7 +5,7 @@ var previous_current: Node2D
 
 
 func _process(delta: float) -> void:
-	visible = TooltipManager.current != null
+	visible = TooltipManager.current != null and ScoreManager.score > 0
 	if TooltipManager.current != null:
 		if previous_current != TooltipManager.current:
 			update_text(TooltipManager.current)

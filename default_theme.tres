@@ -74,42 +74,34 @@ corner_detail = 5
 [sub_resource type="DPITexture" id="DPITexture_ed8xq"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_u7cj8"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_uwdo0"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_nh3dc"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_5sl4s"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_s87n4"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_xgv2l"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="DPITexture" id="DPITexture_juax2"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
 "
-base_scale = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bp0wp"]
 content_margin_left = 16.0
@@ -144,17 +136,14 @@ content_margin_bottom = 8.0
 [sub_resource type="DPITexture" id="DPITexture_7j863"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
 "
-base_scale = 2.0
 
 [sub_resource type="DPITexture" id="DPITexture_50bnw"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
 "
-base_scale = 2.0
 
 [sub_resource type="DPITexture" id="DPITexture_cefca"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
 "
-base_scale = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7cj8"]
 content_margin_left = 4.0
@@ -203,17 +192,14 @@ corner_detail = 5
 [sub_resource type="DPITexture" id="DPITexture_bp0wp"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
 "
-base_scale = 2.0
 
 [sub_resource type="DPITexture" id="DPITexture_e7bfs"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
 "
-base_scale = 2.0
 
 [sub_resource type="DPITexture" id="DPITexture_3taad"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
 "
-base_scale = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh3dc"]
 content_margin_left = 4.0

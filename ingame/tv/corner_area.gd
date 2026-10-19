@@ -8,11 +8,9 @@ var enabled := false
 func _ready() -> void:
 	body_entered.connect(_body_entered)
 	$Bumper.scale = Vector2(0, 0)
-	
-	get_tree().create_timer(1.0).timeout.connect(func(): enabled = true)
 
 func _body_entered(body: PhysicsBody2D) -> void:
-	if not enabled:
+	if ScoreManager.score < 1:
 		return
 	
 	if body is Logo:
