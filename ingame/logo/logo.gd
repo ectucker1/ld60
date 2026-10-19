@@ -22,6 +22,7 @@ func find_tv(node) -> TV:
 		return find_tv(node.get_parent())
 
 func _ready() -> void:
+	add_to_group("logos")
 	tv = find_tv(self)
 	
 	randomize()
