@@ -22,3 +22,5 @@ func _physics_process(delta: float) -> void:
 	
 	for i in range(len(logos), len(reflections)):
 		reflections[i].visible = false
+	
+	visible = !ScoreManager.its_over
