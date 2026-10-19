@@ -16,3 +16,5 @@ data_*/
 
 # VSCode project files
 .vscode/*
+
+__pycache__/
