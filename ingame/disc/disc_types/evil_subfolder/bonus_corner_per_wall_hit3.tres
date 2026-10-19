@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_oa2sc")
 buff_amount = 4.0
-name = "Four walls make a corner"
-desc = "Gain a massive stacking bonus to corner points for each wall hit, resets on corner hit"
+name = "Wall to the Future 3"
+desc = "\"+$4 for next corner hit per wall hit, reset on corner hit\""
 tier = 3
 metadata/_custom_type_script = "uid://d1jamvncs61io"

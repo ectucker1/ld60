@@ -7,6 +7,6 @@ script = ExtResource("1_bn6mq")
 left = true
 bonus = 100
 name = "Genesis III"
-desc = "Score 100 when left TV hits a corner"
+desc = "\"+$100 when TV to left hits corner\""
 tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

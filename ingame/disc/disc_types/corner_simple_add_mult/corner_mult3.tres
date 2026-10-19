@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_q6n3x")
 name = "Hustler III"
-desc = "Increase corner mult by 25% to corner score"
+desc = "\"+25% $$ for corner hits\""
 tier = 3
 corner_score_mult = 0.25
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

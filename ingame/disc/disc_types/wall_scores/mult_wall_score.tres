@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_308ao")
 name = "WALL-X"
-desc = "Increase wall hit mult by 5%"
+desc = "\"+5% $$ for wall hits"
 num_in_pool = 7
 combine_to = ExtResource("1_vnqhv")
 wall_score_mult = 0.25

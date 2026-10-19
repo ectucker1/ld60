@@ -1,0 +1,51 @@
+Name,Description,Tier,Tier Label,Number in Pool,Resource Path
+Building Stolen,"""+$25 when TV to right hits corner.""",1,Tier 1,6,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_r.tres
+Dog of Wall Avenue,"""Speed up on wall hit, reset on corner hit""",1,Tier 1,7,ingame/disc/disc_types/evil_subfolder/speed_up_on_wall_hit.tres
+DROVE,"""+$1 when TV above or below hits wall""",1,Tier 1,6,ingame/disc/disc_types/score_on_nearby_wall/score_on_nearby_wall_ab.tres
+Genesis,"""+$25 when TV to left hits corner""",1,Tier 1,6,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_l.tres
+Hustler,"""+10% $$ for corner hits""",1,Tier 1,7,ingame/disc/disc_types/corner_simple_add_mult/corner_mult.tres
+Inside Dude,"""+$15 when TV for right or left hits corner""",1,Tier 1,6,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_rl.tres
+Quick and Mad,"""+10% DVD speed""",1,Tier 1,8,ingame/disc/disc_types/speed_mult/speed_mult_10.tres
+REPLACE_ME,"""REPLACE_ME""",1,Tier 1,0,ingame/disc/disc_types/mult_wall_score.tres
+Sea's 10,"""+$10 for corner hits""",1,Tier 1,8,ingame/disc/disc_types/corner_simple_add_mult/corner_add.tres
+Green Inch,"""+$75 for corner hit if logo is green""",1,Tier 1,5,ingame/disc/disc_types/colors/green_bonus.tres
+The Walk,"""Corner  hit % $$ increases over time between hits""",1,Tier 1,7,ingame/disc/disc_types/time_based/corner_mult_seconds.tres
+Wall to the Future,"""+$1 for next corner hit per wall hit, reset on corner hit""",1,Tier 1,8,ingame/disc/disc_types/evil_subfolder/bonus_corner_per_wall_hit.tres
+WALL-X,"""+5% $$ for wall hits",1,Tier 1,7,ingame/disc/disc_types/wall_scores/mult_wall_score.tres
+WALL-Y,"""+$1 for wall hits""",1,Tier 1,7,ingame/disc/disc_types/wall_scores/add_wall_score.tres
+Want for Velocity,"""Corner hits give a speed boost to adjanct TVs""",1,Tier 1,7,ingame/disc/disc_types/evil_subfolder/speed_up_all_corner_hit.tres
+Building Stolen II,"""+$50 when TV to right hits a corner",2,Tier 2,1,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_r2.tres
+Dog of Wall Avenue 2,"""Speed up more on wall hit, reset on corner hit""",2,Tier 2,1,ingame/disc/disc_types/evil_subfolder/speed_up_on_wall_hit2.tres
+DROVE MORE,"""+$2 when TV above or below hits wall""",2,Tier 2,1,ingame/disc/disc_types/score_on_nearby_wall/score_on_nearby_wall_ab2.tres
+Genesis II,"""+$50 when TV to left hits corner""",2,Tier 2,1,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_l2.tres
+Hustler II,""" +15% $$ for corner hits""",2,Tier 2,1,ingame/disc/disc_types/corner_simple_add_mult/corner_mult2.tres
+Inside Dude II,"""+$25 when TV to right or left hits corner""",2,Tier 2,1,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_rl2.tres
+2 Quick 2 Mad,"""+15% DVD speed""",2,Tier 2,2,ingame/disc/disc_types/speed_mult/speed_mult_20.tres
+Sea's 15,"""+$15 for corner hits""",2,Tier 2,3,ingame/disc/disc_types/corner_simple_add_mult/corner_add2.tres
+Green Kilometer,"""+$150 for corner hit if logo is green""",2,Tier 2,2,ingame/disc/disc_types/colors/green_bonus2.tres
+The Journey,"""Corner hit % $$ increases greatly over time between hits""",2,Tier 2,1,ingame/disc/disc_types/time_based/corner_mult_seconds2.tres
+Wall to the Future 2,"""+$2 for next corner hit per wall hit, reset on corner hit""",2,Tier 2,1,ingame/disc/disc_types/evil_subfolder/bonus_corner_per_wall_hit2.tres
+WALL-X2,"""+10% $$ for wall hits",2,Tier 2,1,ingame/disc/disc_types/wall_scores/mult_wall_score2.tres
+WALL-Y II RETURN TO EARTH,"""+$2 for wall hits""",2,Tier 2,1,ingame/disc/disc_types/wall_scores/add_wall_score2.tres
+Want for More Velocity,"""Corner hits give a big speed boost to adjacent TVs""",2,Tier 2,1,ingame/disc/disc_types/evil_subfolder/speed_up_all_corner_hit2.tres
+Building Stolen III,"""+$100 when TV to right hits a corner""",3,Tier 3,0,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_r3.tres
+Dog of Wall Avenue 3,"""Speed up greatly on wall hit, reset on corner hit""",3,Tier 3,0,ingame/disc/disc_types/evil_subfolder/speed_up_on_wall_hit3.tres
+DROVE FOREVER,"""+$4 when TV above or below hits wall""",3,Tier 3,0,ingame/disc/disc_types/score_on_nearby_wall/score_on_nearby_wall_ab3.tres
+Wall to the Future 3,"""+$4 for next corner hit per wall hit, reset on corner hit""",3,Tier 3,0,ingame/disc/disc_types/evil_subfolder/bonus_corner_per_wall_hit3.tres
+Genesis III,"""+$100 when TV to left hits corner""",3,Tier 3,0,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_l3.tres
+Hustler III,"""+25% $$ for corner hits""",3,Tier 3,0,ingame/disc/disc_types/corner_simple_add_mult/corner_mult3.tres
+Inside Dude III,"""+$50 when TV to right or left hits corner""",3,Tier 3,0,ingame/disc/disc_types/score_on_nearby_corner/score_on_nearby_corner_rl3.tres
+3 Quick 3 Mad,"""+20% DVD speed""",3,Tier 3,0,ingame/disc/disc_types/speed_mult/speed_mult_30.tres
+Sea's 25,"""+$25 for corner hits""",3,Tier 3,0,ingame/disc/disc_types/corner_simple_add_mult/corner_add3.tres
+Green Lightyear,"""+$300 for corner hits if logo is green""",3,Tier 3,0,ingame/disc/disc_types/colors/green_bonus3.tres
+The Odessey,"""Corner hit % $$ increases massivly over time between hits""",3,Tier 3,0,ingame/disc/disc_types/time_based/corner_mult_seconds3.tres
+WALL-X3,"""+20% $$ for wall hits",3,Tier 3,0,ingame/disc/disc_types/wall_scores/mult_wall_score3.tres
+WALL-Y THE THIRD INSTALLMENT,"""+$5 for wall hits""",3,Tier 3,0,ingame/disc/disc_types/wall_scores/add_wall_score3.tres
+Wanted for Most Velocity,"""Corner hits give a massive speed boost to adjacent TVs""",3,Tier 3,0,ingame/disc/disc_types/evil_subfolder/speed_up_all_corner_hit3.tres
+Attack of the Clones,"""Add an extra DVD  to the screen""",4,Unique,1,ingame/disc/disc_types/more_evil_subfolder/extra_disc.tres
+Blue Pill,"""DVD no longer turns blue""",4,Unique,1,ingame/disc/disc_types/colors/remove_blue.tres
+Bord V Berrari,"""Speed up the TV to the right but slow this one down""",4,Unique,1,ingame/disc/disc_types/evil_subfolder/speed_up_right.tres
+High and Mighty,"""Increase corner and wall % $$. TV below loses wall and corner % $$.""",4,Unique,1,ingame/disc/disc_types/evil_subfolder/lower_score_less.tres
+The Snap,"""When this TV scores an even number, double it.\nOtherwise, score nothing.""",4,Unique,1,ingame/disc/disc_types/more_evil_subfolder/double_on_even.tres
+Red Pill,"""DVD no longer turns red""",4,Unique,1,ingame/disc/disc_types/colors/remove_red.tres
+Dead Corner Society,"""+100% $$ for wall hits. Corner hits no longer score.""",4,Unique,1,ingame/disc/disc_types/more_evil_subfolder/no_corner_double_wall.tres

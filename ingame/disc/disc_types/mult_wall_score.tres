@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_ofacu")
+desc = "\"REPLACE_ME\""
 wall_score_mult = 2.0
 metadata/_custom_type_script = "uid://dru57ptcau8xr"
