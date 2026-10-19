@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="ld60"
+config/name="Corner the Market"
 run/main_scene="uid://ck08mlqov6xn1"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
 
 [aseprite]
 

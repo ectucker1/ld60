@@ -8,6 +8,10 @@
 [ext_resource type="Script" uid="uid://tea6g6eujy27" path="res://ingame/menu/start_button.gd" id="5_1o0b2"]
 [ext_resource type="Script" uid="uid://3e8q6vusjkj5" path="res://ingame/exit_button.gd" id="6_fagqj"]
 
+[sub_resource type="FontVariation" id="FontVariation_eu55n"]
+base_font = ExtResource("2_s1py6")
+spacing_space = -8
+
 [sub_resource type="Animation" id="Animation_cltkd"]
 resource_name = "HideMenus"
 tracks/0/type = "value"
@@ -116,7 +120,6 @@ offset_right = 116.0
 offset_bottom = 81.0
 
 [node name="MainMenu" type="MarginContainer" parent="Control" unique_id=1050501308]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,9 +156,9 @@ alignment = 1
 [node name="Label" type="Label" parent="Control/MainMenu/VBoxContainer" unique_id=1297805563]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3019608, 0.49411765, 0.74509805, 1)
-theme_override_fonts/font = ExtResource("2_s1py6")
+theme_override_fonts/font = SubResource("FontVariation_eu55n")
 theme_override_font_sizes/font_size = 22
-text = "Revue of Rental"
+text = "Corner the Market"
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Control/MainMenu/VBoxContainer" unique_id=1855200646]
@@ -176,6 +179,7 @@ text = "Exit"
 script = ExtResource("6_fagqj")
 
 [node name="EndMenu" type="MarginContainer" parent="Control" unique_id=404602878]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

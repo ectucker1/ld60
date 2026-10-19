@@ -9,7 +9,7 @@ on:
 
 env:
   GODOT_VERSION: 4.7.2
-  EXPORT_NAME: ld60
+  EXPORT_NAME: Corner_the_Market
   PROJECT_PATH: .
 
 jobs:

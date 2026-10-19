@@ -15,7 +15,7 @@ func transition_to(scene: String) -> void:
 		next = scene
 		
 		get_tree().paused = true
-		PauseMenu.enabled = false
+		#PauseMenu.enabled = false
 		GlobalSounds.pause_triggers = true
 
 		anim_player.play("OutIn")
@@ -26,7 +26,7 @@ func _switch_scene_to_next():
 
 func _finish_transition():
 	get_tree().paused = false
-	PauseMenu.enabled = true
+	#PauseMenu.enabled = true
 	GlobalSounds.pause_triggers = false
 	transitioning = false
 	next = ""
