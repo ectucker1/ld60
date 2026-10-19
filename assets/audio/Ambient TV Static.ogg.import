@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ambient TV Static.ogg-2b25d495af7dc2e692c6019
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

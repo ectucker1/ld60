@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ambient Rain.ogg-c41e721e6bec9e58f5b0b7f01b88
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

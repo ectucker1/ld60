@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/The Corner Shop.ogg-554b1038472f8e0487c6664d3
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
