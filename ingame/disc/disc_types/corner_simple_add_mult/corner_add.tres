@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_ms1ax")
 name = "Sea's 10"
-desc = "Add 10 to corner score"
+desc = "\"+$10 for corner hits\""
 num_in_pool = 12
 combine_to = ExtResource("1_7fyhq")
 corner_score_add = 10

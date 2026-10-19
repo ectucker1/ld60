@@ -8,6 +8,6 @@ left = true
 right = true
 bonus = 50
 name = "Inside Dude III"
-desc = "Score 50 when right or left TV hits a corner"
+desc = "\"+$50 when TV to right or left hits corner\""
 tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

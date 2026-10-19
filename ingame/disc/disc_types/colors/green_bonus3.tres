@@ -6,7 +6,7 @@
 script = ExtResource("1_cxxsn")
 target_color = Color(0, 1, 0, 1)
 extra_add = 300
-name = "Shade of Cash 3"
-desc = "Corner hit is an extra 300 if the color is green"
+name = "Green Lightyear"
+desc = "\"+$300 for corner hits if logo is green\""
 tier = 3
 metadata/_custom_type_script = "uid://c0l6vu1pm27p4"

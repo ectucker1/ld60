@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_n6i38")
 buff_amount = 2.25
-name = "Three walls make a corner"
-desc = "Gain a larger stacking bonus to corner points for each wall hit, resets on corner hit"
+name = "Wall to the Future 2"
+desc = "\"+$2 for next corner hit per wall hit, reset on corner hit\""
 tier = 2
 num_in_pool = 1
 combine_to = ExtResource("1_6rgq7")

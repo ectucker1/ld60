@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_m0vty")
 name = "WALL-Y"
-desc = "Add 1 points to score on wall hit"
+desc = "\"+$1 for wall hits\""
 num_in_pool = 7
 combine_to = ExtResource("1_45e0s")
 wall_score_add = 1

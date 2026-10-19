@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_t3hop")
-name = "Walls Only"
-desc = "+1 mult for walls. Corners no longer score."
+name = "Dead Corner Society"
+desc = "\"+100% $$ for wall hits. Corner hits no longer score.\""
 tier = 4
 num_in_pool = 1
 metadata/_custom_type_script = "uid://dufriktheeyig"
