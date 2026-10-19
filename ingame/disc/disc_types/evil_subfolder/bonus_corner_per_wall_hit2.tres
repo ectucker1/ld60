@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_n6i38")
-buff_amount = 2.25
+buff_amount = 2.0
 name = "Wall to the Future 2"
 desc = "\"+$2 for next corner hit per wall hit, reset on corner hit\""
 tier = 2
