@@ -32,6 +32,9 @@ func can_refresh() -> bool:
 			num_bought += 1
 	return num_bought >= 2
 
+var force_unique_every = 4
+var force_unique_in = force_unique_every
+
 func refresh() -> void:
 	# Add remaining back to pool
 	for marker in $Markers.get_children():
@@ -41,13 +44,28 @@ func refresh() -> void:
 				pool.push_back(original_disc)
 			child.queue_free()
 	
+	force_unique_in -= 1
+	
 	# Spawn new discs
 	pool.shuffle()
 	for marker in $Markers.get_children():
 		if pool.is_empty():
 			continue
 		
+		# Force a unique, if available
+		var chosen_disc = null
+		if force_unique_in <= 0:
+			for disc in pool:
+				if disc.tier == 4:
+					chosen_disc = disc
+		if chosen_disc != null:
+			pool.erase(chosen_disc)
+		else:
+			chosen_disc = pool.pop_back()
+		if chosen_disc.tier == 4:
+			force_unique_in = force_unique_every
+		
 		var new_disc = disc.instantiate()
-		new_disc.disc = pool.pop_back()
+		new_disc.disc = chosen_disc
 		marker.add_child(new_disc)
 		new_disc.global_position = marker.global_position
