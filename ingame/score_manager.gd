@@ -16,6 +16,8 @@ var tickets: int = 0
 var last_ticket: int = 0
 var next_ticket: int = 25
 
+var its_over := false
+
 func ticket_progress() -> float:
 	return float(score - last_ticket) / float(next_ticket - last_ticket) * 100.0
 
@@ -31,6 +33,12 @@ func _physics_process(delta: float) -> void:
 			competitor_time_current = competitor_time_base
 			competitor_score = (competitor_score * 1.00001) + 41
 			print(competitor_score)
+	if its_over:
+		score = -999
+	if score > 0 and competitor_score > score and not its_over:
+		its_over = true
+		GlobalMenu.menu_zone.show_menu("EndMenu")
+	
 func next_ticket_threshold(prev_ticket: int) -> int:
 	return ( (prev_ticket * 1.09) + (25 * log(prev_ticket) / log(10)) + 100 )
  	#Balance return point sunday morning

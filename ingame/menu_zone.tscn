@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://bwy25pcxjsexn"]
+
+[ext_resource type="Texture2D" uid="uid://d24gtxx27l72q" path="res://util/white.png" id="1_l0jju"]
+[ext_resource type="Script" uid="uid://pqkfoujdvlpl" path="res://ingame/menu_zone.gd" id="2_cltkd"]
+[ext_resource type="FontFile" uid="uid://bt8bllgnhpajx" path="res://assets/fonts/not_jam_laika/Not Jam Laika 11.ttf" id="2_s1py6"]
+[ext_resource type="Script" uid="uid://clc28i66wl32e" path="res://util/pause_menu/fullscreen_toggle.gd" id="3_r6dbj"]
+[ext_resource type="PackedScene" uid="uid://c60j8g1ejaogb" path="res://util/audio/volume_controller.tscn" id="4_gr4hd"]
+[ext_resource type="Script" uid="uid://tea6g6eujy27" path="res://ingame/menu/start_button.gd" id="5_1o0b2"]
+[ext_resource type="Script" uid="uid://3e8q6vusjkj5" path="res://ingame/exit_button.gd" id="6_fagqj"]
+
+[sub_resource type="Animation" id="Animation_cltkd"]
+resource_name = "HideMenus"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_hxigo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ysl1o"]
+resource_name = "ShowMenus"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ysl1o"]
+_data = {
+&"HideMenus": SubResource("Animation_cltkd"),
+&"RESET": SubResource("Animation_hxigo"),
+&"ShowMenus": SubResource("Animation_ysl1o")
+}
+
+[node name="MenuZone" type="Sprite2D" unique_id=1793736949]
+process_mode = 3
+self_modulate = Color(0, 0, 0, 1)
+z_index = 5
+texture = ExtResource("1_l0jju")
+region_enabled = true
+region_rect = Rect2(0, 0, 234, 162)
+script = ExtResource("2_cltkd")
+
+[node name="Control" type="Control" parent="." unique_id=1206652307]
+custom_minimum_size = Vector2(232, 162)
+custom_maximum_size = Vector2(232, 162)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -116.0
+offset_top = -81.0
+offset_right = 116.0
+offset_bottom = 81.0
+
+[node name="MainMenu" type="MarginContainer" parent="Control" unique_id=1050501308]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsLine" type="HBoxContainer" parent="Control/MainMenu" unique_id=1365136490]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/MainMenu/SettingsLine" unique_id=1950279843]
+layout_mode = 2
+
+[node name="FullscreenToggle" type="CheckButton" parent="Control/MainMenu/SettingsLine/CenterContainer" unique_id=1393044959]
+layout_mode = 2
+text = "Fullscreen"
+script = ExtResource("3_r6dbj")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control/MainMenu/SettingsLine" unique_id=1197795334]
+layout_mode = 2
+
+[node name="VolumeController" parent="Control/MainMenu/SettingsLine/CenterContainer2" unique_id=401136011 instance=ExtResource("4_gr4hd")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MainMenu" unique_id=177401669]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/MainMenu/VBoxContainer" unique_id=1297805563]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3019608, 0.49411765, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("2_s1py6")
+theme_override_font_sizes/font_size = 22
+text = "Revue of Rental"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/MainMenu/VBoxContainer" unique_id=1855200646]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MainMenu/VBoxContainer/CenterContainer" unique_id=887146256]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Control/MainMenu/VBoxContainer/CenterContainer/VBoxContainer" unique_id=699123007]
+layout_mode = 2
+text = "Start"
+script = ExtResource("5_1o0b2")
+
+[node name="ExitButton" type="Button" parent="Control/MainMenu/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1977022321]
+layout_mode = 2
+text = "Exit"
+script = ExtResource("6_fagqj")
+
+[node name="EndMenu" type="MarginContainer" parent="Control" unique_id=404602878]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsLine" type="HBoxContainer" parent="Control/EndMenu" unique_id=1668049040]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/EndMenu/SettingsLine" unique_id=133999536]
+layout_mode = 2
+
+[node name="FullscreenToggle" type="CheckButton" parent="Control/EndMenu/SettingsLine/CenterContainer" unique_id=166918235]
+layout_mode = 2
+text = "Fullscreen"
+script = ExtResource("3_r6dbj")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control/EndMenu/SettingsLine" unique_id=1754818955]
+layout_mode = 2
+
+[node name="VolumeController" parent="Control/EndMenu/SettingsLine/CenterContainer2" unique_id=399770842 instance=ExtResource("4_gr4hd")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/EndMenu" unique_id=509094245]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/EndMenu/VBoxContainer" unique_id=2106839793]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0, 0.19607843, 1)
+theme_override_fonts/font = ExtResource("2_s1py6")
+theme_override_font_sizes/font_size = 22
+text = "The End"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/EndMenu/VBoxContainer" unique_id=311006894]
+layout_mode = 2
+text = "Internet streaming has overtaken video rental."
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/EndMenu/VBoxContainer" unique_id=1350290478]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/EndMenu/VBoxContainer/CenterContainer" unique_id=1503216920]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="Control/EndMenu/VBoxContainer/CenterContainer/VBoxContainer" unique_id=252592728]
+layout_mode = 2
+text = "Exit"
+script = ExtResource("6_fagqj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1192865584]
+libraries/ = SubResource("AnimationLibrary_ysl1o")
