@@ -28,6 +28,17 @@ def godot_unescape(value: str) -> str:
     return re.sub(r'\\(.)', lambda m: {"n": "\n", "t": "\t"}.get(m.group(1), m.group(1)), value)
 
 
+# Quotes are only added in the spreadsheet to stop cells being read as
+# formulas, so any at the start or end of a value are stripped.
+QUOTES_AND_WHITESPACE = "\"'“”‘’ \t\r\n"
+
+
+def clean_value(value: str) -> str:
+    """Strip surrounding whitespace and quotes, and turn typed \\n sequences
+    into real line breaks."""
+    return value.strip(QUOTES_AND_WHITESPACE).replace("\\n", "\n")
+
+
 def set_string_prop(text: str, key: str, value: str) -> tuple[str, str | None]:
     """Return the updated file text and the previous value (None if unset)."""
     header, sep, body = text.partition("[resource]")
@@ -76,7 +87,7 @@ def main() -> int:
         changes = []
         try:
             for key, column in (("name", "Name"), ("desc", "Description")):
-                value = row[column]
+                value = clean_value(row[column])
                 updated, old = set_string_prop(new_text, key, value)
                 # Unset properties default to REPLACE_ME, so leave those alone.
                 if old != value and not (old is None and value == "REPLACE_ME"):

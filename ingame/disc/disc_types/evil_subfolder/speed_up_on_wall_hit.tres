@@ -7,7 +7,7 @@
 script = ExtResource("1_e3wfk")
 buff_amount = 1.0
 name = "Dog of Wall Avenue"
-desc = "\"Speed up on wall hit, reset on corner hit\""
+desc = "Speed up on wall hit, reset on corner hit"
 num_in_pool = 7
 combine_to = ExtResource("1_dxopm")
 metadata/_custom_type_script = "uid://d1jamvncs61io"

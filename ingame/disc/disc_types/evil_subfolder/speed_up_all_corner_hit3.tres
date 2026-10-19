@@ -11,6 +11,6 @@ right = true
 buff_amount = 4.0
 buff_time = 3.0
 name = "Wanted for Most Velocity"
-desc = "\"Corner hits give a massive speed boost to adjacent TVs\""
+desc = "Corner hits give a massive speed boost to adjacent TVs"
 tier = 3
 metadata/_custom_type_script = "uid://d1jamvncs61io"

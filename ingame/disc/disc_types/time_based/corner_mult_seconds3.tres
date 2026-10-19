@@ -6,6 +6,6 @@
 script = ExtResource("1_xap1e")
 mult_bonus = 2.0
 name = "The Odessey"
-desc = "\"Corner hit % $$ increases massivly over time between hits\""
+desc = "Corner hit % $$ increases massivly over time between hits"
 tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

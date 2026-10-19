@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_grny7")
 name = "Hustler II"
-desc = "\" +15% $$ for corner hits\""
+desc = "+15% $$ for corner hits"
 tier = 2
 num_in_pool = 1
 combine_to = ExtResource("1_vbh3w")

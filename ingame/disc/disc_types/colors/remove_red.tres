@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_gppb4")
 name = "Red Pill"
-desc = "\"DVD no longer turns red\""
+desc = "DVD no longer turns red"
 tier = 4
 num_in_pool = 1
 metadata/_custom_type_script = "uid://p8avbcm7dtu7"

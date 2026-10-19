@@ -45,7 +45,7 @@ Wanted for Most Velocity,"""Corner hits give a massive speed boost to adjacent T
 Attack of the Clones,"""Add an extra DVD  to the screen""",4,Unique,1,ingame/disc/disc_types/more_evil_subfolder/extra_disc.tres
 Blue Pill,"""DVD no longer turns blue""",4,Unique,1,ingame/disc/disc_types/colors/remove_blue.tres
 Bord V Berrari,"""Speed up the TV to the right but slow this one down""",4,Unique,1,ingame/disc/disc_types/evil_subfolder/speed_up_right.tres
-High and Mighty,"""Increase corner and wall % $$. TV below loses wall and corner % $$.""",4,Unique,1,ingame/disc/disc_types/evil_subfolder/lower_score_less.tres
+High and Mighty,"""Increase corner and wall % $$.\nTV below loses wall and corner % $$.""",4,Unique,1,ingame/disc/disc_types/evil_subfolder/lower_score_less.tres
 The Snap,"""When this TV scores an even number, double it.\nOtherwise, score nothing.""",4,Unique,1,ingame/disc/disc_types/more_evil_subfolder/double_on_even.tres
 Red Pill,"""DVD no longer turns red""",4,Unique,1,ingame/disc/disc_types/colors/remove_red.tres
 Dead Corner Society,"""+100% $$ for wall hits. Corner hits no longer score.""",4,Unique,1,ingame/disc/disc_types/more_evil_subfolder/no_corner_double_wall.tres

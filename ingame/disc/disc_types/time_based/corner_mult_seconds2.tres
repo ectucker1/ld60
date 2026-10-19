@@ -7,7 +7,7 @@
 script = ExtResource("1_bw4jg")
 mult_bonus = 1.5
 name = "The Journey"
-desc = "\"Corner hit % $$ increases greatly over time between hits\""
+desc = "Corner hit % $$ increases greatly over time between hits"
 tier = 2
 num_in_pool = 1
 combine_to = ExtResource("1_jhuip")

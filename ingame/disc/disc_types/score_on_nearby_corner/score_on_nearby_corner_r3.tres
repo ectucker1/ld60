@@ -7,6 +7,6 @@ script = ExtResource("1_b41dj")
 right = true
 bonus = 100
 name = "Building Stolen III"
-desc = "\"+$100 when TV to right hits a corner\""
+desc = "+$100 when TV to right hits a corner"
 tier = 3
 metadata/_custom_type_script = "uid://dru57ptcau8xr"

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_wdl4g")
 name = "WALL-Y II RETURN TO EARTH"
-desc = "\"+$2 for wall hits\""
+desc = "+$2 for wall hits"
 tier = 2
 num_in_pool = 1
 combine_to = ExtResource("1_0pgkw")

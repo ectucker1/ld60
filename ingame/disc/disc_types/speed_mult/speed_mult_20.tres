@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_33cc1")
 name = "2 Quick 2 Mad"
-desc = "\"+15% DVD speed\""
+desc = "+15% DVD speed"
 tier = 2
 num_in_pool = 2
 combine_to = ExtResource("1_qkla3")
