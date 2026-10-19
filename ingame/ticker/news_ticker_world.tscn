@@ -10,6 +10,44 @@ content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 
+[sub_resource type="Animation" id="Animation_ex46r"]
+resource_name = "OhNo"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OhNo:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1.319508, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h2fo0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OhNo:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4b8y3"]
+_data = {
+&"OhNo": SubResource("Animation_ex46r"),
+&"RESET": SubResource("Animation_h2fo0")
+}
+
 [node name="NewsTickerWorld" type="Node2D" unique_id=234397378]
 script = ExtResource("1_ex46r")
 
@@ -33,6 +71,20 @@ theme_override_fonts/font = ExtResource("1_lqibe")
 theme_override_font_sizes/font_size = 22
 text = "Score: Wow"
 script = ExtResource("2_lqibe")
+
+[node name="OhNo" type="ColorRect" parent="Offset/ScoreContainer/ScoreLabel" unique_id=2117563598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Offset/ScoreContainer/ScoreLabel" unique_id=153864045]
+libraries/ = SubResource("AnimationLibrary_4b8y3")
 
 [node name="CompetitorScoreLbl" type="Label" parent="Offset/ScoreContainer" unique_id=634138926]
 custom_minimum_size = Vector2(160, 0)
