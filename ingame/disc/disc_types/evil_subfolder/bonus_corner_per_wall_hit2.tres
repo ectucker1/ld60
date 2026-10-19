@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_n6i38")
-buff_amount = 2.25
+buff_amount = 2.0
 name = "Three walls make a corner"
 desc = "Gain a larger stacking bonus to corner points for each wall hit, resets on corner hit"
 tier = 2
