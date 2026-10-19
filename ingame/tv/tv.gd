@@ -77,6 +77,9 @@ func get_speed_mult() -> float:
 	var mult = 1.0
 	for disc in get_discs():
 		mult += disc.speed_mult
+	# x2 mode lol
+	if ReplayManager.is_fast_mode:
+		mult *= 2.0
 	return mult
 
 func get_global_center():

@@ -18,6 +18,8 @@ var next_ticket: int = 25
 
 var its_over := false
 
+var total_earnings_highscore := 0
+
 func ticket_progress() -> float:
 	return float(score - last_ticket) / float(next_ticket - last_ticket) * 100.0
 
@@ -36,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	if its_over:
 		score = -999
 	if score > 0 and competitor_score > score and not its_over:
+		total_earnings_highscore = score
 		its_over = true
 		GlobalMenu.menu_zone.show_menu("EndMenu")
 	

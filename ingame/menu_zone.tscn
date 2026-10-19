@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c60j8g1ejaogb" path="res://util/audio/volume_controller.tscn" id="4_gr4hd"]
 [ext_resource type="Script" uid="uid://tea6g6eujy27" path="res://ingame/menu/start_button.gd" id="5_1o0b2"]
 [ext_resource type="Script" uid="uid://3e8q6vusjkj5" path="res://ingame/exit_button.gd" id="6_fagqj"]
+[ext_resource type="Script" uid="uid://bd858uli650kf" path="res://ingame/end_menu.gd" id="8_hxigo"]
+[ext_resource type="Script" uid="uid://brcldmni1yq2u" path="res://ingame/play_again.gd" id="9_ysl1o"]
 
 [sub_resource type="FontVariation" id="FontVariation_eu55n"]
 base_font = ExtResource("2_s1py6")
@@ -120,6 +122,7 @@ offset_right = 116.0
 offset_bottom = 81.0
 
 [node name="MainMenu" type="MarginContainer" parent="Control" unique_id=1050501308]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,38 +182,19 @@ text = "Exit"
 script = ExtResource("6_fagqj")
 
 [node name="EndMenu" type="MarginContainer" parent="Control" unique_id=404602878]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="SettingsLine" type="HBoxContainer" parent="Control/EndMenu" unique_id=1668049040]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="Control/EndMenu/SettingsLine" unique_id=133999536]
-layout_mode = 2
-
-[node name="FullscreenToggle" type="CheckButton" parent="Control/EndMenu/SettingsLine/CenterContainer" unique_id=166918235]
-layout_mode = 2
-text = "Fullscreen"
-script = ExtResource("3_r6dbj")
-
-[node name="CenterContainer2" type="CenterContainer" parent="Control/EndMenu/SettingsLine" unique_id=1754818955]
-layout_mode = 2
-
-[node name="VolumeController" parent="Control/EndMenu/SettingsLine/CenterContainer2" unique_id=399770842 instance=ExtResource("4_gr4hd")]
-layout_mode = 2
+script = ExtResource("8_hxigo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/EndMenu" unique_id=509094245]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 5
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/EndMenu/VBoxContainer" unique_id=2106839793]
@@ -224,13 +208,31 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Control/EndMenu/VBoxContainer" unique_id=311006894]
 layout_mode = 2
 text = "Internet streaming has overtaken video rental."
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Control/EndMenu/VBoxContainer" unique_id=1551083992]
+modulate = Color(0.37, 1, 0.4015, 1)
+layout_mode = 2
+text = "Total $BBI: 50,200 (x2 Mode)"
+horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Control/EndMenu/VBoxContainer" unique_id=1350290478]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/EndMenu/VBoxContainer/CenterContainer" unique_id=1503216920]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
+
+[node name="PlayAgain" type="Button" parent="Control/EndMenu/VBoxContainer/CenterContainer/VBoxContainer" unique_id=260596993]
+layout_mode = 2
+text = "Play Again"
+script = ExtResource("9_ysl1o")
+
+[node name="PlayAgainX2" type="Button" parent="Control/EndMenu/VBoxContainer/CenterContainer/VBoxContainer" unique_id=886086590]
+layout_mode = 2
+text = "Play Again (x2 Speed)"
+script = ExtResource("9_ysl1o")
+set_high_speed = true
 
 [node name="ExitButton" type="Button" parent="Control/EndMenu/VBoxContainer/CenterContainer/VBoxContainer" unique_id=252592728]
 layout_mode = 2
