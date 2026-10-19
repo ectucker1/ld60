@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://dite8evymt610" path="res://ingame/shop.gd" id="10_7lqh5"]
 [ext_resource type="Texture2D" uid="uid://c3vpbbksp4q8d" path="res://ingame/refresh_icon.png" id="10_r8bkt"]
 [ext_resource type="PackedScene" uid="uid://baivbes5p37yf" path="res://ingame/tv/disc_slot.tscn" id="10_wi66d"]
+[ext_resource type="PackedScene" uid="uid://cocbh2borjreg" path="res://ingame/tv/blinky_lights.tscn" id="11_wnfix"]
+[ext_resource type="Script" uid="uid://c6a0xrdfcbm5" path="res://ingame/tv/blinky_lights.gd" id="12_dx04f"]
 [ext_resource type="Resource" uid="uid://b0cd6lclvbpcc" path="res://ingame/disc/disc_types/speed_mult/speed_mult_10.tres" id="13_36i4f"]
 [ext_resource type="PackedScene" uid="uid://6gwf8hnwk7kp" path="res://ingame/ticket_gui.tscn" id="13_pvtff"]
 [ext_resource type="Resource" uid="uid://bo7i8kdpvko10" path="res://ingame/disc/disc_types/wall_scores/add_wall_score.tres" id="14_7ruv5"]
@@ -399,6 +401,11 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
+[node name="BlinkyLights" parent="TVConnector/TopLeft" unique_id=1244769354 instance=ExtResource("11_wnfix")]
+position = Vector2(27, -16)
+rotation = 1.5707964
+metadata/_edit_lock_ = true
+
 [node name="TopMiddle" type="Area2D" parent="TVConnector" unique_id=1360717503 node_paths=PackedStringArray("left", "right", "below")]
 position = Vector2(22, -20)
 script = ExtResource("2_o7wyp")
@@ -470,6 +477,11 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
+[node name="BlinkyLights" parent="TVConnector/TopMiddle" unique_id=399812185 instance=ExtResource("11_wnfix")]
+z_index = 2
+position = Vector2(-28, 24)
+metadata/_edit_lock_ = true
+
 [node name="TopRight" type="Area2D" parent="TVConnector" unique_id=1368384317 node_paths=PackedStringArray("left", "below")]
 position = Vector2(94, -27)
 script = ExtResource("2_o7wyp")
@@ -540,6 +552,11 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
+[node name="BlinkyLights" parent="TVConnector/TopRight" unique_id=489645444 instance=ExtResource("11_wnfix")]
+z_index = 2
+position = Vector2(-16, 19)
+metadata/_edit_lock_ = true
+
 [node name="BottomLeft" type="Area2D" parent="TVConnector" unique_id=1871451394 node_paths=PackedStringArray("right", "above")]
 position = Vector2(-55, 36)
 script = ExtResource("2_o7wyp")
@@ -608,6 +625,35 @@ z_index = 3
 layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
+
+[node name="BlinkyLights" type="Node2D" parent="TVConnector/BottomLeft" unique_id=2146961347]
+z_index = 2
+position = Vector2(-34, 29)
+script = ExtResource("12_dx04f")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomLeft/BlinkyLights" unique_id=940654812]
+modulate = Color(0.59607846, 0.15686275, 0.015686275, 1)
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("29_y437b")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="TVConnector/BottomLeft/BlinkyLights" unique_id=1051145400]
+modulate = Color(0.2784314, 0.6039216, 0.078431375, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(3, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("29_y437b")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="TVConnector/BottomLeft/BlinkyLights" unique_id=1075044005]
+modulate = Color(0.16078432, 0.24313726, 0.65882355, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(6, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("29_y437b")
+centered = false
 
 [node name="BottomMiddle" type="Area2D" parent="TVConnector" unique_id=476473176 node_paths=PackedStringArray("left", "right", "above")]
 position = Vector2(22, 56)
@@ -680,6 +726,35 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
 
+[node name="BlinkyLights" type="Node2D" parent="TVConnector/BottomMiddle" unique_id=1338640906]
+z_index = 2
+position = Vector2(-26, -24)
+script = ExtResource("12_dx04f")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="TVConnector/BottomMiddle/BlinkyLights" unique_id=20183657]
+modulate = Color(0.59607846, 0.15686275, 0.015686275, 1)
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("29_y437b")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="TVConnector/BottomMiddle/BlinkyLights" unique_id=1152736482]
+modulate = Color(0.2784314, 0.6039216, 0.078431375, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(3, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("29_y437b")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="TVConnector/BottomMiddle/BlinkyLights" unique_id=274963459]
+modulate = Color(0.16078432, 0.24313726, 0.65882355, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(6, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("29_y437b")
+centered = false
+
 [node name="BottomRight" type="Area2D" parent="TVConnector" unique_id=47487788 node_paths=PackedStringArray("left", "above")]
 position = Vector2(92, 43)
 script = ExtResource("2_o7wyp")
@@ -749,6 +824,11 @@ z_index = 3
 layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("9_mk1uw")
+
+[node name="BlinkyLights" parent="TVConnector/BottomRight" unique_id=747055940 instance=ExtResource("11_wnfix")]
+z_index = 2
+position = Vector2(28, -2)
+metadata/_edit_lock_ = true
 
 [node name="EffectsCamera2D" type="Camera2D" parent="." unique_id=1134236562]
 script = ExtResource("2_d7b73")
@@ -851,6 +931,7 @@ z_index = 6
 position = Vector2(17, 14)
 texture = ExtResource("26_wi66d")
 script = ExtResource("29_u0ij1")
+metadata/_edit_lock_ = true
 
 [node name="MenuZone" parent="." unique_id=1793736949 instance=ExtResource("29_bl64n")]
 visible = false
