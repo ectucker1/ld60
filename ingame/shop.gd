@@ -3,6 +3,7 @@ extends Node2D
 
 var disc: PackedScene = preload("res://ingame/disc/disc.tscn")
 
+var initial_pool: Array[Disc]
 var pool: Array[Disc]
 
 
@@ -20,10 +21,14 @@ func _ready() -> void:
 	var discs: Array[Disc] = []
 	consume_disc_folder(discs, "res://ingame/disc/disc_types")
 	
-	pool = []
+	initial_pool = []
 	for disc in discs:
 		for i in range(0, disc.num_in_pool):
-			pool.push_back(disc)
+			initial_pool.push_back(disc)
+	
+	pool = []
+	for disc in initial_pool:
+		pool.push_back(disc)
 
 func can_refresh() -> bool:
 	var num_bought = 0
@@ -49,8 +54,11 @@ func refresh() -> void:
 	# Spawn new discs
 	pool.shuffle()
 	for marker in $Markers.get_children():
+		# Re-add discs to pool if it is empty
 		if pool.is_empty():
-			continue
+			for disc in initial_pool:
+				pool.push_back(disc)
+			pool.shuffle()
 		
 		# Force a unique, if available
 		var chosen_disc = null
