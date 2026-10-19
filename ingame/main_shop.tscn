@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://bo7i8kdpvko10" path="res://ingame/disc/disc_types/wall_scores/add_wall_score.tres" id="14_7ruv5"]
 [ext_resource type="Script" uid="uid://ckda6auq3ephe" path="res://ingame/refresh_button.gd" id="14_m0m8y"]
 [ext_resource type="Resource" uid="uid://l05m0e4sfg18" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_mult.tres" id="15_bmf7w"]
-[ext_resource type="Resource" uid="uid://c4f4e71f5xn84" path="res://ingame/disc/disc_types/evil_subfolder/lower_score_less.tres" id="17_bl64n"]
+[ext_resource type="Resource" uid="uid://di4vuaomsjbca" path="res://ingame/disc/disc_types/corner_simple_add_mult/corner_add.tres" id="16_a5vqv"]
 [ext_resource type="PackedScene" uid="uid://5qd1mny2sd3n" path="res://ingame/tooltip_display.tscn" id="19_mk1uw"]
 [ext_resource type="PackedScene" uid="uid://dans3f0f2a2eo" path="res://ingame/ticker/news_ticker.tscn" id="20_36i4f"]
 [ext_resource type="PackedScene" uid="uid://1o5bdibbsjs1" path="res://ingame/trash/trash_can.tscn" id="23_7ruv5"]
@@ -783,7 +783,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-126, 54)
 
 [node name="Disc" parent="DaShop/Markers/Marker2D4" unique_id=1809058538 instance=ExtResource("3_kqxgg")]
-disc = ExtResource("17_bl64n")
+disc = ExtResource("16_a5vqv")
 metadata/_edit_lock_ = true
 
 [node name="Tickets" parent="DaShop" unique_id=293473471 instance=ExtResource("13_pvtff")]
